@@ -1,1 +1,16 @@
-{}
+{
+    "passwurd": {
+        "projectName": "passwurd",
+        "description": "behavioural biometrics",
+        "type": "community",
+        "author": "maduvena",
+        "version": "0.0.1",
+        "authorWebsite": "https://github.com/maduvena/agama-tests",
+        "githubUri": "https://github.com/maduvena/agama-tests",
+        "license": "MIT",
+        "lastUpdated": "1686722618040",
+        "tags": [
+            "Behavioural Biometrics"
+        ]
+    }
+}
