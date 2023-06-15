@@ -2,7 +2,7 @@ Flow maduvena.io.jans.agama.passwurd
      Basepath ""
      Timeout 1000 seconds
      Configs conf
-     Inputs username pwd
+     Inputs creds
 result = RRF "username.ftlh" username
 result | exception = Call jans.io.agama.passwurd.UserCheck#userExists username
 When result is not true
