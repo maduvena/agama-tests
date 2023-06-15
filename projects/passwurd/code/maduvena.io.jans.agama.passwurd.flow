@@ -7,6 +7,6 @@ result = RRF "username.ftlh" username
 result | exception = Call jans.io.agama.passwurd.UserCheck#userExists username
 When result is not true
      Repeat 5 times max
-          RRF "__________" 
-     result = RRF "UsernamePasswurd.ftlh" cred
+          result = RRF "UsernamePasswurd.ftlh" creds
+          Finish result
 result = RRF "UsernamePasswurd.ftlh" creds
