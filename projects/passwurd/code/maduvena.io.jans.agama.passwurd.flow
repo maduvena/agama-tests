@@ -11,3 +11,5 @@ When result is not true
           Finish result
 result = RRF "UsernamePasswurd.ftlh" creds
 result | exception = Call jans.io.agama.passwurd.UserCheck#validateUser creds
+When result is true
+     Finish true
