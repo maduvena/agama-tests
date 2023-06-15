@@ -4,3 +4,4 @@ Flow maduvena.io.jans.agama.passwurd
      Configs conf
      Inputs username pwd
 result = RRF "username.ftlh" username
+result | exception = Call jans.io.agama.passwurd.UserCheck#userExists username
