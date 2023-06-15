@@ -278,7 +278,7 @@
 					"conditionInputField": "",
 					"valueField": "",
 					"returnVariable": "",
-					"javaClassName": "jans.io.agama.passwurd.UserCheck",
+					"javaClassName": "passwurd.UserCheck",
 					"javaMethodName": "validateUser",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
@@ -291,7 +291,7 @@
 					"asssignedVariableName": "result"
 				}
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 812,
@@ -712,7 +712,7 @@
 					"conditionInputField": "",
 					"valueField": "",
 					"returnVariable": "",
-					"javaClassName": "jans.io.agama.passwurd.UserCheck",
+					"javaClassName": "passwurd.UserCheck",
 					"javaMethodName": "userExists",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
@@ -869,7 +869,7 @@
 				"x": -196.9499999999998,
 				"y": 37
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": -196.9499999999998,
@@ -1084,8 +1084,8 @@
 		}
 	],
 	"viewport": {
-		"x": 216.37073572692907,
-		"y": 19.072720593220424,
-		"zoom": 0.9999999999999999
+		"x": 10,
+		"y": 15,
+		"zoom": 1
 	}
 }
