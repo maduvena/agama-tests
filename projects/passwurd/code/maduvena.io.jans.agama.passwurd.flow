@@ -4,13 +4,13 @@ Flow maduvena.io.jans.agama.passwurd
      Configs conf
      Inputs creds
 result = RRF "username.ftlh" username
-result | exception = Call jans.io.agama.passwurd.UserCheck#userExists username
+result | exception = Call passwurd.UserCheck#userExists username
 When result is not true
      Repeat 5 times max
           result = RRF "UsernamePasswurd.ftlh" creds
           Finish result
 result = RRF "UsernamePasswurd.ftlh" creds
-result | exception = Call jans.io.agama.passwurd.UserCheck#validateUser creds
+result | exception = Call passwurd.UserCheck#validateUser creds
 When result is true
      Finish result
 result | exception = Trigger TwoFA creds
