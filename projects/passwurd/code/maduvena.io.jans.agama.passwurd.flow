@@ -12,4 +12,5 @@ When result is not true
 result = RRF "UsernamePasswurd.ftlh" creds
 result | exception = Call jans.io.agama.passwurd.UserCheck#validateUser creds
 When result is true
-     Finish true
+     Finish result
+result | exception = Trigger TwoFA creds
