@@ -3,6 +3,81 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
+			"position": {
+				"x": 1080,
+				"y": 30
+			},
+			"type": "call",
+			"data": {
+				"id": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
+				"type": "Agama-call-Node",
+				"parentId": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"handles": [
+					"Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.FAILURE",
+					"Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.SUCCESS"
+				],
+				"position": {
+					"x": 1080,
+					"y": 30
+				},
+				"agamaData": {
+					"id": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
+					"type": "Agama-call-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a",
+					"name": "",
+					"basepath": "",
+					"comment": "API call to validate keystrokes",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "creds",
+					"logMessage": "",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "jans.io.agama.passwurd.UserCheck",
+					"javaMethodName": "validateUser",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "",
+					"assignCallbackResult": "",
+					"displayName": "PasswurdValidation",
+					"nodeColor": "",
+					"exceptionVariableField": "exception",
+					"nodeIcon": "material-symbols:code",
+					"asssignedVariableName": "result"
+				}
+			},
+			"selected": true,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 1080,
+				"y": 30
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "finish-6265ffd8-59f7-4870-9a44-a0243d7caed2",
 			"position": {
 				"x": 1038,
@@ -142,7 +217,7 @@
 					"asssignedVariableName": "result"
 				}
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 880,
@@ -713,11 +788,28 @@
 				"color": "#fff",
 				"fillOpacity": 0.7
 			}
+		},
+		{
+			"id": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a-Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b-65dd1a29-b7fe-4134-91ae-789d186176ea",
+			"type": "straight",
+			"source": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a",
+			"target": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
 		}
 	],
 	"viewport": {
-		"x": 44.49750499425909,
-		"y": 10.82302022519093,
-		"zoom": 0.870550563296124
+		"x": 297.25622677756337,
+		"y": 56.388517159714894,
+		"zoom": 0.659753955386447
 	}
 }
