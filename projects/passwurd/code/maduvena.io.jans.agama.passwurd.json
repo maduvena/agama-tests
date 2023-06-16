@@ -437,7 +437,7 @@
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				}
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 987,
@@ -1162,8 +1162,8 @@
 		}
 	],
 	"viewport": {
-		"x": 94.63124999999997,
-		"y": 27,
+		"x": 319,
+		"y": 61,
 		"zoom": 1
 	}
 }
