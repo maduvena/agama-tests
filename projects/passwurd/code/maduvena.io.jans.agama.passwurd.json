@@ -53,7 +53,7 @@
 					"valueField": "",
 					"returnVariable": "",
 					"javaClassName": "passwurd.UserCheck",
-					"javaMethodName": "init",
+					"javaMethodName": "initializeFlow",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
 					"logLevel": "",
@@ -65,7 +65,7 @@
 					"asssignedVariableName": "result"
 				}
 			},
-			"selected": false,
+			"selected": true,
 			"positionAbsolute": {
 				"x": -100.94999999999982,
 				"y": 49
