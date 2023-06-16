@@ -3,7 +3,7 @@ Flow maduvena.io.jans.agama.passwurd
      Timeout 1000 seconds
      Configs conf
      Inputs creds
-result | exception = Call passwurd.UserCheck#init config
+result | exception = Call passwurd.UserCheck#initializeFlow config
 result = RRF "username.ftlh" username
 result | exception = Call passwurd.UserCheck#userExists username
 When result is not true
