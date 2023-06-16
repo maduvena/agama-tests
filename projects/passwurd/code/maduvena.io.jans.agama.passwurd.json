@@ -65,7 +65,7 @@
 					"asssignedVariableName": "result"
 				}
 			},
-			"selected": true,
+			"selected": false,
 			"positionAbsolute": {
 				"x": -100.94999999999982,
 				"y": 49
@@ -424,7 +424,7 @@
 					"variableField": "",
 					"conditionInputField": "",
 					"valueField": "",
-					"returnVariable": "result",
+					"returnVariable": "true",
 					"javaClassName": "",
 					"javaMethodName": "",
 					"javaVariableName": "",
@@ -524,7 +524,7 @@
 			"height": 122,
 			"id": "Agama-rrf-Node-bebdea76-cd90-4c19-ac92-bfb77da73cff",
 			"position": {
-				"x": 771,
+				"x": 772,
 				"y": 493
 			},
 			"type": "rrf",
@@ -539,7 +539,7 @@
 					"Agama-repeat-Node-b5e30698-c96b-4d62-80e8-d582f73bd5a1.InRepeatBlock"
 				],
 				"position": {
-					"x": 771,
+					"x": 772,
 					"y": 493
 				},
 				"agamaData": {
@@ -588,7 +588,7 @@
 				}
 			},
 			"positionAbsolute": {
-				"x": 771,
+				"x": 772,
 				"y": 493
 			},
 			"selected": false,
@@ -1162,8 +1162,8 @@
 		}
 	],
 	"viewport": {
-		"x": 319,
-		"y": 61,
-		"zoom": 1
+		"x": 110.58471082948859,
+		"y": 138.10013412422933,
+		"zoom": 0.8705505632961242
 	}
 }
