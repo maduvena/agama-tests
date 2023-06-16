@@ -12,5 +12,19 @@
         "tags": [
             "Behavioural Biometrics"
         ]
+    },
+    "sample": {
+        "projectName": "sample",
+        "description": "Jose and mike's projects",
+        "type": "community",
+        "author": "maduvena",
+        "version": "0.0.1",
+        "authorWebsite": "https://github.com/maduvena/agama-tests",
+        "githubUri": "https://github.com/maduvena/agama-tests",
+        "license": "MIT",
+        "lastUpdated": "1686898685575",
+        "tags": [
+            "authentication"
+        ]
     }
 }
