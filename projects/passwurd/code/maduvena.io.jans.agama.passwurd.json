@@ -62,10 +62,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
-					"asssignedVariableName": "config"
+					"asssignedVariableName": "result"
 				}
 			},
-			"selected": false,
+			"selected": true,
 			"positionAbsolute": {
 				"x": -100.94999999999982,
 				"y": 49
