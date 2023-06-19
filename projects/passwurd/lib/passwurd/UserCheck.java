@@ -22,6 +22,7 @@ import org.apache.http.HttpResponse;
 import io.jans.util.StringHelper;
 import io.jans.model.SimpleExtendedCustomProperty;
 import io.jans.as.common.model.common.User;
+import org.apache.commons.codec.binary.Base64;
 
 public class UserCheck {
 
@@ -150,8 +151,53 @@ public class UserCheck {
 	public static boolean userExists(String uid) {
 		User resultUser = userService.getUserByAttribute("uid", uid);
 		return (resultUser != null);
-			
+
 	}
-	
-	
+
+	public String getAccessTokenJansServer() {
+
+		HttpClient httpClient = HttpService2.getHttpsClient();
+
+		String url = configAttributes.get("AS_ENDPOINT") + "/jans-auth/restv1/token";
+		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri="
+				+ configAttributes.get("AS_REDIRECT_URI");
+		JSONObject header = new JSONObject();
+		header.put("Content-type", "application/x-www-form-urlencoded");
+		header.put("Accept", "application/json");
+		String encodedString = Base64.encodeBase64String(
+				(configAttributes.get("AS_CLIENT_ID") + ":" + configAttributes.get("AS_CLIENT_SECRET")).getBytes());
+		header.put("Authorization", "Basic " + encodedString);
+
+		HttpServiceResponse resultResponse = null;
+		try {
+			resultResponse = httpService.executePost(httpClient, url, null, header.toString(), data);
+			HttpResponse httpResponse = resultResponse.getHttpResponse();
+			if (httpService.isResponseStastusCodeOk(httpResponse)) {
+				logger.debug("Passwurd. Jans-Auth getAccessToken. Get invalid response from server: ",
+						(httpResponse.getStatusLine().getStatusCode()));
+				httpService.consume(httpResponse);
+				return null;
+			}
+			bytes[] response_bytes = httpService.getResponseContent(httpResponse);
+			String response_string = httpService.convertEntityToString(response_bytes);
+			httpService.consume(httpResponse);
+
+			if (response_string == null) {
+				logger.debug("Passwurd. getAccessToken. Got empty response from validation server");
+				return null;
+			}
+			JSONObject response = new JSONObject(response_string);
+
+			logger.debug("Passwurd. response access token: " + response.get("access_token"));
+			return String.valueOf(response.get("access_token"));
+
+		} catch (Exception e) {
+			logger.error("Jans Auth Server - getAccessToken", e);
+			return null;
+		} finally {
+			resultResponse.closeConnection();
+		}
+
+	}
+
 }
