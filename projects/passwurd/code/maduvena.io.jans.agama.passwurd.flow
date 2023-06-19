@@ -9,6 +9,7 @@ result | exception = Call passwurd.UserCheck#userExists username
 When result is not true
      Repeat 5 times max
           result = RRF "UsernamePasswurd.ftlh" creds
+          result | exception = Call passwurd.UserCheck#validateKeystrokes creds
           Finish true
 result = RRF "UsernamePasswurd.ftlh" creds
 result | exception = Call passwurd.UserCheck#validateUser creds
