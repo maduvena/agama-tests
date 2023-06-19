@@ -3,26 +3,33 @@ package passwurd;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
+
 import io.jans.as.common.model.User;
 import io.jans.as.common.service.common.UserService;
+import io.jans.service.cdi.util.CdiUtil;
+import io.jans.util.StringHelper;
+import io.jans.as.common.model.common.User;
+
+import io.jans.as.model.crypto.signature.SignatureAlgorithm;
+import io.jans.as.model.crypto.AuthCryptoProvider;
+
 import io.jans.service.custom.CustomScriptService;
 import io.jans.model.custom.script.CustomScriptType;
 import io.jans.model.custom.script.model.CustomScript;
-import io.jans.service.cdi.util.CdiUtil;
-import io.jans.as.server.service.net.HttpService2;
-import io.jans.service.cdi.util.CdiUtil;
+import io.jans.model.SimpleExtendedCustomProperty;
+
 import java.util.Map;
 import java.util.HashMap;
+import org.apache.commons.codec.binary.Base64;
+
 import org.apache.http.client.HttpClient;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import io.jans.as.server.model.net.HttpServiceResponse;
+import io.jans.as.server.service.net.HttpService2;
 import org.apache.http.entity.ContentType;
 import org.apache.http.HttpResponse;
-import io.jans.util.StringHelper;
-import io.jans.model.SimpleExtendedCustomProperty;
-import io.jans.as.common.model.common.User;
-import org.apache.commons.codec.binary.Base64;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UserCheck {
 
@@ -30,6 +37,7 @@ public class UserCheck {
 	private static final UserService userService = CdiUtil.bean(UserService.class);
 	private static final HttpService2 httpService = CdiUtil.bean(HttpService2);
 	private static Map<String, String> configAttributes;
+	private static AuthCryptoProvider cryptoProvider = null;
 
 	public static boolean initializeFlow(Map<String, String> config) {
 
@@ -56,6 +64,9 @@ public class UserCheck {
 		if (configAttributes.get("PASSWURD_KEY_A_PASSWORD") == null) {
 			logger.debug("Passwurd. Initialization. Property PASSWURD_KEY_A_PASSWORD is mandatory");
 			return false;
+		} else {
+			cryptoProvider = new AuthCryptoProvider(configAttributes.get("PASSWURD_KEY_A_KEYSTORE"),
+					configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
 		}
 
 		if (configAttributes.get("PASSWURD_API_URL") == null) {
@@ -77,6 +88,7 @@ public class UserCheck {
 
 			configAttributes.put("AS_CLIENT_ID", clientRegistrationResponse.get("client_id"));
 			configAttributes.put("AS_CLIENT_SECRET", clientRegistrationResponse.get("client_secret"));
+			configAttributes.put("ORG_ID", clientRegistrationResponse.get("org_id"));
 		}
 
 	}
@@ -134,6 +146,8 @@ public class UserCheck {
                 {   conf.setValue2(response_data.getString("client_id")); }
                 else if (StringHelper.equalsIgnoreCase(conf.getValue1(), "AS_CLIENT_SECRET"))
                 {   conf.setValue2(response_data.getString("client_secret")); }
+                else if (StringHelper.equalsIgnoreCase(conf.getValue1(), "ORG_ID"))
+                {   conf.setValue2(response_data.getString("org_id")); }
             
             }
             custScriptService.update(customScript);    
@@ -200,4 +214,122 @@ public class UserCheck {
 
 	}
 
+	public static String signUid(String uid) {
+
+		String alias = "passwurd";
+		String signedUID = cryptoProvider.sign(uid, alias, null, SignatureAlgorithm.RS256);
+
+		return signedUID;
+	}
+
+	public int validateKeystrokes(Credentials cred) {
+		logger.debug("Passwurd. Attempting to validate keystrokes");
+
+		try {
+			String customer_sig = signUid(cred.getUsername());
+
+			String access_token = getAccessTokenJansServer();
+			JSONObject data = new JSONObject();
+			data.put("k_username", cred.getK_username());
+			data.put("k_pwd", cred.getK_pwd());
+			data.put("customer_sig", customer_sig);
+			data.put("org_id", configAttributes.get("ORG_ID"));
+			data.put("uid", cred.getUsername());
+
+			JSONObject headers = new JSONObject();
+			headers.put("Accept", "application/json");
+
+			headers.put("Authorization", "Bearer " + access_token);
+			String endpointUrl = configAttributes.get("PASSWURD_API_URL") + "/validate";
+
+			HttpClient httpClient = httpService.getHttpsClient();
+			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,
+					headers.toString(), data.toString(), ContentType.APPLICATION_JSON);
+			HttpResponse httpResponse = resultResponse.getHttpResponse();
+			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
+			logger.debug("Passwurd. validate keystrokes response status code: " + httpResponseStatusCode);
+
+			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
+				logger.debug("Passwurd. Failed to validate");
+				httpService.consume(httpResponse);
+				return null;
+			}
+			byte[] bytes = httpService.getResponseContent(httpResponse);
+			String response = httpService.convertEntityToString(bytes);
+			data = new JSONObject(response);
+
+			if (httpResponseStatusCode == "200" || httpResponseStatusCode == "202") {
+				if (data.get("status") == "Enrollment") {
+					logger.debug("Enrollment");
+					return -1;
+				} else if (data.get("status") == "Approved") {
+					logger.debug("Approved");
+					return -1;
+				} else if (data.get("status") == "Denied") {
+					logger.debug("Denied");
+					track_id = data.get("track_id");
+					return track_id;
+				}
+				logger.debug("Keystrokes validated successfully");
+			} else if (httpResponseStatusCode == "422") {
+				// in this case the password text mismatched, hence we do not offer the 2FA
+				// option
+				return -2;
+			} else if (httpResponseStatusCode == "400") {
+				logger.debug(
+						"Passwurd. in this case the password text mismatched, hence we do not offer the 2FA option");
+				return -2;
+			} else {
+				logger.debug("Failed to validate keystrokes, API returned error " + httpResponseStatusCode);
+				return 0;
+			}
+		} catch (
+
+		Exception e) {
+			logger.debug("Passwurd. Failed to execute /validate.", e);
+			return 0;
+		}
+	}
+
+	public boolean notifyProfile(Credentials creds) {
+
+		String access_token = getAccessTokenJansServer();
+
+		try {
+
+			JSONObject data = new JSONObject();
+			data.put("uid", creds.getUsername());
+			data.put("track_id", creds.getTrackId());
+
+			JSONObject headers = new JSONObject();
+			headers.put("Accept", "application/json");
+
+			headers.put("Authorization", "Bearer " + access_token);
+
+			String endpointUrl = configAttributes.get("PASSWURD_API_URL") + "/notify";
+
+			HttpClient httpClient = httpService.getHttpsClient();
+			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, headers,
+					data.toString(), ContentType.APPLICATION_JSON);
+			HttpResponse httpResponse = resultResponse.getHttpResponse();
+			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
+			logger.debug("Passwurd. Notify response status code: " + httpResponseStatusCode);
+
+			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
+				logger.debug("Passwurd. Notify response invalid ");
+				httpService.consume(httpResponse);
+				return null;
+			}
+			byte[] bytes = httpService.getResponseContent(httpResponse);
+
+			String response = httpService.convertEntityToString(bytes);
+			data = new JSONObject(response);
+			logger.debug(data.getString("status"));
+
+		} catch (Exception e) {
+			logger.debug("Passwurd. Failed to execute /notify.", e);
+			// return true irrespective of the result
+			return True;
+		}
+	}
 }
