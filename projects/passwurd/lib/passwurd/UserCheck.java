@@ -21,12 +21,13 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.HttpResponse;
 import io.jans.util.StringHelper;
 import io.jans.model.SimpleExtendedCustomProperty;
+import io.jans.as.common.model.common.User;
 
 public class UserCheck {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserCheck.class);
 	private static final UserService userService = CdiUtil.bean(UserService.class);
-
+	private static final HttpService2 httpService = CdiUtil.bean(HttpService2);
 	private static Map<String, String> configAttributes;
 
 	public static boolean initializeFlow(Map<String, String> config) {
@@ -94,7 +95,7 @@ public class UserCheck {
         String response = null;
 
         try {
-        	HttpService2 httpService = CdiUtil.bean(HttpService2);
+        	
         	HttpClient httpClient =  httpService.getHttpsClient();
         	HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, header.toString(), body.toString(), ContentType.APPLICATION_JSON);
         	HttpResponse httpResponse = resultResponse.getHttpResponse();
@@ -144,5 +145,13 @@ public class UserCheck {
         }
         return result;
 
-}
+	}
+
+	public static boolean userExists(String uid) {
+		User resultUser = userService.getUserByAttribute("uid", uid);
+		return (resultUser != null);
+			
+	}
+	
+	
 }
