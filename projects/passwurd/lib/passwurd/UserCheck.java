@@ -66,15 +66,18 @@ public class UserCheck {
 		}
 
 		if (configAttributes.get("AS_CLIENT_ID") == null) {
-			
-	             Map<String,String> clientRegistrationResponse = registerScanClient(configAttributes.get("AS_ENDPOINT"), configAttributes.get("AS_REDIRECT_URI"), configAttributes.get("AS_SSA"));
-	            if (clientRegistrationResponse == null)
-	                return false;
 
-	            configAttributes.put("AS_CLIENT_ID", clientRegistrationResponse.get("client_id"));
-	            configAttributes.put("AS_CLIENT_SECRET", clientRegistrationResponse.get("client_secret"));
-		    
+			Map<String, String> clientRegistrationResponse = registerScanClient(configAttributes.get("AS_ENDPOINT"),
+					configAttributes.get("AS_REDIRECT_URI"), configAttributes.get("AS_SSA"));
+			if (clientRegistrationResponse == null)
+				logger.debug("Passwurd. Unable to register client with AS");
+			return false;
+
+			configAttributes.put("AS_CLIENT_ID", clientRegistrationResponse.get("client_id"));
+			configAttributes.put("AS_CLIENT_SECRET", clientRegistrationResponse.get("client_secret"));
 		}
+
+	}
 
 	public static Map<String, String> registerScanClient(String asBaseUrl, String asRedirectUri,String asSSA){
         logger.debug( "Passwurd. Attempting to register client");
@@ -126,9 +129,9 @@ public class UserCheck {
             {
                 
                 if (StringHelper.equalsIgnoreCase(conf.getValue1(), "AS_CLIENT_ID"))
-                    conf.setValue2(response_data.getString("client_id"));
+                {   conf.setValue2(response_data.getString("client_id")); }
                 else if (StringHelper.equalsIgnoreCase(conf.getValue1(), "AS_CLIENT_SECRET"))
-                    conf.setValue2(response_data.getString("client_secret"));
+                {   conf.setValue2(response_data.getString("client_secret")); }
             
             }
             custScriptService.update(customScript);    
