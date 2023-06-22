@@ -11,7 +11,10 @@
         "lastUpdated": "1686722618040",
         "tags": [
             "Behavioural Biometrics"
-        ]
+        ],
+        "configs": {
+            "maduvena.io.jans.agama.passwurd": {}
+        }
     },
     "sample": {
         "projectName": "sample",
