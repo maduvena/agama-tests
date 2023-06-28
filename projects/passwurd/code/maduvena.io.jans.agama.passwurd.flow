@@ -5,8 +5,8 @@ Flow maduvena.io.jans.agama.passwurd
      Inputs creds
 result | exception = Call passwurd.UserCheck#initializeFlow config
 Log "@error " Exceptions
-result = RRF "username.ftlh" username
-result | exception = Call passwurd.UserCheck#userExists username
+creds = RRF "username.ftlh" creds
+result | exception = Call passwurd.UserCheck#userExists creds
 When result is not true
      Repeat 5 times max
           result = RRF "UsernamePasswurd.ftlh" creds
