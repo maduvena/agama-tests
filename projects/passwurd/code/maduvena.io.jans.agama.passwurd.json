@@ -64,7 +64,7 @@
 					"nodeIcon": "octicon:log-16"
 				}
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": -258.8123364543445,
@@ -921,7 +921,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "username",
+					"arguments": "creds",
 					"logMessage": "",
 					"templatePath": "",
 					"maxIteration": "",
@@ -943,7 +943,7 @@
 					"asssignedVariableName": "result"
 				}
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 159.1859085701957,
@@ -993,7 +993,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "username",
+					"arguments": "creds",
 					"logMessage": "",
 					"templatePath": "username.ftlh",
 					"maxIteration": "",
@@ -1012,7 +1012,7 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
-					"asssignedVariableName": "result"
+					"asssignedVariableName": "creds"
 				}
 			},
 			"selected": false,
@@ -1331,8 +1331,8 @@
 		}
 	],
 	"viewport": {
-		"x": 627.4902577036473,
-		"y": 66.74023929867525,
-		"zoom": 0.8705505632961243
+		"x": 10,
+		"y": 15,
+		"zoom": 1
 	}
 }
