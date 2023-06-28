@@ -162,7 +162,8 @@ public class UserCheck {
 
 	}
 
-	public static boolean userExists(String uid) {
+	public static boolean userExists(Credentials cred) {
+                String uid = cred.getUsername();
 		User resultUser = userService.getUserByAttribute("uid", uid);
 		return (resultUser != null);
 
