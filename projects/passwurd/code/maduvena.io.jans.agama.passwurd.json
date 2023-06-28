@@ -921,7 +921,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "creds",
+					"arguments": "credentialMap",
 					"logMessage": "",
 					"templatePath": "",
 					"maxIteration": "",
@@ -993,7 +993,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "creds",
+					"arguments": "credentialMap",
 					"logMessage": "",
 					"templatePath": "username.ftlh",
 					"maxIteration": "",
@@ -1012,10 +1012,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
-					"asssignedVariableName": "creds"
+					"asssignedVariableName": "result"
 				}
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": -49.939918704493095,
@@ -1331,8 +1331,8 @@
 		}
 	],
 	"viewport": {
-		"x": 661.9709457529752,
-		"y": 152.41834474479145,
-		"zoom": 0.5743491774985173
+		"x": 467,
+		"y": 5,
+		"zoom": 1
 	}
 }
