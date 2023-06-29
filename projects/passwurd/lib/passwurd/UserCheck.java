@@ -37,6 +37,15 @@ public class UserCheck {
 	private static Map<String, String> configAttributes;
 	private static AuthCryptoProvider cryptoProvider = null;
 
+	
+	public static Map<String, String> initCredentialMap(Map<String, String> credentialMap) {
+		credentialMap = new HashMap<String, String>();
+		credentialMap.put("username", "");
+		credentialMap.put("k_username", "");
+		credentialMap.put("k_pwd", "");
+		credentialMap.put("trackId", "");
+		credentialMap.put("orgId", "");
+	}
 	public static boolean initializeFlow(Map<String, String> config) {
 
 		configAttributes = config;
