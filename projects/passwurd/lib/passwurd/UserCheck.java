@@ -40,6 +40,8 @@ public class UserCheck {
 	private static AuthCryptoProvider cryptoProvider = null;
 
 	public static boolean initializeFlow(Map<String, String> config) {
+                logger.debug("initializeFlow called");
+                logger.debug("config"+config);
 
 		configAttributes = config;
 		if (configAttributes.get("AS_ENDPOINT") == null) {
