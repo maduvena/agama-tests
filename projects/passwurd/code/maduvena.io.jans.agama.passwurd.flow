@@ -1,9 +1,10 @@
 Flow maduvena.io.jans.agama.passwurd
      Basepath ""
      Timeout 1000 seconds
-     Configs conf
+     Configs config
      Inputs creds
 result | exception = Call passwurd.UserCheck#initializeFlow config
+Log "@info " config
 Log "@error " exception
 result = RRF "username.ftlh" credentialMap
 result | exception = Call passwurd.UserCheck#userExists credentialMap
