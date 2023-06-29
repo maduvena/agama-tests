@@ -3,6 +3,7 @@ Flow maduvena.io.jans.agama.passwurd
      Timeout 1000 seconds
      Configs config
      Inputs credentialMap
+credentialMap | exception = Call passwurd.UserCheck#initCredentialMap credentialMap
 result | exception = Call passwurd.UserCheck#initializeFlow config
 Log "@info " config
 Log "@error " exception
