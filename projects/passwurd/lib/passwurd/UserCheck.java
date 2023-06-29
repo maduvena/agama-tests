@@ -3,8 +3,6 @@ package passwurd;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
-import io.jans.as.common.model.common.User;
-
 import io.jans.as.common.service.common.UserService;
 import io.jans.service.cdi.util.CdiUtil;
 import io.jans.util.StringHelper;
@@ -40,8 +38,6 @@ public class UserCheck {
 	private static AuthCryptoProvider cryptoProvider = null;
 
 	public static boolean initializeFlow(Map<String, String> config) {
-                logger.debug("initializeFlow called");
-                logger.debug("config"+config);
 
 		configAttributes = config;
 		if (configAttributes.get("AS_ENDPOINT") == null) {
@@ -95,77 +91,73 @@ public class UserCheck {
 
 	}
 
-	public static Map<String, String> registerScanClient(String asBaseUrl, String asRedirectUri,String asSSA){
-        logger.debug( "Passwurd. Attempting to register client");
-        JSONObject body = new JSONObject();
-        JSONObject header = new JSONObject();
-        JSONArray redirect = new JSONArray();
-        redirect.put(asRedirectUri);
-        body.put("redirect_uris", redirect);
-        body.put("software_statement", asSSA);
-        header.put("Accept" , "application/json");
-        
-        String endpointUrl = asBaseUrl + "/jans-auth/restv1/register";
-         
-        String response = null;
+	public static Map<String, String> registerScanClient(String asBaseUrl, String asRedirectUri, String asSSA) {
+		logger.debug("Passwurd. Attempting to register client");
+		JSONObject body = new JSONObject();
+		JSONObject header = new JSONObject();
+		JSONArray redirect = new JSONArray();
+		redirect.put(asRedirectUri);
+		body.put("redirect_uris", redirect);
+		body.put("software_statement", asSSA);
+		header.put("Accept", "application/json");
 
-        try {
-        	
-        	HttpClient httpClient =  httpService.getHttpsClient();
-        	HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, header.toString(), body.toString(), ContentType.APPLICATION_JSON);
-        	HttpResponse httpResponse = resultResponse.getHttpResponse();
-            String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode()
-            logger.debug( "Passwurd. Get client registration response status code: " +httpResponseStatusCode);
+		String endpointUrl = asBaseUrl + "/jans-auth/restv1/register";
 
-            if(  httpService.isResponseStastusCodeOk(httpResponse)== false)
-            {   logger.debug(  "Passwurd. Scan. Get invalid registration");
-                httpService.consume(httpResponse);
-                return null;
-            }
-            byte [] bytes = httpService.getResponseContent(httpResponse);
+		String response = null;
 
-            response = httpService.convertEntityToString(bytes);
-        }catch(Exception e)
-        {
-            logger.debug("Passwurd. Failed to send client registration request: ");
-            e.printStackTrace();
-            return null;
-        }
-        JSONObject response_data = new JSONObject(response);
-        Map<String, String> result = new HashMap<String, String>();
-        result.put("client_id", response_data.getString("client_id"));
-        result.put("client_secret", response_data.getString("client_secret"));
-        
-       
-       
-        try {
-        	CustomScriptService custScriptService = CdiUtil.bean(CustomScriptService);
-        	CustomScript customScript = custScriptService.getScriptByDisplayName("agama");
-            for (List<SimpleExtendedCustomProperty> conf : customScript.getConfigurationProperties())
-            {
-                
-                if (StringHelper.equalsIgnoreCase(conf.getValue1(), "AS_CLIENT_ID"))
-                {   conf.setValue2(response_data.getString("client_id")); }
-                else if (StringHelper.equalsIgnoreCase(conf.getValue1(), "AS_CLIENT_SECRET"))
-                {   conf.setValue2(response_data.getString("client_secret")); }
-                else if (StringHelper.equalsIgnoreCase(conf.getValue1(), "ORG_ID"))
-                {   conf.setValue2(response_data.getString("org_id")); }
-            
-            }
-            custScriptService.update(customScript);    
+		try {
 
-            logger.debug( "Passwurd. Stored client credentials in script parameters");
-        }catch(Exception e)
-        {
-        	logger.error( "Passwurd. Failed to store client credentials.", e);
-            return null;
-        }
-        return result;
+			HttpClient httpClient = httpService.getHttpsClient();
+			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,
+					header.toString(), body.toString(), ContentType.APPLICATION_JSON);
+			HttpResponse httpResponse = resultResponse.getHttpResponse();
+			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
+			logger.debug("Passwurd. Get client registration response status code: " + httpResponseStatusCode);
+
+			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
+				logger.debug("Passwurd. Scan. Get invalid registration");
+				httpService.consume(httpResponse);
+				return null;
+			}
+			byte[] bytes = httpService.getResponseContent(httpResponse);
+
+			response = httpService.convertEntityToString(bytes);
+		} catch (Exception e) {
+			logger.debug("Passwurd. Failed to send client registration request: ");
+			e.printStackTrace();
+			return null;
+		}
+		JSONObject response_data = new JSONObject(response);
+		Map<String, String> result = new HashMap<String, String>();
+		result.put("client_id", response_data.getString("client_id"));
+		result.put("client_secret", response_data.getString("client_secret"));
+
+		try {
+			CustomScriptService custScriptService = CdiUtil.bean(CustomScriptService);
+			CustomScript customScript = custScriptService.getScriptByDisplayName("agama");
+			for (List<SimpleExtendedCustomProperty> conf : customScript.getConfigurationProperties()) {
+
+				if (StringHelper.equalsIgnoreCase(conf.getValue1(), "AS_CLIENT_ID")) {
+					conf.setValue2(response_data.getString("client_id"));
+				} else if (StringHelper.equalsIgnoreCase(conf.getValue1(), "AS_CLIENT_SECRET")) {
+					conf.setValue2(response_data.getString("client_secret"));
+				} else if (StringHelper.equalsIgnoreCase(conf.getValue1(), "ORG_ID")) {
+					conf.setValue2(response_data.getString("org_id"));
+				}
+
+			}
+			custScriptService.update(customScript);
+
+			logger.debug("Passwurd. Stored client credentials in script parameters");
+		} catch (Exception e) {
+			logger.error("Passwurd. Failed to store client credentials.", e);
+			return null;
+		}
+		return result;
 
 	}
 
-	public static boolean userExists(Credentials cred) {
-                String uid = cred.getUsername();
+	public static boolean userExists(String uid) {
 		User resultUser = userService.getUserByAttribute("uid", uid);
 		return (resultUser != null);
 
@@ -195,7 +187,7 @@ public class UserCheck {
 				httpService.consume(httpResponse);
 				return null;
 			}
-			bytes[] response_bytes = httpService.getResponseContent(httpResponse);
+			byte[] response_bytes = httpService.getResponseContent(httpResponse);
 			String response_string = httpService.convertEntityToString(response_bytes);
 			httpService.consume(httpResponse);
 
