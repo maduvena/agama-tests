@@ -3,8 +3,8 @@ package passwurd;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
+import io.jans.as.common.model.common.User;
 
-import io.jans.as.common.model.User;
 import io.jans.as.common.service.common.UserService;
 import io.jans.service.cdi.util.CdiUtil;
 import io.jans.util.StringHelper;
