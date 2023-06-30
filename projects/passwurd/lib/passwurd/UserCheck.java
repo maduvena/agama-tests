@@ -1,5 +1,5 @@
 
-package passwurd;
+package io.jans.passwurd;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
