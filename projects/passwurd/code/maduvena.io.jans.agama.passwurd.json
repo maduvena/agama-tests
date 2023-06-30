@@ -962,8 +962,8 @@
 			"height": 140,
 			"id": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b",
 			"position": {
-				"x": 695.517709560277,
-				"y": -386.3555320829912
+				"x": 719.517709560277,
+				"y": -346.3555320829912
 			},
 			"type": "when",
 			"data": {
@@ -974,8 +974,8 @@
 				"inRepeatBlock": false,
 				"handles": [],
 				"position": {
-					"x": 695.517709560277,
-					"y": -386.3555320829912
+					"x": 719.517709560277,
+					"y": -346.3555320829912
 				},
 				"agamaData": {
 					"id": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b",
@@ -1015,8 +1015,8 @@
 				}
 			},
 			"positionAbsolute": {
-				"x": 695.517709560277,
-				"y": -386.3555320829912
+				"x": 719.517709560277,
+				"y": -346.3555320829912
 			},
 			"selected": false,
 			"dragging": false
@@ -1158,7 +1158,7 @@
 					"asssignedVariableName": "credentialMap"
 				}
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 283.89823848500146,
@@ -1403,14 +1403,6 @@
 			"source": "Agama-trigger-Node-b9453f0d-002f-4318-9d65-eae4685777aa"
 		},
 		{
-			"source": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b",
-			"sourceHandle": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.FAILURE",
-			"target": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a",
-			"targetHandle": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
-			"id": "reactflow__edge-Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61bAgama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.FAILURE-Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66aAgama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
-			"selected": false
-		},
-		{
 			"id": "Agama-rrf-Node-bebdea76-cd90-4c19-ac92-bfb77da73cff-Agama-call-Node-79206e7a-5d5f-4fa2-861b-80114dd67337-cdcce39f-40de-4435-a607-ee52c454f382",
 			"type": "straight",
 			"source": "Agama-rrf-Node-bebdea76-cd90-4c19-ac92-bfb77da73cff",
@@ -1495,11 +1487,19 @@
 			"type": "straight",
 			"source": "Agama-call-Node-67a34536-3cda-4f1b-9338-3c02117f11e1",
 			"target": "Agama-call-Node-be4a6ad9-69a2-4134-a09d-1da7418ab5d8"
+		},
+		{
+			"source": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b",
+			"sourceHandle": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.FAILURE",
+			"target": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a",
+			"targetHandle": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
+			"id": "reactflow__edge-Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61bAgama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.FAILURE-Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66aAgama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
+			"selected": true
 		}
 	],
 	"viewport": {
-		"x": 503,
-		"y": 572,
+		"x": -219,
+		"y": 560,
 		"zoom": 1
 	}
 }
