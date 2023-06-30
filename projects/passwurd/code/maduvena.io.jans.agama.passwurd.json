@@ -52,7 +52,7 @@
 					"conditionInputField": "",
 					"valueField": "",
 					"returnVariable": "",
-					"javaClassName": "passwurd.UserCheck",
+					"javaClassName": "io.jans.passwurd.UserCheck",
 					"javaMethodName": "initCredentialMap",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
@@ -341,7 +341,7 @@
 					"conditionInputField": "",
 					"valueField": "",
 					"returnVariable": "",
-					"javaClassName": "passwurd.UserCheck",
+					"javaClassName": "io.jans.passwurd.UserCheck",
 					"javaMethodName": "initializeFlow",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
@@ -1073,7 +1073,7 @@
 					"conditionInputField": "",
 					"valueField": "",
 					"returnVariable": "",
-					"javaClassName": "passwurd.UserCheck",
+					"javaClassName": "io.jans.passwurd.UserCheck",
 					"javaMethodName": "userExists",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
@@ -1271,7 +1271,8 @@
 				"fill": "#FFCC00",
 				"color": "#fff",
 				"fillOpacity": 0.7
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b-Agama-repeat-Node-b5e30698-c96b-4d62-80e8-d582f73bd5a1-9b9132d7-8e07-4070-9f73-23221688008b",
@@ -1497,8 +1498,8 @@
 		}
 	],
 	"viewport": {
-		"x": 10,
-		"y": 15,
+		"x": 503,
+		"y": 572,
 		"zoom": 1
 	}
 }
