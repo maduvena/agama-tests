@@ -7,7 +7,7 @@ credentialMap | exception = Call passwurd.UserCheck#initCredentialMap credential
 result | exception = Call passwurd.UserCheck#initializeFlow config
 Log "@info " config
 Log "@error " exception
-result = RRF "username.ftlh" credentialMap
+credentialMap = RRF "username.ftlh" 
 result | exception = Call passwurd.UserCheck#userExists credentialMap
 When result is not true
      Repeat 5 times max
