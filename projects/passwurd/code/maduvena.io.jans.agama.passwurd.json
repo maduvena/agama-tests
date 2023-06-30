@@ -1136,7 +1136,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "credentialMap",
+					"arguments": "",
 					"logMessage": "",
 					"templatePath": "username.ftlh",
 					"maxIteration": "",
@@ -1155,10 +1155,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
-					"asssignedVariableName": "result"
+					"asssignedVariableName": "credentialMap"
 				}
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 283.89823848500146,
@@ -1497,8 +1497,8 @@
 		}
 	],
 	"viewport": {
-		"x": 656.171875,
-		"y": 419.5,
-		"zoom": 0.5
+		"x": 156,
+		"y": 527,
+		"zoom": 1
 	}
 }
