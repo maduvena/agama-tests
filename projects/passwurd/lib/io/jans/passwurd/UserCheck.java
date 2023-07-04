@@ -226,19 +226,20 @@ public class UserCheck {
 		return signedUID;
 	}
 
-	public int validateKeystrokes(Credentials cred) {
+	public int validateKeystrokes(Map<String, String> credentialMap) {
 		logger.debug("Passwurd. Attempting to validate keystrokes");
 
 		try {
-			String customer_sig = signUid(cred.getUsername());
+			String customer_sig = signUid(credentialMap.get("username"));
 
 			String access_token = getAccessTokenJansServer();
+			
 			JSONObject data = new JSONObject();
-			data.put("k_username", cred.getK_username());
-			data.put("k_pwd", cred.getK_pwd());
+			data.put("k_username", credentialMap.get("k_username"));
+			data.put("k_pwd", credentialMap.get("k_pwd"));
 			data.put("customer_sig", customer_sig);
 			data.put("org_id", configAttributes.get("ORG_ID"));
-			data.put("uid", cred.getUsername());
+			data.put("uid", credentialMap.get("username"));
 
 			JSONObject headers = new JSONObject();
 			headers.put("Accept", "application/json");
@@ -295,15 +296,16 @@ public class UserCheck {
 		}
 	}
 
-	public boolean notifyProfile(Credentials creds) {
+	public boolean notifyProfile(Map<String, String> credentialMap) {
 
 		String access_token = getAccessTokenJansServer();
 
 		try {
 
+			
 			JSONObject data = new JSONObject();
-			data.put("uid", creds.getUsername());
-			data.put("track_id", creds.getTrackId());
+			data.put("uid", credentialMap.get("username"));
+			data.put("track_id", credentialMap.get("trackId"));
 
 			JSONObject headers = new JSONObject();
 			headers.put("Accept", "application/json");
