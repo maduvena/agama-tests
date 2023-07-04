@@ -49,26 +49,26 @@ public class UserCheck {
 	public static boolean initializeFlow(Map<String, String> config) {
 
 		configAttributes = config;
-		if (configAttributes.get("AS_ENDPOINT") == null) {
+		if (StringHelper.isEmpty(configAttributes.get("AS_ENDPOINT") )) {
 			logger.debug("Passwurd. Initialization. Property AS_ENDPOINT is mandatory");
 			return false;
 		}
-		if (configAttributes.get("AS_REDIRECT_URI") == null) {
+		if (StringHelper.isEmpty(configAttributes.get("AS_REDIRECT_URI") ) ){
 			logger.debug("Passwurd. Initialization. Property AS_REDIRECT_URI is mandatory");
 			return false;
 		}
 
-		if (configAttributes.get("PORTAL_JWKS") == null) {
+		if (StringHelper.isEmpty(configAttributes.get("PORTAL_JWKS") ) {
 			logger.debug("Passwurd. Initialization. Property PORTAL_JWKS is mandatory");
 			return false;
 		}
 
-		if (configAttributes.get("PASSWURD_KEY_A_KEYSTORE") == null) {
+		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_KEY_A_KEYSTORE") ) {
 			logger.debug("Passwurd. Initialization. Property PASSWURD_KEY_A_KEYSTORE is mandatory");
 			return false;
 		}
 
-		if (configAttributes.get("PASSWURD_KEY_A_PASSWORD") == null) {
+		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_KEY_A_PASSWORD") )) {
 			logger.debug("Passwurd. Initialization. Property PASSWURD_KEY_A_PASSWORD is mandatory");
 			return false;
 		} else {
@@ -76,16 +76,16 @@ public class UserCheck {
 					configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
 		}
 
-		if (configAttributes.get("PASSWURD_API_URL") == null) {
+		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_API_URL") ) {
 			logger.debug("Passwurd. Initialization. Property PASSWURD_API_URL is mandatory");
 			return false;
 		}
-		if (configAttributes.get("AS_SSA") == null) {
+		if (StringHelper.isEmpty(configAttributes.get("AS_SSA") ) {
 			logger.debug("Passwurd. Initialization. Property AS_SSA is mandatory");
 			return false;
 		}
 
-		if (configAttributes.get("AS_CLIENT_ID") == null) {
+		if (StringHelper.isEmpty(configAttributes.get("AS_CLIENT_ID") ) {
 
 			Map<String, String> clientRegistrationResponse = registerScanClient(configAttributes.get("AS_ENDPOINT"),
 					configAttributes.get("AS_REDIRECT_URI"), configAttributes.get("AS_SSA"));
