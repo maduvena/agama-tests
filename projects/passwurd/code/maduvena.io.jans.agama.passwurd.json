@@ -652,7 +652,7 @@
 					"asssignedVariableName": "result"
 				}
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1121.4337982802356,
@@ -664,7 +664,7 @@
 			"height": 122,
 			"id": "finish-6265ffd8-59f7-4870-9a44-a0243d7caed2",
 			"position": {
-				"x": 1295,
+				"x": 1299,
 				"y": 494
 			},
 			"type": "finish",
@@ -679,7 +679,7 @@
 					"Agama-repeat-Node-b5e30698-c96b-4d62-80e8-d582f73bd5a1.InRepeatBlock"
 				],
 				"position": {
-					"x": 1295,
+					"x": 1299,
 					"y": 494
 				},
 				"agamaData": {
@@ -726,10 +726,10 @@
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				}
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 1295,
+				"x": 1299,
 				"y": 494
 			}
 		},
