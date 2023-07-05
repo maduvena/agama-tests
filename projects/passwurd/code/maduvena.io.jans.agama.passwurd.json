@@ -726,7 +726,7 @@
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				}
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1299,
@@ -873,7 +873,7 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
-					"asssignedVariableName": "result"
+					"asssignedVariableName": "credentialMap"
 				}
 			},
 			"positionAbsolute": {
@@ -1026,8 +1026,8 @@
 			"height": 122,
 			"id": "Agama-call-Node-7f95f093-5751-4676-bb6f-71669fb560ca",
 			"position": {
-				"x": 472.1308522405833,
-				"y": -415.4275618649956
+				"x": 474.1308522405833,
+				"y": -413.4275618649956
 			},
 			"type": "call",
 			"data": {
@@ -1038,8 +1038,8 @@
 				"inRepeatBlock": false,
 				"handles": [],
 				"position": {
-					"x": 472.1308522405833,
-					"y": -415.4275618649956
+					"x": 474.1308522405833,
+					"y": -413.4275618649956
 				},
 				"agamaData": {
 					"id": "Agama-call-Node-7f95f093-5751-4676-bb6f-71669fb560ca",
@@ -1089,8 +1089,8 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 472.1308522405833,
-				"y": -415.4275618649956
+				"x": 474.1308522405833,
+				"y": -413.4275618649956
 			}
 		},
 		{
@@ -1498,8 +1498,8 @@
 		}
 	],
 	"viewport": {
-		"x": 10,
-		"y": 15,
-		"zoom": 1
+		"x": 578.6718750000001,
+		"y": 612.5317937342301,
+		"zoom": 0.5
 	}
 }
