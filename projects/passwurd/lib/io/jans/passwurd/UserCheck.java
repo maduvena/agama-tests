@@ -170,6 +170,7 @@ public class UserCheck {
 
 	public static boolean userExists(String uid) {
 		User resultUser = userService.getUserByAttribute("uid", uid);
+                logger.info("userExists:"+resultUser);
 		return (resultUser != null);
 
 	}
