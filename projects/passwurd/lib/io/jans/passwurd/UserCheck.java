@@ -40,6 +40,7 @@ public class UserCheck {
 	public UserCheck(){}
 
 	public static Map<String, String> initCredentialMap(Map<String, String> credentialMap) {
+                logger.info("Passwurd. initCredentialMap ");
 		credentialMap = new HashMap<String, String>();
 		credentialMap.put("username", "");
 		credentialMap.put("k_username", "");
