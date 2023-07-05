@@ -47,7 +47,7 @@ public class UserCheck {
 		credentialMap.put("orgId", "");
 	}
 	public static boolean initializeFlow(Map<String, String> config) {
-
+                logger.info("Passwurd. Initialization. ");
 		configAttributes = config;
 		if (configAttributes.get("AS_ENDPOINT").isBlank() ) {
 			logger.debug("Passwurd. Initialization. Property AS_ENDPOINT is mandatory");
@@ -97,7 +97,7 @@ public class UserCheck {
 			configAttributes.put("AS_CLIENT_SECRET", clientRegistrationResponse.get("client_secret"));
 			configAttributes.put("ORG_ID", clientRegistrationResponse.get("org_id"));
 		}
-
+                logger.info("Passwurd. Initialization. Completed");
 	}
 
 	public static Map<String, String> registerScanClient(String asBaseUrl, String asRedirectUri, String asSSA) {
