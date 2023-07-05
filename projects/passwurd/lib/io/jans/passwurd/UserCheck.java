@@ -49,26 +49,26 @@ public class UserCheck {
 	public static boolean initializeFlow(Map<String, String> config) {
 
 		configAttributes = config;
-		if (StringHelper.isEmpty(configAttributes.get("AS_ENDPOINT") )) {
+		if (configAttributes.get("AS_ENDPOINT").isBlank() ) {
 			logger.debug("Passwurd. Initialization. Property AS_ENDPOINT is mandatory");
 			return false;
 		}
-		if (StringHelper.isEmpty(configAttributes.get("AS_REDIRECT_URI") ) ){
+		if (configAttributes.get("AS_REDIRECT_URI").isBlank() ){
 			logger.debug("Passwurd. Initialization. Property AS_REDIRECT_URI is mandatory");
 			return false;
 		}
 
-		if (StringHelper.isEmpty(configAttributes.get("PORTAL_JWKS") ) {
+		if (configAttributes.get("PORTAL_JWKS")isBlank() ) {
 			logger.debug("Passwurd. Initialization. Property PORTAL_JWKS is mandatory");
 			return false;
 		}
 
-		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_KEY_A_KEYSTORE") ) {
+		if (configAttributes.get("PASSWURD_KEY_A_KEYSTORE").isBlank() ) {
 			logger.debug("Passwurd. Initialization. Property PASSWURD_KEY_A_KEYSTORE is mandatory");
 			return false;
 		}
 
-		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_KEY_A_PASSWORD") )) {
+		if (configAttributes.get("PASSWURD_KEY_A_PASSWORD").isBlank() ) {
 			logger.debug("Passwurd. Initialization. Property PASSWURD_KEY_A_PASSWORD is mandatory");
 			return false;
 		} else {
@@ -76,16 +76,16 @@ public class UserCheck {
 					configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
 		}
 
-		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_API_URL") ) {
+		if (configAttributes.get("PASSWURD_API_URL").isBlank() ) {
 			logger.debug("Passwurd. Initialization. Property PASSWURD_API_URL is mandatory");
 			return false;
 		}
-		if (StringHelper.isEmpty(configAttributes.get("AS_SSA") ) {
+		if (configAttributes.get("AS_SSA").isBlank() ) {
 			logger.debug("Passwurd. Initialization. Property AS_SSA is mandatory");
 			return false;
 		}
 
-		if (StringHelper.isEmpty(configAttributes.get("AS_CLIENT_ID") ) {
+		if (configAttributes.get("AS_CLIENT_ID").isBlank() ) {
 
 			Map<String, String> clientRegistrationResponse = registerScanClient(configAttributes.get("AS_ENDPOINT"),
 					configAttributes.get("AS_REDIRECT_URI"), configAttributes.get("AS_SSA"));
