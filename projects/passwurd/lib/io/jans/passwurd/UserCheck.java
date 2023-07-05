@@ -37,7 +37,8 @@ public class UserCheck {
 	private static Map<String, String> configAttributes;
 	private static AuthCryptoProvider cryptoProvider = null;
 
-	
+	public UserCheck(){}
+
 	public static Map<String, String> initCredentialMap(Map<String, String> credentialMap) {
 		credentialMap = new HashMap<String, String>();
 		credentialMap.put("username", "");
