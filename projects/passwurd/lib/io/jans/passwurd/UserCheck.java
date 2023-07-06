@@ -173,7 +173,7 @@ public class UserCheck {
 	public static boolean userExists(Map<String, String> credentialMap) {
 		String uid = credentialMap.get("username");
 		logger.debug("Passwurd. username: " + uid);
-		if (uid.isBlank()) {
+		if (uid == null || uid.isBlank()) {
 			return false;
 		} else {
 			User resultUser = userService.getUserByAttribute("uid", uid);
