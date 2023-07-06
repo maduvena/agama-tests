@@ -37,10 +37,11 @@ public class UserCheck {
 	private static Map<String, String> configAttributes;
 	private static AuthCryptoProvider cryptoProvider = null;
 
-	public UserCheck(){}
+	public UserCheck() {
+	}
 
 	public static Map<String, String> initCredentialMap(Map<String, String> credentialMap) {
-                logger.info("Passwurd. initCredentialMap ");
+		logger.info("Passwurd. initCredentialMap ");
 		credentialMap = new HashMap<String, String>();
 		credentialMap.put("username", "");
 		credentialMap.put("k_username", "");
@@ -48,8 +49,9 @@ public class UserCheck {
 		credentialMap.put("trackId", "");
 		credentialMap.put("orgId", "");
 	}
+
 	public static boolean initializeFlow(Map<String, String> config) {
-                logger.info("Passwurd. Initialization. ");
+        logger.info("Passwurd. Initialization. ");
 		configAttributes = config;
 		if (configAttributes.get("AS_ENDPOINT").isBlank() ) {
 			logger.debug("Passwurd. Initialization. Property AS_ENDPOINT is mandatory");
@@ -168,11 +170,16 @@ public class UserCheck {
 
 	}
 
-	public static boolean userExists(String uid) {
-		User resultUser = userService.getUserByAttribute("uid", uid);
-                logger.info("userExists:"+resultUser);
-		return (resultUser != null);
-
+	public static boolean userExists(Map<String, String> credentialMap) {
+		String uid = credentialMap.get("username");
+		logger.debug("Passwurd. username: " + uid);
+		if (uid.isBlank()) {
+			return false;
+		} else {
+			User resultUser = userService.getUserByAttribute("uid", uid);
+			logger.info("userExists:" + resultUser);
+			return (resultUser != null);
+		}
 	}
 
 	public String getAccessTokenJansServer() {
@@ -236,7 +243,7 @@ public class UserCheck {
 			String customer_sig = signUid(credentialMap.get("username"));
 
 			String access_token = getAccessTokenJansServer();
-			
+
 			JSONObject data = new JSONObject();
 			data.put("k_username", credentialMap.get("k_username"));
 			data.put("k_pwd", credentialMap.get("k_pwd"));
@@ -305,7 +312,6 @@ public class UserCheck {
 
 		try {
 
-			
 			JSONObject data = new JSONObject();
 			data.put("uid", credentialMap.get("username"));
 			data.put("track_id", credentialMap.get("trackId"));
