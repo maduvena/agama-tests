@@ -3,6 +3,77 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-log-Node-9dd01c31-fccc-4cff-8a6c-3eb0937014fd",
+			"position": {
+				"x": 483.89823848500146,
+				"y": -453.13505140828926
+			},
+			"type": "log",
+			"data": {
+				"id": "Agama-log-Node-9dd01c31-fccc-4cff-8a6c-3eb0937014fd",
+				"type": "Agama-log-Node",
+				"parentId": "Agama-rrf-Node-ae9e7f43-2c39-4a36-95b5-c90a98cffba0",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"handles": [],
+				"position": {
+					"x": 483.89823848500146,
+					"y": -453.13505140828926
+				},
+				"agamaData": {
+					"id": "Agama-log-Node-9dd01c31-fccc-4cff-8a6c-3eb0937014fd",
+					"type": "Agama-log-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-rrf-Node-ae9e7f43-2c39-4a36-95b5-c90a98cffba0",
+					"name": "",
+					"basepath": "",
+					"comment": "",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "credentialMap",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "info",
+					"assignCallbackResult": "",
+					"displayName": "Printing gathered inputs in credentialMap",
+					"nodeColor": "",
+					"exceptionVariableField": "",
+					"nodeIcon": "octicon:log-16"
+				}
+			},
+			"selected": false,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 483.89823848500146,
+				"y": -453.13505140828926
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "Agama-call-Node-67a34536-3cda-4f1b-9338-3c02117f11e1",
 			"position": {
 				"x": -789.2617662463252,
@@ -63,7 +134,8 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "credentialMap"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -134,7 +206,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"positionAbsolute": {
 				"x": 34.980494823528375,
@@ -205,7 +278,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -280,7 +354,8 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "result"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -352,7 +427,8 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "result"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"positionAbsolute": {
@@ -428,7 +504,8 @@
 					"nodeIcon": "fluent-mdl2:trigger-approval",
 					"flowFileName": "TwoFA",
 					"asssignedVariableName": "result"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -502,7 +579,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"positionAbsolute": {
@@ -575,7 +653,8 @@
 					"displayName": "",
 					"nodeColor": "",
 					"exceptionVariableField": ""
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -650,7 +729,8 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "result"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -724,7 +804,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -799,7 +880,8 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
 					"asssignedVariableName": "result"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -874,7 +956,8 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
 					"asssignedVariableName": "credentialMap"
-				}
+				},
+				"skake": false
 			},
 			"positionAbsolute": {
 				"x": 772,
@@ -948,7 +1031,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:event-repeat-outline-rounded"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -962,7 +1046,7 @@
 			"height": 140,
 			"id": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b",
 			"position": {
-				"x": 719.517709560277,
+				"x": 919.517709560277,
 				"y": -346.3555320829912
 			},
 			"type": "when",
@@ -974,7 +1058,7 @@
 				"inRepeatBlock": false,
 				"handles": [],
 				"position": {
-					"x": 719.517709560277,
+					"x": 919.517709560277,
 					"y": -346.3555320829912
 				},
 				"agamaData": {
@@ -1012,10 +1096,11 @@
 					"displayName": "",
 					"nodeColor": "",
 					"exceptionVariableField": ""
-				}
+				},
+				"skake": false
 			},
 			"positionAbsolute": {
-				"x": 719.517709560277,
+				"x": 919.517709560277,
 				"y": -346.3555320829912
 			},
 			"selected": false,
@@ -1026,19 +1111,19 @@
 			"height": 122,
 			"id": "Agama-call-Node-7f95f093-5751-4676-bb6f-71669fb560ca",
 			"position": {
-				"x": 474.1308522405833,
+				"x": 674.1308522405833,
 				"y": -413.4275618649956
 			},
 			"type": "call",
 			"data": {
 				"id": "Agama-call-Node-7f95f093-5751-4676-bb6f-71669fb560ca",
 				"type": "Agama-call-Node",
-				"parentId": "Agama-rrf-Node-ae9e7f43-2c39-4a36-95b5-c90a98cffba0",
+				"parentId": "Agama-log-Node-9dd01c31-fccc-4cff-8a6c-3eb0937014fd",
 				"whenCondition": "",
 				"inRepeatBlock": false,
 				"handles": [],
 				"position": {
-					"x": 474.1308522405833,
+					"x": 674.1308522405833,
 					"y": -413.4275618649956
 				},
 				"agamaData": {
@@ -1050,7 +1135,7 @@
 					"hasNoRepeat": false,
 					"whenCondition": "",
 					"inRepeatBlock": false,
-					"parentId": "Agama-rrf-Node-ae9e7f43-2c39-4a36-95b5-c90a98cffba0",
+					"parentId": "Agama-log-Node-9dd01c31-fccc-4cff-8a6c-3eb0937014fd",
 					"name": "",
 					"basepath": "",
 					"comment": "Has this user been registered?",
@@ -1084,12 +1169,13 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "result"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 474.1308522405833,
+				"x": 674.1308522405833,
 				"y": -413.4275618649956
 			}
 		},
@@ -1156,9 +1242,10 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
 					"asssignedVariableName": "credentialMap"
-				}
+				},
+				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 283.89823848500146,
@@ -1224,7 +1311,8 @@
 					"timeout": "1000",
 					"inputs": "credentialMap",
 					"configs": "config"
-				}
+				},
+				"skake": false
 			},
 			"position": {
 				"x": -1079.7990248291221,
@@ -1239,23 +1327,6 @@
 		}
 	],
 	"edges": [
-		{
-			"id": "Agama-rrf-Node-ae9e7f43-2c39-4a36-95b5-c90a98cffba0-Agama-call-Node-7f95f093-5751-4676-bb6f-71669fb560ca-ad811274-ed56-408f-92f2-8a8e32b7cae3",
-			"type": "straight",
-			"source": "Agama-rrf-Node-ae9e7f43-2c39-4a36-95b5-c90a98cffba0",
-			"target": "Agama-call-Node-7f95f093-5751-4676-bb6f-71669fb560ca",
-			"label": "",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"labelBgStyle": {
-				"fill": "#FFCC00",
-				"color": "#fff",
-				"fillOpacity": 0.7
-			}
-		},
 		{
 			"id": "Agama-call-Node-7f95f093-5751-4676-bb6f-71669fb560ca-Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b-9e1258cb-cd34-4cd4-870a-902252415631",
 			"type": "straight",
@@ -1495,11 +1566,34 @@
 			"targetHandle": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
 			"id": "reactflow__edge-Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61bAgama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.FAILURE-Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66aAgama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
 			"selected": false
+		},
+		{
+			"id": "Agama-rrf-Node-ae9e7f43-2c39-4a36-95b5-c90a98cffba0-Agama-log-Node-9dd01c31-fccc-4cff-8a6c-3eb0937014fd-6dcc814c-7633-4171-b8fa-3ee6fc13946a",
+			"type": "straight",
+			"source": "Agama-rrf-Node-ae9e7f43-2c39-4a36-95b5-c90a98cffba0",
+			"target": "Agama-log-Node-9dd01c31-fccc-4cff-8a6c-3eb0937014fd",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
+		},
+		{
+			"id": "Agama-log-Node-9dd01c31-fccc-4cff-8a6c-3eb0937014fd-Agama-call-Node-7f95f093-5751-4676-bb6f-71669fb560ca-a14d7fec-48b9-4419-b7b9-e433ff7a0e09",
+			"type": "straight",
+			"source": "Agama-log-Node-9dd01c31-fccc-4cff-8a6c-3eb0937014fd",
+			"target": "Agama-call-Node-7f95f093-5751-4676-bb6f-71669fb560ca"
 		}
 	],
 	"viewport": {
-		"x": -372.00876805847406,
-		"y": 1014.6955843429566,
-		"zoom": 1.148698354997035
+		"x": 335,
+		"y": 606,
+		"zoom": 1
 	}
 }
