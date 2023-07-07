@@ -8,6 +8,7 @@ result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
 Log "@info " config
 Log "@error " exception
 credentialMap = RRF "username.ftlh" 
+Log "@info " credentialMap
 result | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
 When result is not true
      Repeat 5 times max
