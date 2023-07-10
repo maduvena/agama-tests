@@ -19,3 +19,4 @@ result = RRF "UsernamePasswurd.ftlh" credentialMap
 result | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
 resultCode = "result"
 When resultCode is -1
+     Log "@info " Authentication success
