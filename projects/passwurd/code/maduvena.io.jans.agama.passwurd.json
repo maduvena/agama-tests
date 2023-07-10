@@ -35,13 +35,19 @@
 					"parentId": "Agama-when-Node-2ee1d3ed-00b9-4d25-8e4d-a59d6d1b1cb5",
 					"name": "",
 					"basepath": "",
-					"comment": "",
+					"comment": "Printing result code",
 					"notes": "",
 					"flowfilename": "",
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "",
+					"logMessage": "resultCode",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -53,14 +59,16 @@
 					"javaMethodName": "",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
-					"logLevel": "",
+					"logLevel": "info",
 					"assignCallbackResult": "",
-					"displayName": "",
+					"displayName": "Printing result code",
 					"nodeColor": "",
-					"exceptionVariableField": ""
-				}
+					"exceptionVariableField": "",
+					"nodeIcon": "octicon:log-16"
+				},
+				"skake": true
 			},
-			"selected": false,
+			"selected": true,
 			"positionAbsolute": {
 				"x": 1661.936259139833,
 				"y": 552.3206075596838
@@ -1772,12 +1780,12 @@
 			"target": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a",
 			"targetHandle": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
 			"id": "reactflow__edge-Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61bAgama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.SUCCESS-Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66aAgama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
-			"selected": true
+			"selected": false
 		}
 	],
 	"viewport": {
-		"x": 184.77089097326677,
-		"y": 918.5424938177448,
+		"x": 80.77089097326677,
+		"y": 282.5424938177448,
 		"zoom": 0.5743491774985175
 	}
 }
