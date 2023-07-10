@@ -25,3 +25,4 @@ Log "@info " resultCode
 When resultCode is -2
      Log "@error " Password incorrect
      Finish false
+Log "@error " resultCode
