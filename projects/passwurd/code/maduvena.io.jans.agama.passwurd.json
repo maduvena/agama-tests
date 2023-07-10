@@ -65,9 +65,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1610.1984841915728,
@@ -139,7 +140,7 @@
 					"nodeColor": "",
 					"exceptionVariableField": ""
 				},
-				"skake": true
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -1590,11 +1591,19 @@
 				"fillOpacity": 0.7
 			},
 			"sourceHandle": "Agama-when-Node-2ee1d3ed-00b9-4d25-8e4d-a59d6d1b1cb5.SUCCESS"
+		},
+		{
+			"source": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b",
+			"sourceHandle": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.SUCCESS",
+			"target": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a",
+			"targetHandle": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
+			"id": "reactflow__edge-Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61bAgama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.SUCCESS-Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66aAgama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
+			"selected": true
 		}
 	],
 	"viewport": {
-		"x": -133.406707832552,
-		"y": -68.83135142343912,
+		"x": 208.171875,
+		"y": 292.5,
 		"zoom": 0.5
 	}
 }
