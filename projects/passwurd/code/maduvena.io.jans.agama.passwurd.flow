@@ -22,6 +22,6 @@ When resultCode is -1
      Log "@info " Authentication successful
      Finish true
 Log "@info " resultCode
-When resultCode is -2 or -3
+When resultCode is -2
      Log "@error " Password incorrect
      Finish false
