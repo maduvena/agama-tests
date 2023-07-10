@@ -21,3 +21,4 @@ resultCode = "result"
 When resultCode is -1
      Log "@info " Authentication successful
      Finish true
+Log "@ " __________
