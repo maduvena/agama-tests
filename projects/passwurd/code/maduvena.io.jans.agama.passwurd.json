@@ -1315,19 +1315,11 @@
 			"type": "straight",
 			"source": "Agama-rrf-Node-ec495fd2-57ec-4ce4-af68-6ab86d577067",
 			"target": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a"
-		},
-		{
-			"source": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b",
-			"sourceHandle": "Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.SUCCESS",
-			"target": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a",
-			"targetHandle": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
-			"id": "reactflow__edge-Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61bAgama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.SUCCESS-Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66aAgama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a.righta",
-			"selected": false
 		}
 	],
 	"viewport": {
-		"x": -108.828125,
-		"y": 73.8322074607537,
+		"x": -142.828125,
+		"y": -30.167792539246307,
 		"zoom": 0.5
 	}
 }
