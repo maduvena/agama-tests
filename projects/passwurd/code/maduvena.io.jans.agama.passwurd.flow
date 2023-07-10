@@ -26,3 +26,7 @@ When resultCode is -2
      Log "@error " Password incorrect
      Finish false
 Log "@error " resultCode
+When resultCode is -3
+     Log "@error " Server error
+     Finish false
+Log "@error " resultCode
