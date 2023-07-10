@@ -16,7 +16,7 @@ When result is not true
           resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
           Finish true
 result = RRF "UsernamePasswurd.ftlh" credentialMap
-result | exception = Call io.jans.passwurd.UserCheck#validateUser credentialMap
+result | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
 When result is true
      Finish result
 result | exception = Trigger TwoFA credentialMap
