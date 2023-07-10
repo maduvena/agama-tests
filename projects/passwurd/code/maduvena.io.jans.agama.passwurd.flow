@@ -30,3 +30,5 @@ When resultCode is -3
      Log "@error " Server error
      Finish false
 Log "@error " resultCode
+credentialMap = RRF "otp.ftlh" credentialMap
+result | exception = Call io.jans.passwurd.UserCheck#notifyProfile credentialMap
