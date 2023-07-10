@@ -3,6 +3,154 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "finish-aed6a169-8276-4c3c-b5c1-ec84b589f5c4",
+			"position": {
+				"x": 3360.4540568866487,
+				"y": 550.5795064330915
+			},
+			"type": "finish",
+			"data": {
+				"id": "finish-aed6a169-8276-4c3c-b5c1-ec84b589f5c4",
+				"type": "Agama-finish-Flow",
+				"parentId": "Agama-log-Node-13e740a9-b316-4f4d-866c-38bb0ded0965",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"handles": [
+					"Agama-when-Node-62c30a75-2421-498a-88a0-abaf20acd61b.FAILURE",
+					"Agama-when-Node-62c30a75-2421-498a-88a0-abaf20acd61b.SUCCESS"
+				],
+				"position": {
+					"x": 3360.4540568866487,
+					"y": 550.5795064330915
+				},
+				"agamaData": {
+					"id": "finish-aed6a169-8276-4c3c-b5c1-ec84b589f5c4",
+					"type": "Agama-finish-Flow",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-log-Node-13e740a9-b316-4f4d-866c-38bb0ded0965",
+					"name": "",
+					"basepath": "",
+					"comment": "Authentication COmpleted",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "true",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "",
+					"assignCallbackResult": "",
+					"displayName": "Authentication COmpleted",
+					"nodeColor": "",
+					"exceptionVariableField": "",
+					"nodeIcon": "material-symbols:line-end-square-rounded"
+				}
+			},
+			"selected": true,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 3360.4540568866487,
+				"y": 550.5795064330915
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
+			"id": "Agama-log-Node-13e740a9-b316-4f4d-866c-38bb0ded0965",
+			"position": {
+				"x": 3160.4540568866487,
+				"y": 550.5795064330915
+			},
+			"type": "log",
+			"data": {
+				"id": "Agama-log-Node-13e740a9-b316-4f4d-866c-38bb0ded0965",
+				"type": "Agama-log-Node",
+				"parentId": "Agama-call-Node-972d0daf-7a3c-4084-a9c0-1185a1e60d03",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"handles": [
+					"Agama-when-Node-62c30a75-2421-498a-88a0-abaf20acd61b.FAILURE",
+					"Agama-when-Node-62c30a75-2421-498a-88a0-abaf20acd61b.SUCCESS"
+				],
+				"position": {
+					"x": 3160.4540568866487,
+					"y": 550.5795064330915
+				},
+				"agamaData": {
+					"id": "Agama-log-Node-13e740a9-b316-4f4d-866c-38bb0ded0965",
+					"type": "Agama-log-Node",
+					"hasSuccess": "",
+					"hasFailure": "",
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-call-Node-972d0daf-7a3c-4084-a9c0-1185a1e60d03",
+					"name": "",
+					"basepath": "",
+					"comment": "Notify Profile Result",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "result",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "info",
+					"assignCallbackResult": "",
+					"displayName": "Notify Profile Result",
+					"nodeColor": "",
+					"exceptionVariableField": "",
+					"nodeIcon": "octicon:log-16"
+				}
+			},
+			"selected": false,
+			"positionAbsolute": {
+				"x": 3160.4540568866487,
+				"y": 550.5795064330915
+			},
+			"dragging": false
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "Agama-call-Node-972d0daf-7a3c-4084-a9c0-1185a1e60d03",
 			"position": {
 				"x": 2958.4540568866487,
@@ -66,9 +214,10 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "result"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2958.4540568866487,
@@ -141,7 +290,8 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
 					"asssignedVariableName": "credentialMap"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -2693,11 +2843,45 @@
 				"color": "#fff",
 				"fillOpacity": 0.7
 			}
+		},
+		{
+			"id": "Agama-call-Node-972d0daf-7a3c-4084-a9c0-1185a1e60d03-Agama-log-Node-13e740a9-b316-4f4d-866c-38bb0ded0965-6b7ce32c-a642-4622-a493-ec3589ccb744",
+			"type": "straight",
+			"source": "Agama-call-Node-972d0daf-7a3c-4084-a9c0-1185a1e60d03",
+			"target": "Agama-log-Node-13e740a9-b316-4f4d-866c-38bb0ded0965",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
+		},
+		{
+			"id": "Agama-log-Node-13e740a9-b316-4f4d-866c-38bb0ded0965-finish-aed6a169-8276-4c3c-b5c1-ec84b589f5c4-aa2c13b6-ec49-48de-9f43-050922dbf37f",
+			"type": "straight",
+			"source": "Agama-log-Node-13e740a9-b316-4f4d-866c-38bb0ded0965",
+			"target": "finish-aed6a169-8276-4c3c-b5c1-ec84b589f5c4",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
 		}
 	],
 	"viewport": {
-		"x": -164.90937499999995,
-		"y": 90.5,
+		"x": -499.90937499999995,
+		"y": 133.5,
 		"zoom": 0.5
 	}
 }
