@@ -65,9 +65,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2171.4540568866487,
@@ -139,7 +140,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -174,7 +176,7 @@
 				"agamaData": {
 					"id": "Agama-when-Node-939a5d21-e7aa-42a9-8d65-59e5550daa05",
 					"type": "Agama-when-Node",
-					"hasSuccess": true,
+					"hasSuccess": false,
 					"hasFailure": false,
 					"hasRepeat": false,
 					"hasNoRepeat": false,
@@ -201,7 +203,7 @@
 					"idpAuthEndpoint": "",
 					"variableField": "resultCode",
 					"conditionInputField": "is",
-					"valueField": "-2 or -3",
+					"valueField": "-2",
 					"returnVariable": "",
 					"javaClassName": "",
 					"javaMethodName": "",
@@ -212,9 +214,10 @@
 					"displayName": "",
 					"nodeColor": "",
 					"exceptionVariableField": ""
-				}
+				},
+				"skake": true
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1858.4540568866487,
