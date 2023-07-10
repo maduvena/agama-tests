@@ -358,7 +358,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 976,
@@ -720,7 +720,7 @@
 					"valueField": "",
 					"returnVariable": "",
 					"javaClassName": "io.jans.passwurd.UserCheck",
-					"javaMethodName": "validateUser",
+					"javaMethodName": "validateKeystrokes",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
 					"logLevel": "",
@@ -733,7 +733,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1121.4337982802356,
@@ -1593,8 +1593,8 @@
 		}
 	],
 	"viewport": {
-		"x": 10,
-		"y": 15,
+		"x": -517,
+		"y": 337,
 		"zoom": 1
 	}
 }
