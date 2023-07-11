@@ -65,7 +65,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -139,7 +140,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"selected": true,
 			"dragging": false,
@@ -3065,8 +3067,8 @@
 		}
 	],
 	"viewport": {
-		"x": -121.86054570520992,
-		"y": 130.50158153969045,
+		"x": -90.86054570521003,
+		"y": 270.50158153969045,
 		"zoom": 0.6597539553864471
 	}
 }
