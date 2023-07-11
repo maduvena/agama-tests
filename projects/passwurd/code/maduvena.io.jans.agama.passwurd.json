@@ -68,7 +68,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 3360.4540568866487,
@@ -1777,11 +1777,11 @@
 					"nodeColor": "",
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
-					"asssignedVariableName": "result"
+					"asssignedVariableName": "resultCode"
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1075.1984841915728,
@@ -2882,8 +2882,8 @@
 		}
 	],
 	"viewport": {
-		"x": 414.09062500000005,
-		"y": 395.5,
+		"x": 259.0424255632961,
+		"y": 155.6294494367039,
 		"zoom": 0.5
 	}
 }
