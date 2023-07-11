@@ -230,7 +230,7 @@ public class UserCheck {
 
 	public static String signUid(String uid) {
 
-		String alias = "passwurd";
+		String alias = CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer();
 		String signedUID = cryptoProvider.sign(uid, alias, null, SignatureAlgorithm.RS256);
 
 		return signedUID;
