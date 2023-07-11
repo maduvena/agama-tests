@@ -234,7 +234,7 @@ public class UserCheck {
 
 		String alias = new URI(CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer()).getPath();
 		logger.debug("alias : "+ alias);
-		String signedUID = cryptoProvider.sign(uid, alias, null,SignatureAlgorithm.DEF_SHA256WITHRSA );
+		String signedUID = cryptoProvider.sign(uid, alias, "changeit",SignatureAlgorithm.DEF_SHA256WITHRSA );
 		logger.debug("signedUID : "+ signedUID);
 		return signedUID;
 	}
