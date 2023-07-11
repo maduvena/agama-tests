@@ -9,8 +9,8 @@ Log "@info " config
 Log "@error " exception
 credentialMap = RRF "username.ftlh" 
 Log "@info " credentialMap
-result | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
-When result is not true
+resultCheck | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
+When resultCheck is not true
      Repeat 5 times max
           credentialMap = RRF "UsernamePasswurd.ftlh" credentialMap
           resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
