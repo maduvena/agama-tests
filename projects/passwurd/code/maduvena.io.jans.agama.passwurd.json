@@ -3,6 +3,154 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-log-Node-8eb40a83-e854-4c6d-8703-353951d7e451",
+			"position": {
+				"x": 1818.6214250389783,
+				"y": 172.63739270702638
+			},
+			"type": "log",
+			"data": {
+				"id": "Agama-log-Node-8eb40a83-e854-4c6d-8703-353951d7e451",
+				"type": "Agama-log-Node",
+				"parentId": "Agama-call-Node-79206e7a-5d5f-4fa2-861b-80114dd67337",
+				"whenCondition": "",
+				"inRepeatBlock": true,
+				"handles": [
+					"Agama-repeat-Node-b5e30698-c96b-4d62-80e8-d582f73bd5a1.InFlow",
+					"Agama-repeat-Node-b5e30698-c96b-4d62-80e8-d582f73bd5a1.InRepeatBlock"
+				],
+				"position": {
+					"x": 1818.6214250389783,
+					"y": 172.63739270702638
+				},
+				"agamaData": {
+					"id": "Agama-log-Node-8eb40a83-e854-4c6d-8703-353951d7e451",
+					"type": "Agama-log-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": true,
+					"parentId": "Agama-call-Node-79206e7a-5d5f-4fa2-861b-80114dd67337",
+					"name": "",
+					"basepath": "",
+					"comment": "Print exceptions",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "exception",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "error",
+					"assignCallbackResult": "",
+					"displayName": "Print exceptions",
+					"nodeColor": "",
+					"exceptionVariableField": "",
+					"nodeIcon": "octicon:log-16"
+				}
+			},
+			"selected": false,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 1818.6214250389783,
+				"y": 172.63739270702638
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
+			"id": "Agama-log-Node-a1670ce3-c1b7-4194-bfc2-69a23474e0b3",
+			"position": {
+				"x": 1275.1984841915728,
+				"y": 143.4855284315163
+			},
+			"type": "log",
+			"data": {
+				"id": "Agama-log-Node-a1670ce3-c1b7-4194-bfc2-69a23474e0b3",
+				"type": "Agama-log-Node",
+				"parentId": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"handles": [
+					"Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.FAILURE",
+					"Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.SUCCESS"
+				],
+				"position": {
+					"x": 1275.1984841915728,
+					"y": 143.4855284315163
+				},
+				"agamaData": {
+					"id": "Agama-log-Node-a1670ce3-c1b7-4194-bfc2-69a23474e0b3",
+					"type": "Agama-log-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
+					"name": "",
+					"basepath": "",
+					"comment": "Printing exceptions if any ",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "exception",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "error",
+					"assignCallbackResult": "",
+					"displayName": "Printing exceptions if any ",
+					"nodeColor": "",
+					"exceptionVariableField": "",
+					"nodeIcon": "octicon:log-16"
+				}
+			},
+			"selected": true,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 1275.1984841915728,
+				"y": 143.4855284315163
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "finish-aed6a169-8276-4c3c-b5c1-ec84b589f5c4",
 			"position": {
 				"x": 3360.4540568866487,
@@ -1130,7 +1278,7 @@
 			"height": 140,
 			"id": "Agama-when-Node-2ee1d3ed-00b9-4d25-8e4d-a59d6d1b1cb5",
 			"position": {
-				"x": 1293.5413825315602,
+				"x": 1493.5413825315602,
 				"y": 606.3206075596838
 			},
 			"type": "when",
@@ -1145,7 +1293,7 @@
 					"Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.SUCCESS"
 				],
 				"position": {
-					"x": 1293.5413825315602,
+					"x": 1493.5413825315602,
 					"y": 606.3206075596838
 				},
 				"agamaData": {
@@ -1195,7 +1343,7 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 1293.5413825315602,
+				"x": 1493.5413825315602,
 				"y": 606.3206075596838
 			}
 		},
@@ -1204,14 +1352,14 @@
 			"height": 122,
 			"id": "Agama-assignment-Node-908abbb1-12c6-4c50-b239-98dee4a67767",
 			"position": {
-				"x": 1127.2048884312317,
+				"x": 1327.2048884312317,
 				"y": 359.3820681289551
 			},
 			"type": "assignment",
 			"data": {
 				"id": "Agama-assignment-Node-908abbb1-12c6-4c50-b239-98dee4a67767",
 				"type": "Agama-assignment-Node",
-				"parentId": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
+				"parentId": "Agama-log-Node-a1670ce3-c1b7-4194-bfc2-69a23474e0b3",
 				"whenCondition": "",
 				"inRepeatBlock": false,
 				"handles": [
@@ -1219,7 +1367,7 @@
 					"Agama-when-Node-eb5cb5b0-d3f0-4874-b82d-51accdaab61b.SUCCESS"
 				],
 				"position": {
-					"x": 1127.2048884312317,
+					"x": 1327.2048884312317,
 					"y": 359.3820681289551
 				},
 				"agamaData": {
@@ -1231,7 +1379,7 @@
 					"hasNoRepeat": false,
 					"whenCondition": "",
 					"inRepeatBlock": false,
-					"parentId": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
+					"parentId": "Agama-log-Node-a1670ce3-c1b7-4194-bfc2-69a23474e0b3",
 					"name": "",
 					"basepath": "",
 					"comment": "Success Or Error Code",
@@ -1270,7 +1418,7 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 1127.2048884312317,
+				"x": 1327.2048884312317,
 				"y": 359.3820681289551
 			}
 		},
@@ -1781,7 +1929,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1075.1984841915728,
@@ -1793,14 +1941,14 @@
 			"height": 122,
 			"id": "finish-6265ffd8-59f7-4870-9a44-a0243d7caed2",
 			"position": {
-				"x": 1973.466445192872,
+				"x": 2173.466445192872,
 				"y": 288.55006706211475
 			},
 			"type": "finish",
 			"data": {
 				"id": "finish-6265ffd8-59f7-4870-9a44-a0243d7caed2",
 				"type": "Agama-finish-Flow",
-				"parentId": "Agama-call-Node-79206e7a-5d5f-4fa2-861b-80114dd67337",
+				"parentId": "Agama-log-Node-8eb40a83-e854-4c6d-8703-353951d7e451",
 				"whenCondition": "",
 				"inRepeatBlock": true,
 				"handles": [
@@ -1808,7 +1956,7 @@
 					"Agama-repeat-Node-b5e30698-c96b-4d62-80e8-d582f73bd5a1.InRepeatBlock"
 				],
 				"position": {
-					"x": 1973.466445192872,
+					"x": 2173.466445192872,
 					"y": 288.55006706211475
 				},
 				"agamaData": {
@@ -1820,7 +1968,7 @@
 					"hasNoRepeat": false,
 					"whenCondition": "",
 					"inRepeatBlock": true,
-					"parentId": "Agama-call-Node-79206e7a-5d5f-4fa2-861b-80114dd67337",
+					"parentId": "Agama-log-Node-8eb40a83-e854-4c6d-8703-353951d7e451",
 					"name": "",
 					"basepath": "",
 					"comment": "User's keystroke data has been recorded successfully.",
@@ -1859,7 +2007,7 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 1973.466445192872,
+				"x": 2173.466445192872,
 				"y": 288.55006706211475
 			}
 		},
@@ -2469,12 +2617,6 @@
 			}
 		},
 		{
-			"id": "Agama-call-Node-79206e7a-5d5f-4fa2-861b-80114dd67337-finish-6265ffd8-59f7-4870-9a44-a0243d7caed2-56d59826-0b14-44b2-9262-5e8ecbfd9f6c",
-			"type": "straight",
-			"source": "Agama-call-Node-79206e7a-5d5f-4fa2-861b-80114dd67337",
-			"target": "finish-6265ffd8-59f7-4870-9a44-a0243d7caed2"
-		},
-		{
 			"id": "Agama-call-Node-be4a6ad9-69a2-4134-a09d-1da7418ab5d8-Agama-log-Node-16a65634-77c9-4a5b-b1cf-10ce141f62ce-a880f389-d74e-40f5-b0a2-f7029eabb25e",
 			"type": "straight",
 			"source": "Agama-call-Node-be4a6ad9-69a2-4134-a09d-1da7418ab5d8",
@@ -2578,23 +2720,6 @@
 			"type": "straight",
 			"source": "Agama-rrf-Node-ec495fd2-57ec-4ce4-af68-6ab86d577067",
 			"target": "Agama-rrf-Node-a795f58d-3e75-49ff-877f-ce1bb099f66a"
-		},
-		{
-			"id": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b-Agama-assignment-Node-908abbb1-12c6-4c50-b239-98dee4a67767-5035a219-90ba-4130-969c-11bc3ff23c24",
-			"type": "straight",
-			"source": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
-			"target": "Agama-assignment-Node-908abbb1-12c6-4c50-b239-98dee4a67767",
-			"label": "",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"labelBgStyle": {
-				"fill": "#FFCC00",
-				"color": "#fff",
-				"fillOpacity": 0.7
-			}
 		},
 		{
 			"id": "Agama-assignment-Node-908abbb1-12c6-4c50-b239-98dee4a67767-Agama-when-Node-2ee1d3ed-00b9-4d25-8e4d-a59d6d1b1cb5-550d7f3c-97e3-45c7-867f-f308d44f4d94",
@@ -2891,11 +3016,57 @@
 			"id": "Agama-log-Node-f362879a-840b-48c7-adb9-c0fe3ea4bf39-undefined-da459d66-1f28-4536-9d6e-e23693e2dc9c",
 			"type": "straight",
 			"source": "Agama-log-Node-f362879a-840b-48c7-adb9-c0fe3ea4bf39"
+		},
+		{
+			"id": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b-Agama-log-Node-a1670ce3-c1b7-4194-bfc2-69a23474e0b3-daeb94da-0475-434e-93c7-7e2cb3435cd2",
+			"type": "straight",
+			"source": "Agama-call-Node-4aa4ee48-ae97-4c7b-8cb1-f669f096327b",
+			"target": "Agama-log-Node-a1670ce3-c1b7-4194-bfc2-69a23474e0b3",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
+		},
+		{
+			"id": "Agama-log-Node-a1670ce3-c1b7-4194-bfc2-69a23474e0b3-Agama-assignment-Node-908abbb1-12c6-4c50-b239-98dee4a67767-ab1152eb-d35b-42a9-bfd7-9cb34b35e436",
+			"type": "straight",
+			"source": "Agama-log-Node-a1670ce3-c1b7-4194-bfc2-69a23474e0b3",
+			"target": "Agama-assignment-Node-908abbb1-12c6-4c50-b239-98dee4a67767"
+		},
+		{
+			"id": "Agama-call-Node-79206e7a-5d5f-4fa2-861b-80114dd67337-Agama-log-Node-8eb40a83-e854-4c6d-8703-353951d7e451-16ddc2a3-e90b-4a4d-a32b-2ff9fd72806c",
+			"type": "straight",
+			"source": "Agama-call-Node-79206e7a-5d5f-4fa2-861b-80114dd67337",
+			"target": "Agama-log-Node-8eb40a83-e854-4c6d-8703-353951d7e451",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
+		},
+		{
+			"id": "Agama-log-Node-8eb40a83-e854-4c6d-8703-353951d7e451-finish-6265ffd8-59f7-4870-9a44-a0243d7caed2-2a8e0a48-3cc7-40d9-92d2-f467c5fc294e",
+			"type": "straight",
+			"source": "Agama-log-Node-8eb40a83-e854-4c6d-8703-353951d7e451",
+			"target": "finish-6265ffd8-59f7-4870-9a44-a0243d7caed2"
 		}
 	],
 	"viewport": {
-		"x": 542.171875,
-		"y": 455,
-		"zoom": 0.5
+		"x": -121.86054570520992,
+		"y": 130.50158153969045,
+		"zoom": 0.6597539553864471
 	}
 }
