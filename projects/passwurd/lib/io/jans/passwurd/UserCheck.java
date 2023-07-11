@@ -267,7 +267,7 @@ public class UserCheck {
 			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
 				logger.debug("Passwurd. Failed to validate");
 				httpService.consume(httpResponse);
-				return null;
+				return -4;
 			}
 			byte[] bytes = httpService.getResponseContent(httpResponse);
 			String response = httpService.convertEntityToString(bytes);
@@ -284,6 +284,9 @@ public class UserCheck {
 					logger.debug("Denied");
 					track_id = data.get("track_id");
 					return track_id;
+				} else {
+					logger.debug("Some error " + data.get("status"));
+					return -4;
 				}
 				logger.debug("Keystrokes validated successfully");
 			} else if (httpResponseStatusCode == "422") {
@@ -298,9 +301,7 @@ public class UserCheck {
 				logger.debug("Failed to validate keystrokes, API returned error " + httpResponseStatusCode);
 				return 0;
 			}
-		} catch (
-
-		Exception e) {
+		} catch (Exception e) {
 			logger.debug("Passwurd. Failed to execute /validate.", e);
 			return 0;
 		}
