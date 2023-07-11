@@ -282,7 +282,7 @@ public class UserCheck {
 					return -1;
 				} else if (data.get("status") == "Denied") {
 					logger.debug("Denied");
-					track_id = data.get("track_id");
+					int track_id = Integer.valueOf(data.get("track_id"));
 					return track_id;
 				} else {
 					logger.debug("Some error " + data.get("status"));
