@@ -232,7 +232,7 @@ public class UserCheck {
 
 	public static String signUid(String uid) {
 
-		String alias = new URI(CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer()).getPath();
+		String alias = (CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer()).replace("https://","");
 		logger.debug("alias : "+ alias);
 		String signedUID = cryptoProvider.sign(uid, alias, "changeit",SignatureAlgorithm.DEF_SHA256WITHRSA );
 		logger.debug("signedUID : "+ signedUID);
