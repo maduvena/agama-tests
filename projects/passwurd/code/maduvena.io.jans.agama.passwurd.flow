@@ -12,7 +12,7 @@ Log "@info " credentialMap
 resultCheck | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
 When resultCheck is not true
      Repeat 5 times max
-          credentialMap = RRF "UsernamePasswurd.ftlh" credentialMap
+          credentialMap = RRF "UsernamePasswurd.ftlh" 
           resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
           Log "@error " exception
           Finish true
