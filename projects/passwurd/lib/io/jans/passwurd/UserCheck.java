@@ -17,6 +17,7 @@ import io.jans.model.custom.script.model.CustomScript;
 import io.jans.model.SimpleExtendedCustomProperty;
 
 import java.util.Map;
+import java.net.URI;
 import java.util.HashMap;
 import org.apache.commons.codec.binary.Base64;
 
@@ -231,7 +232,7 @@ public class UserCheck {
 
 	public static String signUid(String uid) {
 
-		String alias = CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer();
+		String alias = new URI(CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer()).getPath();
 		logger.debug("alias : "+ alias);
 		String signedUID = cryptoProvider.sign(uid, alias, null,SignatureAlgorithm.DEF_SHA256WITHRSA );
 		logger.debug("signedUID : "+ signedUID);
