@@ -1928,11 +1928,11 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
-					"asssignedVariableName": "result"
+					"asssignedVariableName": "credentialMap"
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 855.0030780613267,
@@ -2158,7 +2158,7 @@
 				"x": 809.8283385849655,
 				"y": -621.4495100845664
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
