@@ -344,7 +344,8 @@ public class UserCheck {
 		} catch (Exception e) {
 			logger.debug("Passwurd. Failed to execute /notify.", e);
 			// return true irrespective of the result
-			return True;
+
 		}
+		return true;
 	}
 }
