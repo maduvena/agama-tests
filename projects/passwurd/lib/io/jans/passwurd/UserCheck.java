@@ -78,6 +78,7 @@ public class UserCheck {
 		} else {
 			cryptoProvider = new AuthCryptoProvider(configAttributes.get("PASSWURD_KEY_A_KEYSTORE"),
 					configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
+			logger.debug("Passwurd. Initialization. Keystore initialized");
 		}
 
 		if (configAttributes.get("PASSWURD_API_URL").isBlank() ) {
@@ -231,8 +232,9 @@ public class UserCheck {
 	public static String signUid(String uid) {
 
 		String alias = CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer();
-		String signedUID = cryptoProvider.sign(uid, alias, null, SignatureAlgorithm.RS256);
-
+		logger.debug("alias : "+ alias);
+		String signedUID = cryptoProvider.sign(uid, alias, null,SignatureAlgorithm.DEF_SHA256WITHRSA );
+		logger.debug("signedUID : "+ signedUID);
 		return signedUID;
 	}
 
