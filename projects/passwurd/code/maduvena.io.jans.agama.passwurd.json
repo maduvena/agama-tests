@@ -2125,14 +2125,20 @@
 					"comment": "user does not exist",
 					"notes": "",
 					"flowfilename": "",
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
 					"callType": "Call static method",
 					"arguments": "",
 					"logMessage": "",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
-					"variableField": "result",
+					"variableField": "resultCheck",
 					"conditionInputField": "is not",
 					"valueField": "true",
 					"returnVariable": "",
@@ -2152,7 +2158,7 @@
 				"x": 809.8283385849655,
 				"y": -621.4495100845664
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -2217,7 +2223,7 @@
 					"nodeColor": "",
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
-					"asssignedVariableName": "result"
+					"asssignedVariableName": "resultCheck"
 				},
 				"skake": false
 			},
@@ -2888,8 +2894,8 @@
 		}
 	],
 	"viewport": {
-		"x": 119.53425563196151,
-		"y": 423.6035667815181,
-		"zoom": 0.5743491774985173
+		"x": 542.171875,
+		"y": 455,
+		"zoom": 0.5
 	}
 }
