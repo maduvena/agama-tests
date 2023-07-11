@@ -236,7 +236,7 @@ public class UserCheck {
 		return signedUID;
 	}
 
-	public int validateKeystrokes(Map<String, String> credentialMap) {
+	public static int validateKeystrokes(Map<String, String> credentialMap) {
 		logger.debug("Passwurd. Attempting to validate keystrokes");
 
 		try {
@@ -306,7 +306,7 @@ public class UserCheck {
 		}
 	}
 
-	public boolean notifyProfile(Map<String, String> credentialMap) {
+	public static boolean notifyProfile(Map<String, String> credentialMap) {
 
 		String access_token = getAccessTokenJansServer();
 
