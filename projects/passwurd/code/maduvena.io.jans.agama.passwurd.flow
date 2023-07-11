@@ -15,7 +15,7 @@ When resultCheck is not true
           credentialMap = RRF "UsernamePasswurd.ftlh" credentialMap
           resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
           Finish true
-result = RRF "UsernamePasswurd.ftlh" credentialMap
+credentialMap = RRF "UsernamePasswurd.ftlh" credentialMap
 resultCode | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
 resultCode = "result"
 When resultCode is -1
