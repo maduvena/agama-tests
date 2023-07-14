@@ -30,6 +30,7 @@ function handler(_0x6fa6x7) {
 }
 
 function getKeystrokesDataP() {
+    console.log("getKeystrokesDataP");
     var _0x6fa6xa = JSON['stringify'](keystroke_dataP);
     keystroke_dataP = [];
     return _0x6fa6xa
@@ -43,6 +44,8 @@ function getKeystrokesDataP() {
 
 // Handle the login form submit
 function gatherDataP() {
+    console.log("gatherDataP");
     k_pwd = getKeystrokesDataP();
+    console.log("gatherDataP - k_pwd"+ k_pwd);
     document.getElementById('k_pwd').value = k_pwd;
 }
