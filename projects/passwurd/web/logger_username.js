@@ -46,7 +46,7 @@ function getKeystrokesDataU() {
 function gatherDataU() {
     console.log("gatherDataU")
     k_username = getKeystrokesDataU();
-    console.log("k_username")
+    console.log("k_username"+k_username)
     document.getElementById('k_username').value = k_username;
     document.getElementById('login_form').submit();
 
