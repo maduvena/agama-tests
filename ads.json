@@ -13,17 +13,7 @@
             "Behavioural Biometrics"
         ],
         "configs": {
-            "maduvena.io.jans.agama.passwurd": {
-                "AS_ENDPOINT": "URL of Auth server",
-                "AS_SSA": "SSA to register to the auth server",
-                "AS_CLIENT_ID": "client id",
-                "AS_CLIENT_SECRET": "client secret",
-                "AS_REDIRECT_URI": "redirect url",
-                "PORTAL_JWKS": "jwks",
-                "PASSWURD_KEY_A_KEYSTORE": "keystore",
-                "PASSWURD_KEY_A_PASSWORD": "in plain text, but should not be so",
-                "PASSWURD_API_URL": "URL of Passwurd API"
-            }
+            "maduvena.io.jans.agama.passwurd": {}
         }
     },
     "sample": {
