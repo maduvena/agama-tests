@@ -41,7 +41,7 @@ public class UserCheck {
 	public UserCheck() {
 	}
 
-	public static Map<String, String> initCredentialMap(Map<String, String> credentialMap) {
+	public static Map<String, String> initCredentialMap(HashMap<String, String> credentialMap) {
 		logger.info("Passwurd. initCredentialMap ");
 		credentialMap = new HashMap<String, String>();
 		credentialMap.put("username", "");
@@ -172,7 +172,7 @@ public class UserCheck {
 
 	}
 
-	public static boolean userExists(Map<String, String> credentialMap) {
+	public static boolean userExists(HashMap<String, String> credentialMap) {
 		String uid = credentialMap.get("username");
 		logger.debug("Passwurd. username: " + uid);
 		if (uid == null || uid.isBlank()) {
@@ -239,7 +239,7 @@ public class UserCheck {
 		return signedUID;
 	}
 
-	public static int validateKeystrokes(Map<String, String> credentialMap) {
+	public static int validateKeystrokes(HashMap<String, String> credentialMap) {
 		logger.debug("Passwurd. Attempting to validate keystrokes" + credentialMap);
 		credentialMap.forEach((key, value) -> logger.debug(key + ":" + value));
 		
