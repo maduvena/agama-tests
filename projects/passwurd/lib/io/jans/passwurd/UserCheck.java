@@ -243,7 +243,10 @@ public class UserCheck {
 		logger.debug("Passwurd. Attempting to validate keystrokes" + credentialMap);
 
 		try {
+			String username = credentialMap.get("username");
+			logger.debug("Passwurd. username" + username);
 			String customer_sig = signUid(credentialMap.get("username"));
+			
 
 			String access_token = getAccessTokenJansServer();
 
