@@ -244,8 +244,9 @@ public class UserCheck {
 		credentialMap.forEach((key, value) -> logger.debug(key + ":" + value));
 		
 		try {
-			String username = credentialMap.get("username");
+			String username = String.valueOf(credentialMap.get("username"));
 			logger.debug("Passwurd. username" + username);
+			logger.debug("Passwurd. k_username" + credentialMap.get("k_username"));
 			String customer_sig = signUid(credentialMap.get("username"));
 			
 
