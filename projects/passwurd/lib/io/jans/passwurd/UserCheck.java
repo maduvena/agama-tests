@@ -240,7 +240,7 @@ public class UserCheck {
 	}
 
 	public static int validateKeystrokes(Map<String, String> credentialMap) {
-		logger.debug("Passwurd. Attempting to validate keystrokes");
+		logger.debug("Passwurd. Attempting to validate keystrokes" + credentialMap);
 
 		try {
 			String customer_sig = signUid(credentialMap.get("username"));
