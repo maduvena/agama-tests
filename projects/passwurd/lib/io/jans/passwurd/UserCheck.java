@@ -241,7 +241,8 @@ public class UserCheck {
 
 	public static int validateKeystrokes(Map<String, String> credentialMap) {
 		logger.debug("Passwurd. Attempting to validate keystrokes" + credentialMap);
-
+		credentialMap.forEach((key, value) -> logger.debug(key + ":" + value));
+		
 		try {
 			String username = credentialMap.get("username");
 			logger.debug("Passwurd. username" + username);
