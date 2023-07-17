@@ -8,10 +8,10 @@ lform['addEventListener']('paste', (_0xd72fx4) => {
     return _0xd72fx4['preventDefault']()
 });
 var username = document['getElementById']('username');
-username['addEventListener']('keydown', handler, false);
-username['addEventListener']('keyup', handler, false);
+username['addEventListener']('keydown', handlerU, false);
+username['addEventListener']('keyup', handlerU, false);
 
-function handler(_0xd72fx7) {
+function handlerU(_0xd72fx7) {
     var _0xd72fx8 = Date['now']();
     down = '';
     if (_0xd72fx7['type'] == 'keydown') {
