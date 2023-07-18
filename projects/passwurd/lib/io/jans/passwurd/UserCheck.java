@@ -186,7 +186,7 @@ public class UserCheck {
 
 	public static String getAccessTokenJansServer() {
 
-		HttpClient httpClient = HttpService2.getHttpsClient();
+		HttpClient httpClient = httpService.getHttpsClient();
 
 		String url = configAttributes.get("AS_ENDPOINT") + "/jans-auth/restv1/token";
 		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri="
