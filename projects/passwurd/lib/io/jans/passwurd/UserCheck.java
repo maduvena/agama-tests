@@ -232,23 +232,25 @@ public class UserCheck {
 
 	public static String signUid(String uid) {
 
-		String alias = (CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer()).replace("https://","");
-		logger.debug("alias : "+ alias);
-		String signedUID = cryptoProvider.sign(uid, alias, "changeit",SignatureAlgorithm.DEF_SHA256WITHRSA );
-		logger.debug("signedUID : "+ signedUID);
+		String alias = (CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer())
+				.replace("https://", "");
+		logger.debug("alias : " + alias);
+		SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.fromString(SignatureAlgorithm.DEF_SHA256WITHRSA);
+
+		String signedUID = cryptoProvider.sign(uid, alias, "changeit", signatureAlgorithm);
+		logger.debug("signedUID : " + signedUID);
 		return signedUID;
 	}
 
 	public static int validateKeystrokes(HashMap<String, String> credentialMap) {
 		logger.debug("Passwurd. Attempting to validate keystrokes" + credentialMap);
 		credentialMap.forEach((key, value) -> logger.debug(key + ":" + value));
-		
+
 		try {
 			String username = String.valueOf(credentialMap.get("username"));
 			logger.debug("Passwurd. username" + username);
 			logger.debug("Passwurd. k_username" + credentialMap.get("k_username"));
 			String customer_sig = signUid(credentialMap.get("username"));
-			
 
 			String access_token = getAccessTokenJansServer();
 
@@ -289,9 +291,9 @@ public class UserCheck {
 					logger.debug("Approved");
 					return -1;
 				} else if (data.get("status") == "Denied") {
-					logger.debug("Denied"+data.get("track_id"));
+					logger.debug("Denied" + data.get("track_id"));
 					return Integer.valueOf(data.get("track_id"));
-					
+
 				} else {
 					logger.debug("Some error " + data.get("status"));
 					return -4;
