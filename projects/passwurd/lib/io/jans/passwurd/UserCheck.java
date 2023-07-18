@@ -235,6 +235,10 @@ public class UserCheck {
 		String alias = (CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer())
 				.replace("https://", "");
 		logger.debug("alias : " + alias);
+		
+		//cryptoProvider = new AuthCryptoProvider(configAttributes.get("PASSWURD_KEY_A_KEYSTORE"),
+		//configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
+		logger.debug("cryptoProvider : "+ cryptoProvider);
 		SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.fromString(SignatureAlgorithm.DEF_SHA256WITHRSA);
 		logger.debug("signatureAlgorithm : "+ signatureAlgorithm);
 		String signedUID = cryptoProvider.sign(uid, alias, "changeit", signatureAlgorithm);
