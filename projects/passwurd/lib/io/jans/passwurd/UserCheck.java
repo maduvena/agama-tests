@@ -239,7 +239,7 @@ public class UserCheck {
 		//cryptoProvider = new AuthCryptoProvider(configAttributes.get("PASSWURD_KEY_A_KEYSTORE"),
 		//configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
 		logger.debug("cryptoProvider : "+ cryptoProvider);
-		SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.fromString(SignatureAlgorithm.DEF_SHA256WITHRSA);
+		SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.fromString("RS256");
 		logger.debug("signatureAlgorithm : "+ signatureAlgorithm);
 		String signedUID = cryptoProvider.sign(uid, alias, "changeit", signatureAlgorithm);
 		logger.debug("signedUID : " + signedUID);
