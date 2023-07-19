@@ -197,11 +197,11 @@ public class UserCheck {
 		header.put("Accept", "application/json");
 		String encodedString = Base64.encodeBase64String(
 				(configAttributes.get("AS_CLIENT_ID") + ":" + configAttributes.get("AS_CLIENT_SECRET")).getBytes());
-		header.put("Authorization", "Basic " + encodedString);
+		
 
 		HttpServiceResponse resultResponse = null;
 		try {
-			resultResponse = httpService.executePost(httpClient, url, null, header, data);
+			resultResponse = httpService.executePost(httpClient, url, encodedString, header, data);
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			if (httpService.isResponseStastusCodeOk(httpResponse)) {
 				logger.debug("Passwurd. Jans-Auth getAccessToken. Get invalid response from server: ",
