@@ -195,8 +195,7 @@ public class UserCheck {
 		Map<String, String> header = new HashMap<String, String>();
 		header.put("Content-type", "application/x-www-form-urlencoded");
 		header.put("Accept", "application/json");
-		String encodedString = Base64.encodeBase64String(
-				(configAttributes.get("AS_CLIENT_ID") + ":" + configAttributes.get("AS_CLIENT_SECRET")).getBytes());
+		String encodedString = Base64.encodeBase64String((configAttributes.get("AS_CLIENT_ID") + ":" + configAttributes.get("AS_CLIENT_SECRET")).getBytes());
 		
 
 		HttpServiceResponse resultResponse = null;
