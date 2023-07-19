@@ -186,7 +186,7 @@ public class UserCheck {
 
 	public static String getAccessTokenJansServer() {
 
-		HttpClient httpClient = httpService.getHttpsClient();
+		HttpClient httpClient = (HttpClient)httpService.getHttpsClient();
 		logger.debug("HttpClient : "+httpClient.getClass());
 		String url = configAttributes.get("AS_ENDPOINT") + "/jans-auth/restv1/token";
 		logger.debug("configAttributes.get(AS_REDIRECT_URI): " + configAttributes.get("AS_REDIRECT_URI"));
