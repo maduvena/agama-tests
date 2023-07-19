@@ -24,6 +24,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.http.client.HttpClient;
 import io.jans.as.server.model.net.HttpServiceResponse;
 import io.jans.as.server.service.net.HttpService2;
+       
 import org.apache.http.entity.ContentType;
 import org.apache.http.HttpResponse;
 
@@ -33,7 +34,7 @@ import org.slf4j.LoggerFactory;
 public class UserCheck {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserCheck.class);
-	private static final UserService userService = CdiUtil.bean(UserService.class);
+	private static final UserService userService = CdiUtil.bean(UserService);
 	private static final HttpService2 httpService = CdiUtil.bean(HttpService2);
 	private static Map<String, String> configAttributes;
 	private static AuthCryptoProvider cryptoProvider = null;
@@ -191,7 +192,7 @@ public class UserCheck {
 		String url = configAttributes.get("AS_ENDPOINT") + "/jans-auth/restv1/token";
 		logger.debug("configAttributes.get(AS_REDIRECT_URI): " + configAttributes.get("AS_REDIRECT_URI"));
 		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri=" + configAttributes.get("AS_REDIRECT_URI");
-		JSONObject header = new JSONObject();
+		Map<String, String> header = new HashMap<String, String>();
 		header.put("Content-type", "application/x-www-form-urlencoded");
 		header.put("Accept", "application/json");
 		String encodedString = Base64.encodeBase64String(
@@ -200,7 +201,7 @@ public class UserCheck {
 
 		HttpServiceResponse resultResponse = null;
 		try {
-			resultResponse = httpService.executePost(httpClient, url, null, header.toString(), data);
+			resultResponse = httpService.executePost(httpClient, url, null, header, data);
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			if (httpService.isResponseStastusCodeOk(httpResponse)) {
 				logger.debug("Passwurd. Jans-Auth getAccessToken. Get invalid response from server: ",
