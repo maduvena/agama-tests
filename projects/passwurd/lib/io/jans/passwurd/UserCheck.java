@@ -187,10 +187,11 @@ public class UserCheck {
 	public static String getAccessTokenJansServer() {
 
 		HttpClient httpClient = httpService.getHttpsClient();
-
+		logger.debug("HttpClient : "+httpClient.getClass());
 		String url = configAttributes.get("AS_ENDPOINT") + "/jans-auth/restv1/token";
-		logger.debug("configAttributes.get(AS_REDIRECT_URI): "+ configAttributes.get("AS_REDIRECT_URI"));
-		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri="+ configAttributes.get("AS_REDIRECT_URI");
+		logger.debug("configAttributes.get(AS_REDIRECT_URI): " + configAttributes.get("AS_REDIRECT_URI"));
+		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri="
+				+ configAttributes.get("AS_REDIRECT_URI");
 		JSONObject header = new JSONObject();
 		header.put("Content-type", "application/x-www-form-urlencoded");
 		header.put("Accept", "application/json");
@@ -225,7 +226,9 @@ public class UserCheck {
 			logger.error("Jans Auth Server - getAccessToken", e);
 			return null;
 		} finally {
-			resultResponse.closeConnection();
+			if (resultResponse != null) {
+				resultResponse.closeConnection();
+			}
 		}
 
 	}
@@ -235,12 +238,13 @@ public class UserCheck {
 		String alias = (CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer())
 				.replace("https://", "");
 		logger.debug("alias : " + alias);
-		
-		//cryptoProvider = new AuthCryptoProvider(configAttributes.get("PASSWURD_KEY_A_KEYSTORE"),
-		//configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
-		logger.debug("cryptoProvider : "+ cryptoProvider);
+
+		// cryptoProvider = new
+		// AuthCryptoProvider(configAttributes.get("PASSWURD_KEY_A_KEYSTORE"),
+		// configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
+		logger.debug("cryptoProvider : " + cryptoProvider);
 		SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.fromString(SignatureAlgorithm.DEF_RS256);
-		logger.debug("signatureAlgorithm : "+ signatureAlgorithm);
+		logger.debug("signatureAlgorithm : " + signatureAlgorithm);
 		String signedUID = cryptoProvider.sign(uid, alias, "changeit", signatureAlgorithm);
 		logger.debug("signedUID : " + signedUID);
 		return signedUID;
