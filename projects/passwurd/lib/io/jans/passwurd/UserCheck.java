@@ -262,7 +262,7 @@ public class UserCheck {
 
 			String access_token = getAccessTokenJansServer();
 
-			Map<String, String> data = new HashMap<String, String>();
+			JSONObject data = new JSONObject();
 			data.put("k_username", credentialMap.get("k_username"));
 			data.put("k_pwd", credentialMap.get("k_pwd"));
 			data.put("customer_sig", customer_sig);
