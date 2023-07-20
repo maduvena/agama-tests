@@ -195,31 +195,33 @@ public class UserCheck {
 		Map<String, String> header = new HashMap<String, String>();
 		header.put("Content-type", "application/x-www-form-urlencoded");
 		header.put("Accept", "application/json");
-		String encodedString = Base64.encodeBase64String((configAttributes.get("AS_CLIENT_ID") + ":" + configAttributes.get("AS_CLIENT_SECRET")).getBytes());
+		String encodedString = Base64.encodeBase64String(
+				(configAttributes.get("AS_CLIENT_ID") + ":" + configAttributes.get("AS_CLIENT_SECRET")).getBytes());
 		
 
 		HttpServiceResponse resultResponse = null;
 		try {
 			resultResponse = httpService.executePost(httpClient, url, encodedString, header, data);
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
-			if (httpService.isResponseStastusCodeOk(httpResponse)) {
+			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
 				logger.debug("Passwurd. Jans-Auth getAccessToken. Get invalid response from server: ",
 						(httpResponse.getStatusLine().getStatusCode()));
 				httpService.consume(httpResponse);
 				return null;
-			}
-			byte[] response_bytes = httpService.getResponseContent(httpResponse);
-			String response_string = httpService.convertEntityToString(response_bytes);
-			httpService.consume(httpResponse);
+			} else {
+				byte[] response_bytes = httpService.getResponseContent(httpResponse);
+				String response_string = httpService.convertEntityToString(response_bytes);
+				httpService.consume(httpResponse);
 
-			if (response_string == null) {
-				logger.debug("Passwurd. getAccessToken. Got empty response from validation server");
-				return null;
-			}
-			JSONObject response = new JSONObject(response_string);
+				if (response_string == null) {
+					logger.debug("Passwurd. getAccessToken. Got empty response from validation server");
+					return null;
+				}
+				JSONObject response = new JSONObject(response_string);
 
-			logger.debug("Passwurd. response access token: " + response.get("access_token"));
-			return String.valueOf(response.get("access_token"));
+				logger.debug("Passwurd. response access token: " + response.get("access_token"));
+				return String.valueOf(response.get("access_token"));
+			}
 
 		} catch (Exception e) {
 			logger.error("Jans Auth Server - getAccessToken", e);
@@ -268,7 +270,7 @@ public class UserCheck {
 			data.put("org_id", configAttributes.get("ORG_ID"));
 			data.put("uid", credentialMap.get("username"));
 
-			JSONObject headers = new JSONObject();
+			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("Accept", "application/json");
 
 			headers.put("Authorization", "Bearer " + access_token);
@@ -276,7 +278,7 @@ public class UserCheck {
 
 			HttpClient httpClient = httpService.getHttpsClient();
 			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,
-					headers.toString(), data.toString(), ContentType.APPLICATION_JSON);
+					headers, data.toString(), ContentType.APPLICATION_JSON);
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
 			logger.debug("Passwurd. validate keystrokes response status code: " + httpResponseStatusCode);
