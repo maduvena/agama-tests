@@ -277,19 +277,20 @@ public class UserCheck {
 			String endpointUrl = configAttributes.get("PASSWURD_API_URL") + "/validate";
 
 			HttpClient httpClient = httpService.getHttpsClient();
+			logger.debug("endpointUrl: "+endpointUrl);
+			logger.debug("headers: "+headers);
+			logger.debug("data: "+data.toString());
+			
 			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,
 					headers, data.toString(), ContentType.APPLICATION_JSON);
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
 			logger.debug("Passwurd. validate keystrokes response status code: " + httpResponseStatusCode);
 
-			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
-				logger.debug("Passwurd. Failed to validate");
-				httpService.consume(httpResponse);
-				return -4;
-			}
+			
 			byte[] bytes = httpService.getResponseContent(httpResponse);
 			String response = httpService.convertEntityToString(bytes);
+			logger.debug("Response : "+response);
 			data = new JSONObject(response);
 
 			if (httpResponseStatusCode == "200" || httpResponseStatusCode == "202") {
