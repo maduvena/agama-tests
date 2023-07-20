@@ -278,7 +278,7 @@ public class UserCheck {
 
 			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("Accept", "application/json");
-
+			headers.put("Content-Type", "application/json");
 			headers.put("Authorization", "Bearer " + access_token);
 			String endpointUrl = configAttributes.get("PASSWURD_API_URL") + "/validate";
 
@@ -288,7 +288,7 @@ public class UserCheck {
 			logger.debug("data: "+data.toString());
 			
 			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,
-					headers, data.toString(), ContentType.APPLICATION_JSON);
+					headers, data.toString());
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
 			logger.debug("Passwurd. validate keystrokes response status code: " + httpResponseStatusCode);
