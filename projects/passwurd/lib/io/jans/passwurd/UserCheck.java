@@ -259,9 +259,7 @@ public class UserCheck {
 			logger.debug("Passwurd. username" + username);
 			logger.debug("Passwurd. k_username" + credentialMap.get("k_username"));
 			String customer_sig = signUid(credentialMap.get("username"));
-
 			String access_token = getAccessTokenJansServer();
-
 			StringBuffer data = new StringBuffer();
 			data.append("{");
 			data.append("\"k_username\" : "+  credentialMap.get("k_username"));
@@ -274,8 +272,6 @@ public class UserCheck {
 			data.append(",");
 			data.append("\"uid\" : \""+  username+"\"}");
 			
-			
-
 			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("Accept", "application/json");
 			headers.put("Content-Type", "application/json");
@@ -292,26 +288,31 @@ public class UserCheck {
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
 			logger.debug("Passwurd. validate keystrokes response status code: " + httpResponseStatusCode);
-
+			logger.debug("Passwurd. validate keystrokes httpResponse: " + httpResponse);
+			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
+				logger.debug("Passwurd. Validate response invalid ");
+				httpService.consume(httpResponse);
+				
+			}
 			
 			byte[] bytes = httpService.getResponseContent(httpResponse);
 			String response = httpService.convertEntityToString(bytes);
 			logger.debug("Response : "+response);
-			data = new JSONObject(response);
+			JSONObject dataResponse = new JSONObject(response);
 
 			if (httpResponseStatusCode == "200" || httpResponseStatusCode == "202") {
-				if (data.get("status") == "Enrollment") {
+				if (dataResponse.get("status") == "Enrollment") {
 					logger.debug("Enrollment");
 					return -1;
-				} else if (data.get("status") == "Approved") {
+				} else if (dataResponse.get("status") == "Approved") {
 					logger.debug("Approved");
 					return -1;
-				} else if (data.get("status") == "Denied") {
-					logger.debug("Denied" + data.get("track_id"));
-					return Integer.valueOf(data.get("track_id"));
+				} else if (dataResponse.get("status") == "Denied") {
+					logger.debug("Denied" + dataResponse.get("track_id"));
+					return Integer.valueOf(dataResponse.get("track_id"));
 
 				} else {
-					logger.debug("Some error " + data.get("status"));
+					logger.debug("Some error " + dataResponse.get("status"));
 					return -4;
 				}
 				logger.debug("Keystrokes validated successfully");
