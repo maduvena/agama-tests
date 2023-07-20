@@ -262,12 +262,15 @@ public class UserCheck {
 
 			String access_token = getAccessTokenJansServer();
 
-			JSONObject data = new JSONObject();
-			data.put("k_username", credentialMap.get("k_username"));
-			data.put("k_pwd", credentialMap.get("k_pwd"));
-			data.put("customer_sig", customer_sig);
-			data.put("org_id", configAttributes.get("ORG_ID"));
-			data.put("uid", credentialMap.get("username"));
+			StringBuffer data = new StringBuffer();
+			data.append("{");
+			data.append("\"k_username\" : "+  credentialMap.get("k_username"));
+			data.append("\"k_pwd\" : "+  credentialMap.get("k_username"));
+			data.append("\"customer_sig\" : \""+  credentialMap.get("customer_sig")+"\"");
+			data.append("\"org_id\" : \""+  configAttributes.get("ORG_ID")+"\"");
+			data.append("\"uid\" : \""+  credentialMap.get("uid")+"\"}");
+			
+			
 
 			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("Accept", "application/json");
