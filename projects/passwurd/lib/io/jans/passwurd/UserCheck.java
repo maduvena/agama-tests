@@ -265,9 +265,13 @@ public class UserCheck {
 			StringBuffer data = new StringBuffer();
 			data.append("{");
 			data.append("\"k_username\" : "+  credentialMap.get("k_username"));
+			data.append(",");
 			data.append("\"k_pwd\" : "+  credentialMap.get("k_username"));
+			data.append(",");
 			data.append("\"customer_sig\" : \""+  credentialMap.get("customer_sig")+"\"");
+			data.append(",");
 			data.append("\"org_id\" : \""+  configAttributes.get("ORG_ID")+"\"");
+			data.append(",");
 			data.append("\"uid\" : \""+  credentialMap.get("uid")+"\"}");
 			
 			
