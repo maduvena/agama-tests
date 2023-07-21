@@ -3,6 +3,147 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-call-Node-de3c55ea-d89b-4f1c-a34f-b5d595cb5aab",
+			"position": {
+				"x": 1431.5157165665103,
+				"y": 30
+			},
+			"type": "call",
+			"data": {
+				"id": "Agama-call-Node-de3c55ea-d89b-4f1c-a34f-b5d595cb5aab",
+				"type": "Agama-call-Node",
+				"parentId": "Agama-log-Node-24d53e99-04f2-4bab-9295-ab5d2a0b138a",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"position": {
+					"x": 1431.5157165665103,
+					"y": 30
+				},
+				"agamaData": {
+					"id": "Agama-call-Node-de3c55ea-d89b-4f1c-a34f-b5d595cb5aab",
+					"type": "Agama-call-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-log-Node-24d53e99-04f2-4bab-9295-ab5d2a0b138a",
+					"name": "",
+					"basepath": "",
+					"comment": "Has this user been registered?",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "credentialMap",
+					"logMessage": "",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "io.jans.passwurd.UserCheck",
+					"javaMethodName": "userExists",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "",
+					"assignCallbackResult": "",
+					"displayName": "UserCheck",
+					"nodeColor": "",
+					"exceptionVariableField": "exception",
+					"nodeIcon": "material-symbols:code",
+					"asssignedVariableName": "resultCheck"
+				}
+			},
+			"selected": true,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 1431.5157165665103,
+				"y": 30
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
+			"id": "Agama-log-Node-24d53e99-04f2-4bab-9295-ab5d2a0b138a",
+			"position": {
+				"x": 1230,
+				"y": 30
+			},
+			"type": "log",
+			"data": {
+				"id": "Agama-log-Node-24d53e99-04f2-4bab-9295-ab5d2a0b138a",
+				"type": "Agama-log-Node",
+				"parentId": "Agama-rrf-Node-7612b16b-fa25-44cd-a2ff-6ab01b62e3a9",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"position": {
+					"x": 1230,
+					"y": 30
+				},
+				"agamaData": {
+					"id": "Agama-log-Node-24d53e99-04f2-4bab-9295-ab5d2a0b138a",
+					"type": "Agama-log-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-rrf-Node-7612b16b-fa25-44cd-a2ff-6ab01b62e3a9",
+					"name": "",
+					"basepath": "",
+					"comment": "Printing gathered inputs in credentialMap",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "credentialMap",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "info",
+					"assignCallbackResult": "",
+					"displayName": "Printing gathered inputs in credentialMap",
+					"nodeColor": "",
+					"exceptionVariableField": "",
+					"nodeIcon": "octicon:log-16"
+				}
+			},
+			"selected": false,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 1230,
+				"y": 30
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "Agama-rrf-Node-7612b16b-fa25-44cd-a2ff-6ab01b62e3a9",
 			"position": {
 				"x": 1030,
@@ -62,9 +203,10 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
 					"asssignedVariableName": "credentialMap"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1030,
@@ -506,11 +648,45 @@
 				"color": "#fff",
 				"fillOpacity": 0.7
 			}
+		},
+		{
+			"id": "Agama-rrf-Node-7612b16b-fa25-44cd-a2ff-6ab01b62e3a9-Agama-log-Node-24d53e99-04f2-4bab-9295-ab5d2a0b138a-261ea959-1adf-4c33-b0ab-fbbd72f1e1f0",
+			"type": "straight",
+			"source": "Agama-rrf-Node-7612b16b-fa25-44cd-a2ff-6ab01b62e3a9",
+			"target": "Agama-log-Node-24d53e99-04f2-4bab-9295-ab5d2a0b138a",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
+		},
+		{
+			"id": "Agama-log-Node-24d53e99-04f2-4bab-9295-ab5d2a0b138a-Agama-call-Node-de3c55ea-d89b-4f1c-a34f-b5d595cb5aab-f7f8b22e-a0da-4738-b820-e74eb1da79ff",
+			"type": "straight",
+			"source": "Agama-log-Node-24d53e99-04f2-4bab-9295-ab5d2a0b138a",
+			"target": "Agama-call-Node-de3c55ea-d89b-4f1c-a34f-b5d595cb5aab",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
 		}
 	],
 	"viewport": {
-		"x": 144.65720439267238,
-		"y": 347.0953368021426,
+		"x": 106.65720439267227,
+		"y": 217.09533680214258,
 		"zoom": 0.6597539553864473
 	}
 }
