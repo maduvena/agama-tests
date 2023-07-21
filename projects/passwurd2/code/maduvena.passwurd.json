@@ -1710,7 +1710,7 @@
 			"height": 122,
 			"id": "Agama-log-Node-bd6234e9-83e8-4773-886e-ef24a902a850",
 			"position": {
-				"x": 2244.062866266041,
+				"x": 2245.8039673926332,
 				"y": 540.9685668669792
 			},
 			"type": "log",
@@ -1721,7 +1721,7 @@
 				"whenCondition": "",
 				"inRepeatBlock": true,
 				"position": {
-					"x": 2244.062866266041,
+					"x": 2245.8039673926332,
 					"y": 540.9685668669792
 				},
 				"agamaData": {
@@ -1748,7 +1748,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "\"Exceptions Validate keystrokes\" exception",
+					"logMessage": "exception",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -1772,7 +1772,7 @@
 			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 2244.062866266041,
+				"x": 2245.8039673926332,
 				"y": 540.9685668669792
 			}
 		},
@@ -1781,7 +1781,7 @@
 			"height": 122,
 			"id": "Agama-call-Node-5851b03c-8a5e-44c6-92f7-97ddb9d49531",
 			"position": {
-				"x": 2044.0628662660413,
+				"x": 2045.8039673926335,
 				"y": 540.9685668669792
 			},
 			"type": "call",
@@ -1792,7 +1792,7 @@
 				"whenCondition": "",
 				"inRepeatBlock": true,
 				"position": {
-					"x": 2044.0628662660413,
+					"x": 2045.8039673926335,
 					"y": 540.9685668669792
 				},
 				"agamaData": {
@@ -1843,7 +1843,7 @@
 			},
 			"selected": false,
 			"positionAbsolute": {
-				"x": 2044.0628662660413,
+				"x": 2045.8039673926335,
 				"y": 540.9685668669792
 			},
 			"dragging": false
@@ -1853,7 +1853,7 @@
 			"height": 122,
 			"id": "Agama-rrf-Node-87e8b35f-c927-4748-9d77-a2efa3a11f6e",
 			"position": {
-				"x": 1839.5157165665103,
+				"x": 1841.256817693103,
 				"y": 540.9685668669792
 			},
 			"type": "rrf",
@@ -1864,7 +1864,7 @@
 				"whenCondition": "",
 				"inRepeatBlock": true,
 				"position": {
-					"x": 1839.5157165665103,
+					"x": 1841.256817693103,
 					"y": 540.9685668669792
 				},
 				"agamaData": {
@@ -1916,7 +1916,7 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 1839.5157165665103,
+				"x": 1841.256817693103,
 				"y": 540.9685668669792
 			}
 		},
@@ -3459,8 +3459,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1327,
-		"y": -130.5,
-		"zoom": 0.9999999999999999
+		"x": -41.75089129412663,
+		"y": -11.37071944069919,
+		"zoom": 0.5743491774985173
 	}
 }
