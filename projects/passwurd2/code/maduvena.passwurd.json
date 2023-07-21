@@ -2554,7 +2554,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 630,
@@ -3110,7 +3110,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "Condition met User enrollment",
+					"logMessage": "\"Condition met User enrollment\"",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -3131,7 +3131,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"positionAbsolute": {
 				"x": 1819.5157165665103,
 				"y": 148.9685668669792
@@ -4120,8 +4120,8 @@
 		}
 	],
 	"viewport": {
-		"x": 55,
-		"y": 65,
+		"x": -1107,
+		"y": 53,
 		"zoom": 1
 	}
 }
