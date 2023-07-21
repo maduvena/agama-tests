@@ -260,18 +260,29 @@ public class UserCheck {
 			logger.debug("Passwurd. k_username" + credentialMap.get("k_username"));
 			String customer_sig = signUid(credentialMap.get("username"));
 			String access_token = getAccessTokenJansServer();
+			/*
+			 * JSONObject data = new JSONObject();
+			 * 
+			 * data.put("k_username" , new JSONArray( credentialMap.get("k_username")));
+			 * data.put("k_pwd" , new JSONArray( credentialMap.get("k_pwd")));
+			 * 
+			 * data.append("\"customer_sig\" : \""+ customer_sig+"\""); data.append(",");
+			 * data.append("\"org_id\" : \""+ configAttributes.get("ORG_ID")+"\"");
+			 * data.append(","); data.append("\"uid\" : \""+ username+"\"}");
+			 */
+			
 			StringBuffer data = new StringBuffer();
 			data.append("{");
-			data.append("\"k_username\" : "+  credentialMap.get("k_username"));
+			data.append("\"k_username\" : " + credentialMap.get("k_username"));
 			data.append(",");
-			data.append("\"k_pwd\" : "+  credentialMap.get("k_username"));
+			data.append("\"k_pwd\" : " + credentialMap.get("k_pwd"));
 			data.append(",");
-			data.append("\"customer_sig\" : \""+  customer_sig+"\"");
+			data.append("\"customer_sig\" : \"" + customer_sig + "\"");
 			data.append(",");
-			data.append("\"org_id\" : \""+  configAttributes.get("ORG_ID")+"\"");
+			data.append("\"org_id\" : \"" + configAttributes.get("ORG_ID") + "\"");
 			data.append(",");
-			data.append("\"uid\" : \""+  username+"\"}");
-			
+			data.append("\"uid\" : \"" + username + "\"}");
+
 			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("Accept", "application/json");
 			headers.put("Content-Type", "application/json");
