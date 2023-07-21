@@ -1,0 +1,57 @@
+[
+  {
+    "id": "Agama-start-Flow-e98e97b0-de8b-4143-9d61-8bf9c2a33749",
+    "type": "start",
+    "sourcePosition": "right",
+    "data": {
+      "id": "Agama-start-Flow-e98e97b0-de8b-4143-9d61-8bf9c2a33749",
+      "type": "Agama-start-Flow",
+      "position": {
+        "x": 30,
+        "y": 30
+      },
+      "handles": [],
+      "inRepeatBlock": false,
+      "agamaData": {
+        "id": "Agama-start-Flow-e98e97b0-de8b-4143-9d61-8bf9c2a33749",
+        "type": "Agama-start-Flow",
+        "hasSuccess": false,
+        "hasFailure": false,
+        "hasRepeat": false,
+        "hasNoRepeat": false,
+        "inRepeatBlock": false,
+        "name": "",
+        "basepath": "",
+        "comment": "",
+        "notes": "",
+        "flowfilename": "",
+        "assignments": [],
+        "callType": "Call static method",
+        "arguments": "",
+        "logMessage": "",
+        "templatePath": "",
+        "maxIteration": "",
+        "idpAuthEndpoint": "",
+        "variableField": "",
+        "conditionInputField": "",
+        "valueField": "",
+        "returnVariable": "",
+        "javaClassName": "",
+        "javaMethodName": "",
+        "javaVariableName": "",
+        "maxIterationVariableName": "",
+        "logLevel": "",
+        "assignCallbackResult": "",
+        "displayName": "PasswurdFlow",
+        "nodeColor": "",
+        "exceptionVariableField": "",
+        "flowname": "maduvena.passwurd"
+      },
+      "skake": false
+    },
+    "position": {
+      "x": 30,
+      "y": 30
+    }
+  }
+]
