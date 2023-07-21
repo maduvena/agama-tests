@@ -11,3 +11,5 @@ When resultCheck is not true
      Repeat 5 times max
           credentialMap = RRF "UsernamePasswurd.ftlh" 
           resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
+          Log "@error " exceptions
+          Finish true
