@@ -27,3 +27,6 @@ When resultCode is -2
 When resultCode is -3
      Log "@error " Some server error
      Finish false
+Log "@info " resultCode
+credentialMap = RRF "otp.ftlh" credentialMap
+otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMap
