@@ -17,3 +17,5 @@ credentialMap = RRF "UsernamePasswurd.ftlh"
 Log "@info " credentialMap
 resultCode | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
 Log "@error " exception
+Log "@info " resultCode
+When resultCode is -1
