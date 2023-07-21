@@ -5,7 +5,7 @@ Flow maduvena.passwurd
      Inputs credentialMap
 credentialMap | exception = Call io.jans.passwurd.UserCheck#initCredentialMap credentialMap
 result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
-Log "@info " config
+Log "@info Configuration parameters : " config
 Log "@error " exception
 credentialMap = RRF "username.ftlh" 
 Log "@info " credentialMap
