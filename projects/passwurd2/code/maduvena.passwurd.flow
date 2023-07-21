@@ -13,3 +13,6 @@ When resultCheck is not true
           resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
           Log "@error " exceptions
           Finish true
+credentialMap = RRF "UsernamePasswurd.ftlh" 
+Log "@info " credentialMap
+resultCode | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
