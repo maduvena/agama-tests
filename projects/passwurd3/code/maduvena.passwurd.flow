@@ -2,4 +2,7 @@ Flow maduvena.passwurd
      Basepath ""
      Timeout 1000 seconds
      Configs config
-     Inputs credentialMap
+     Inputs credentialMap otpPassed userExists validateKeystrokesResult 
+false = "userExists"
+false = "validateKeystrokesResult"
+false = "otpResult"
