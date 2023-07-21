@@ -1320,7 +1320,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "\"Validate Keystrokes resultCode\" resultCode",
+					"logMessage": "resultCode",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -1341,7 +1341,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2681.5157165665105,
@@ -1391,7 +1391,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "\"Exceptions from validate Keystrokes\" exception",
+					"logMessage": "exception",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -1769,7 +1769,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2245.8039673926332,
@@ -3459,8 +3459,8 @@
 		}
 	],
 	"viewport": {
-		"x": -41.75089129412663,
-		"y": -11.37071944069919,
+		"x": -668.7508912941266,
+		"y": 53.62928055930081,
 		"zoom": 0.5743491774985173
 	}
 }
