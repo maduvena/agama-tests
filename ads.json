@@ -44,6 +44,9 @@
             "authentication",
             "openid-connect",
             "authorization"
-        ]
+        ],
+        "configs": {
+            "maduvena.passwurd": {}
+        }
     }
 }
