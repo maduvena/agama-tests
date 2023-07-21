@@ -135,7 +135,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"positionAbsolute": {
 				"x": 3667.5157165665105,
 				"y": 162.9685668669792
@@ -2533,7 +2533,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "config",
+					"logMessage": "\"Configuration parameters : \" config",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -2554,7 +2554,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 630,
@@ -4120,8 +4120,8 @@
 		}
 	],
 	"viewport": {
-		"x": -733.828125,
-		"y": 142,
-		"zoom": 0.5
+		"x": 55,
+		"y": 65,
+		"zoom": 1
 	}
 }
