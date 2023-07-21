@@ -55,8 +55,8 @@ public class UserCheck {
         public static boolean addUser(HashMap<String, String> credentialMap)
 	{
 		User user = new User();
-        user.setAttribute("uid", credentialMap.get("username"));
-        user = userService.addUser(user, true);
+                user.setAttribute("uid", credentialMap.get("username"));
+                user = userService.addUser(user, true);
 
 		return true;
 	}
