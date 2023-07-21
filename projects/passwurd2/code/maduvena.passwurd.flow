@@ -1,0 +1,22 @@
+Flow maduvena.passwurd
+     Basepath ""
+credentialMap | exception = Call io.jans.passwurd.UserCheck#initCredentialMap credentialMap
+result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
+Log "@info " config
+Log "@error " exception
+credentialMap = RRF "username.ftlh" 
+Log "@info " credentialMap
+resultCheck | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
+When resultCheck is not true
+     Repeat 5 times max
+          credentialMap = RRF "UsernamePasswurd.ftlh" 
+          resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
+          Log "@error " exceptions
+          Finish true
+credentialMap = RRF "UsernamePasswurd.ftlh" 
+Log "@info " credentialMap
+resultCode | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
+Log "@error " exception
+Log "@info " resultCode
+When resultCode is -1
+     Log "@info " Authentication successful

@@ -1,0 +1,49 @@
+{
+    "passwurd": {
+        "projectName": "passwurd",
+        "description": "behavioural biometrics",
+        "type": "community",
+        "author": "maduvena",
+        "version": "2.5.1",
+        "authorWebsite": "https://github.com/maduvena/agama-tests",
+        "githubUri": "https://github.com/maduvena/agama-tests",
+        "license": "MIT",
+        "lastUpdated": "1686722618040",
+        "tags": [
+            "Behavioural Biometrics"
+        ],
+        "configs": {
+            "maduvena.io.jans.agama.passwurd": {}
+        }
+    },
+    "sample": {
+        "projectName": "sample",
+        "description": "Jose and mike's projects",
+        "type": "community",
+        "author": "maduvena",
+        "version": "0.0.1",
+        "authorWebsite": "https://github.com/maduvena/agama-tests",
+        "githubUri": "https://github.com/maduvena/agama-tests",
+        "license": "MIT",
+        "lastUpdated": "1686898685575",
+        "tags": [
+            "authentication"
+        ]
+    },
+    "passwurd2": {
+        "projectName": "passwurd2",
+        "description": "Behavioural Biometrics",
+        "type": "community",
+        "author": "maduvena",
+        "version": "0.0.1",
+        "authorWebsite": "https://github.com/maduvena/agama-tests",
+        "githubUri": "https://github.com/maduvena/agama-tests",
+        "license": "MIT",
+        "lastUpdated": "1689907158037",
+        "tags": [
+            "authentication",
+            "openid-connect",
+            "authorization"
+        ]
+    }
+}
