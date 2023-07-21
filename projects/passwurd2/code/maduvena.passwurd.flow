@@ -28,7 +28,6 @@ Log "@error " exception
 Log "@info " resultCode
 When resultCode is -1
      Log "@info " Authentication successful
-     Finish true
 When resultCode is -2
      Log "@error " Password Incorrect
      Finish false
