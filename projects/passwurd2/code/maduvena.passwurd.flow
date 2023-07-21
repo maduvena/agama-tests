@@ -1,3 +1,6 @@
 Flow maduvena.passwurd
      Basepath ""
 credentialMap | exception = Call io.jans.passwurd.UserCheck#initCredentialMap credentialMap
+result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
+Log "@info " config
+Log "@error " exception
