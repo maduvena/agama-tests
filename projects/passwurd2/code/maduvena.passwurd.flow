@@ -29,8 +29,7 @@ Log "@info " resultCode
 When resultCode is -1
      Log "@info " Authentication successful
 When resultCode is -2
-     Log "@error " Password Incorrect
-     Finish false
+     Log "@info " temp nothing log
 When resultCode is -3
      Log "@error " Some server error
      Finish false
