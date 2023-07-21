@@ -3,6 +3,4 @@ Flow maduvena.passwurd
      Timeout 1000 seconds
      Configs config
      Inputs credentialMap otpPassed userExists validateKeystrokesResult 
-false = "userExists"
-false = "validateKeystrokesResult"
-false = "otpResult"
+initialize Credential Map | exception = Call io.jans.passwurd.UserCheck#initCredentialMap credentialMap
