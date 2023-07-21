@@ -3,6 +3,145 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6",
+			"position": {
+				"x": 4344.5157165665105,
+				"y": 308.9685668669792
+			},
+			"type": "log",
+			"data": {
+				"id": "Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6",
+				"type": "Agama-log-Node",
+				"parentId": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+				"whenCondition": "WhenTrue",
+				"inRepeatBlock": false,
+				"position": {
+					"x": 4344.5157165665105,
+					"y": 308.9685668669792
+				},
+				"agamaData": {
+					"id": "Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6",
+					"type": "Agama-log-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "WhenTrue",
+					"inRepeatBlock": false,
+					"parentId": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+					"name": "",
+					"basepath": "",
+					"comment": "OTP authenticated successfully",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "OTP authenticated successfully",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "info",
+					"assignCallbackResult": "",
+					"displayName": "OTP authenticated successfully",
+					"nodeColor": "",
+					"exceptionVariableField": "",
+					"nodeIcon": "octicon:log-16"
+				}
+			},
+			"selected": true,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 4344.5157165665105,
+				"y": 308.9685668669792
+			}
+		},
+		{
+			"width": 210,
+			"height": 140,
+			"id": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+			"position": {
+				"x": 4231.5157165665105,
+				"y": 78.96856686697919
+			},
+			"type": "when",
+			"data": {
+				"id": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+				"type": "Agama-when-Node",
+				"parentId": "Agama-call-Node-ee94d4d6-33af-465c-8e02-ad362e9e163e",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"position": {
+					"x": 4231.5157165665105,
+					"y": 78.96856686697919
+				},
+				"agamaData": {
+					"id": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+					"type": "Agama-when-Node",
+					"hasSuccess": true,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-call-Node-ee94d4d6-33af-465c-8e02-ad362e9e163e",
+					"name": "",
+					"basepath": "",
+					"comment": "OTP successful",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "otpResult",
+					"conditionInputField": "is",
+					"valueField": "true",
+					"returnVariable": "",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "",
+					"assignCallbackResult": "",
+					"displayName": "",
+					"nodeColor": "",
+					"exceptionVariableField": ""
+				}
+			},
+			"selected": false,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 4231.5157165665105,
+				"y": 78.96856686697919
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "Agama-call-Node-ee94d4d6-33af-465c-8e02-ad362e9e163e",
 			"position": {
 				"x": 4031.5157165665105,
@@ -62,9 +201,10 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "otpResult"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 4031.5157165665105,
@@ -133,7 +273,8 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
 					"asssignedVariableName": "credentialMap"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -203,7 +344,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -2734,11 +2876,46 @@
 				"color": "#fff",
 				"fillOpacity": 0.7
 			}
+		},
+		{
+			"id": "Agama-call-Node-ee94d4d6-33af-465c-8e02-ad362e9e163e-Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c-2c9401f3-4e5a-48f8-b2b5-69ea0b7de34a",
+			"type": "straight",
+			"source": "Agama-call-Node-ee94d4d6-33af-465c-8e02-ad362e9e163e",
+			"target": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
+		},
+		{
+			"id": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c-Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6-13ace4fd-dd27-46bc-9035-92498986607b",
+			"type": "straight",
+			"source": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+			"target": "Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6",
+			"label": "Condition met",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			},
+			"sourceHandle": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c.SUCCESS"
 		}
 	],
 	"viewport": {
-		"x": -709.328125,
-		"y": 198,
+		"x": -1041.1896060297395,
+		"y": 117.61001596557276,
 		"zoom": 0.5
 	}
 }
