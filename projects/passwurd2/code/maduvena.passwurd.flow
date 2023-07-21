@@ -36,7 +36,7 @@ otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMa
 When otpResult is true
      Log "@info " OTP authenticated successfully
      resultNotify | exception = Call io.jans.passwurd.UserCheck#notifyProfile credentialMap
-     Log "@info Result of Notify Profile : " resultNotify 
+     Log "@info " resultNotify 
      Log "@info Authentication completed"
      Finish true
 Log "@error " OTP authentication failed
