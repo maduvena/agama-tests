@@ -634,7 +634,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 3631.5157165665105,
@@ -1748,7 +1748,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "exceptions",
+					"logMessage": "\"Exceptions Validate keystrokes\" exceptions",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -1913,7 +1913,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1839.5157165665103,
