@@ -45,17 +45,6 @@
             "openid-connect",
             "authorization"
         ]
-        "configs": {
-            "maduvena.passwurd": {"AS_ENDPOINT": "",
-    "AS_SSA": "",
-    "AS_CLIENT_ID": "",
-    "AS_CLIENT_SECRET": "",
-    "AS_REDIRECT_URI": "",
-    "PORTAL_JWKS": "",
-    "PASSWURD_KEY_A_KEYSTORE": "",
-    "PASSWURD_KEY_A_PASSWORD": "",
-    "PASSWURD_API_URL": "",
-    "ORG_ID": ""}
-        }
+       
     }
 }
