@@ -62,9 +62,10 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "result"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 430,
@@ -132,11 +133,11 @@
 					"nodeColor": "",
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
-					"asssignedVariableName": "initialize Credential Map"
+					"asssignedVariableName": "initializeCredentialMap"
 				},
 				"skake": true
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 230,
