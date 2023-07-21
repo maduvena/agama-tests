@@ -3,25 +3,25 @@
 		{
 			"width": 170,
 			"height": 122,
-			"id": "Agama-assignment-Node-b873b0f7-27bb-45f3-992d-a3b52f8fc76f",
+			"id": "Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae",
 			"position": {
 				"x": 230,
-				"y": 30
+				"y": 29
 			},
-			"type": "assignment",
+			"type": "call",
 			"data": {
-				"id": "Agama-assignment-Node-b873b0f7-27bb-45f3-992d-a3b52f8fc76f",
-				"type": "Agama-assignment-Node",
+				"id": "Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae",
+				"type": "Agama-call-Node",
 				"parentId": "Agama-start-Flow-197be945-df03-4fed-8308-64eb5d45aff0",
 				"whenCondition": "",
 				"inRepeatBlock": false,
 				"position": {
 					"x": 230,
-					"y": 30
+					"y": 29
 				},
 				"agamaData": {
-					"id": "Agama-assignment-Node-b873b0f7-27bb-45f3-992d-a3b52f8fc76f",
-					"type": "Agama-assignment-Node",
+					"id": "Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae",
+					"type": "Agama-call-Node",
 					"hasSuccess": false,
 					"hasFailure": false,
 					"hasRepeat": false,
@@ -31,28 +31,18 @@
 					"parentId": "Agama-start-Flow-197be945-df03-4fed-8308-64eb5d45aff0",
 					"name": "",
 					"basepath": "",
-					"comment": "Initializing flow variables",
+					"comment": "initialize Credential Map",
 					"notes": "",
 					"flowfilename": "",
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "userExists",
-							"assignedVariableName": "false"
-						},
-						{
-							"variableTypeCheck": true,
-							"assignmentExpression": "validateKeystrokesResult",
-							"assignedVariableName": "false"
-						},
-						{
-							"variableTypeCheck": true,
-							"assignmentExpression": "otpResult",
-							"assignedVariableName": "false"
+							"assignmentExpression": "",
+							"assignedVariableName": ""
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "",
+					"arguments": "credentialMap",
 					"logMessage": "",
 					"templatePath": "",
 					"maxIteration": "",
@@ -61,23 +51,24 @@
 					"conditionInputField": "",
 					"valueField": "",
 					"returnVariable": "",
-					"javaClassName": "",
-					"javaMethodName": "",
+					"javaClassName": "io.jans.passwurd.UserCheck",
+					"javaMethodName": "initCredentialMap",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
 					"logLevel": "",
 					"assignCallbackResult": "",
-					"displayName": "Initializing flow variables",
+					"displayName": "initialize Credential Map",
 					"nodeColor": "",
-					"exceptionVariableField": "",
-					"nodeIcon": "material-symbols:equal"
+					"exceptionVariableField": "exception",
+					"nodeIcon": "material-symbols:code",
+					"asssignedVariableName": "initialize Credential Map"
 				}
 			},
 			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 230,
-				"y": 30
+				"y": 29
 			}
 		},
 		{
@@ -98,8 +89,8 @@
 				"agamaData": {
 					"id": "Agama-start-Flow-197be945-df03-4fed-8308-64eb5d45aff0",
 					"type": "Agama-start-Flow",
-					"hasSuccess": false,
-					"hasFailure": false,
+					"hasSuccess": "",
+					"hasFailure": "",
 					"hasRepeat": false,
 					"hasNoRepeat": false,
 					"inRepeatBlock": false,
@@ -140,7 +131,7 @@
 					"inputs": "credentialMap otpPassed userExists validateKeystrokesResult ",
 					"configs": "config"
 				},
-				"skake": true
+				"skake": false
 			},
 			"position": {
 				"x": 30,
@@ -156,10 +147,10 @@
 	],
 	"edges": [
 		{
-			"id": "Agama-start-Flow-197be945-df03-4fed-8308-64eb5d45aff0-Agama-assignment-Node-b873b0f7-27bb-45f3-992d-a3b52f8fc76f-3de4a481-d8d2-4111-83f4-bf1018a8337a",
+			"id": "Agama-start-Flow-197be945-df03-4fed-8308-64eb5d45aff0-Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae-f80c2fd5-94fc-4d02-80f5-c7f0347cd253",
 			"type": "straight",
 			"source": "Agama-start-Flow-197be945-df03-4fed-8308-64eb5d45aff0",
-			"target": "Agama-assignment-Node-b873b0f7-27bb-45f3-992d-a3b52f8fc76f",
+			"target": "Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae",
 			"label": "",
 			"labelBgPadding": [
 				8,
