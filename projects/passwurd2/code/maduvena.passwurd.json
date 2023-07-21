@@ -3,6 +3,76 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-log-Node-0115e479-41aa-4c4f-b1ee-c98708aa4672",
+			"position": {
+				"x": 4297.528503004688,
+				"y": 318.06286626604157
+			},
+			"type": "log",
+			"data": {
+				"id": "Agama-log-Node-0115e479-41aa-4c4f-b1ee-c98708aa4672",
+				"type": "Agama-log-Node",
+				"parentId": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+				"whenCondition": "WhenTrue",
+				"inRepeatBlock": false,
+				"position": {
+					"x": 4297.528503004688,
+					"y": 318.06286626604157
+				},
+				"agamaData": {
+					"id": "Agama-log-Node-0115e479-41aa-4c4f-b1ee-c98708aa4672",
+					"type": "Agama-log-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "WhenTrue",
+					"inRepeatBlock": false,
+					"parentId": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+					"name": "",
+					"basepath": "",
+					"comment": "To connect the broken node",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "Temp logging",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "info",
+					"assignCallbackResult": "",
+					"displayName": "To connect the broken node",
+					"nodeColor": "",
+					"exceptionVariableField": "",
+					"nodeIcon": "octicon:log-16"
+				}
+			},
+			"selected": true,
+			"positionAbsolute": {
+				"x": 4297.528503004688,
+				"y": 318.06286626604157
+			},
+			"dragging": false
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "Agama-log-Node-deea258f-2390-4995-9db8-b40c14872a71",
 			"position": {
 				"x": 3631.5157165665105,
@@ -574,8 +644,8 @@
 			"height": 122,
 			"id": "Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6",
 			"position": {
-				"x": 4344.5157165665105,
-				"y": 308.9685668669792
+				"x": 4562.778902144008,
+				"y": 315.0314331330207
 			},
 			"type": "log",
 			"data": {
@@ -585,8 +655,8 @@
 				"whenCondition": "WhenTrue",
 				"inRepeatBlock": false,
 				"position": {
-					"x": 4344.5157165665105,
-					"y": 308.9685668669792
+					"x": 4562.778902144008,
+					"y": 315.0314331330207
 				},
 				"agamaData": {
 					"id": "Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6",
@@ -636,8 +706,8 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 4344.5157165665105,
-				"y": 308.9685668669792
+				"x": 4562.778902144008,
+				"y": 315.0314331330207
 			}
 		},
 		{
@@ -4107,12 +4177,38 @@
 			"target": "Agama-log-Node-6d825e53-2d30-48fa-a431-492696a2bc0a",
 			"targetHandle": "Agama-log-Node-6d825e53-2d30-48fa-a431-492696a2bc0a.righta",
 			"id": "reactflow__edge-Agama-log-Node-deea258f-2390-4995-9db8-b40c14872a71-Agama-log-Node-6d825e53-2d30-48fa-a431-492696a2bc0aAgama-log-Node-6d825e53-2d30-48fa-a431-492696a2bc0a.righta",
-			"selected": true
+			"selected": false
+		},
+		{
+			"id": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c-Agama-log-Node-0115e479-41aa-4c4f-b1ee-c98708aa4672-eab0e174-062e-4893-bf18-42345d4f9d6c",
+			"type": "straight",
+			"source": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c",
+			"target": "Agama-log-Node-0115e479-41aa-4c4f-b1ee-c98708aa4672",
+			"label": "Condition met",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			},
+			"sourceHandle": "Agama-when-Node-70741876-683f-474f-9f79-4d95e842782c.SUCCESS"
+		},
+		{
+			"source": "Agama-log-Node-0115e479-41aa-4c4f-b1ee-c98708aa4672",
+			"sourceHandle": null,
+			"target": "Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6",
+			"targetHandle": "Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6.righta",
+			"id": "reactflow__edge-Agama-log-Node-0115e479-41aa-4c4f-b1ee-c98708aa4672-Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6Agama-log-Node-e5e794dd-5c1a-4659-993f-2ea75124c6a6.righta",
+			"selected": false
 		}
 	],
 	"viewport": {
-		"x": -817.828125,
-		"y": 158.10000000000002,
-		"zoom": 0.5
+		"x": -1862.1745594142253,
+		"y": -4.272436469964248,
+		"zoom": 0.6597539553864473
 	}
 }
