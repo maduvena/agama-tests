@@ -3,6 +3,77 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-call-Node-bccc94af-82bd-4e0c-b1be-4464e66dc2e5",
+			"position": {
+				"x": 230,
+				"y": 30
+			},
+			"type": "call",
+			"data": {
+				"id": "Agama-call-Node-bccc94af-82bd-4e0c-b1be-4464e66dc2e5",
+				"type": "Agama-call-Node",
+				"parentId": "Agama-start-Flow-e98e97b0-de8b-4143-9d61-8bf9c2a33749",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"position": {
+					"x": 230,
+					"y": 30
+				},
+				"agamaData": {
+					"id": "Agama-call-Node-bccc94af-82bd-4e0c-b1be-4464e66dc2e5",
+					"type": "Agama-call-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-start-Flow-e98e97b0-de8b-4143-9d61-8bf9c2a33749",
+					"name": "",
+					"basepath": "",
+					"comment": "initialize Credential Map",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "credentialMap",
+					"logMessage": "",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "io.jans.passwurd.UserCheck",
+					"javaMethodName": "initCredentialMap",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "",
+					"assignCallbackResult": "",
+					"displayName": "initialize Credential Map",
+					"nodeColor": "",
+					"exceptionVariableField": "exception",
+					"nodeIcon": "material-symbols:code",
+					"asssignedVariableName": "credentialMap"
+				}
+			},
+			"selected": true,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 230,
+				"y": 30
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "Agama-start-Flow-e98e97b0-de8b-4143-9d61-8bf9c2a33749",
 			"type": "start",
 			"sourcePosition": "right",
@@ -50,13 +121,13 @@
 					"exceptionVariableField": "",
 					"flowname": "maduvena.passwurd"
 				},
-				"skake": false
+				"skake": true
 			},
 			"position": {
 				"x": 30,
 				"y": 30
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 30,
@@ -64,10 +135,28 @@
 			}
 		}
 	],
-	"edges": [],
+	"edges": [
+		{
+			"id": "Agama-start-Flow-e98e97b0-de8b-4143-9d61-8bf9c2a33749-Agama-call-Node-bccc94af-82bd-4e0c-b1be-4464e66dc2e5-5a564717-ee0a-4323-bab1-d2b0c08c9e59",
+			"type": "straight",
+			"source": "Agama-start-Flow-e98e97b0-de8b-4143-9d61-8bf9c2a33749",
+			"target": "Agama-call-Node-bccc94af-82bd-4e0c-b1be-4464e66dc2e5",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
+		}
+	],
 	"viewport": {
-		"x": 10,
-		"y": 15,
+		"x": 108,
+		"y": 122,
 		"zoom": 1
 	}
 }
