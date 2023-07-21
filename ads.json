@@ -48,5 +48,19 @@
         "configs": {
             "maduvena.passwurd": {}
         }
+    },
+    "passwurd3": {
+        "projectName": "passwurd3",
+        "description": "Behavioural Biometrics",
+        "type": "community",
+        "author": "maduvena",
+        "version": "0.0.1",
+        "authorWebsite": "https://github.com/maduvena/agama-tests",
+        "githubUri": "https://github.com/maduvena/agama-tests",
+        "license": "MIT",
+        "lastUpdated": "1689945258857",
+        "tags": [
+            "openid-connect"
+        ]
     }
 }
