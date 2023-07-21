@@ -12,6 +12,7 @@ Log "@info " credentialMap
 resultCheck | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
 Log "@error " exception
 When resultCheck is not null
+     Log "@info " Condition met User enrollment
      Repeat 5 times max
           credentialMap = RRF "UsernamePasswurd.ftlh" 
           resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
