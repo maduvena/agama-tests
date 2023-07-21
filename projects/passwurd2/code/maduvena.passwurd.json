@@ -1320,7 +1320,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "resultCode",
+					"logMessage": "\"Validate Keystrokes resultCode\" resultCode",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -1341,7 +1341,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2681.5157165665105,
@@ -1412,7 +1412,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2481.5157165665105,
