@@ -1913,7 +1913,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1839.5157165665103,
@@ -2587,10 +2587,16 @@
 					"inRepeatBlock": false,
 					"name": "",
 					"basepath": "",
-					"comment": "",
+					"comment": "PasswurdFlow",
 					"notes": "",
 					"flowfilename": "",
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
 					"callType": "Call static method",
 					"arguments": "",
 					"logMessage": "",
@@ -2610,7 +2616,11 @@
 					"displayName": "PasswurdFlow",
 					"nodeColor": "",
 					"exceptionVariableField": "",
-					"flowname": "maduvena.passwurd"
+					"flowname": "maduvena.passwurd",
+					"nodeIcon": "material-symbols:line-start-square",
+					"timeout": "1000",
+					"inputs": "credentialMap",
+					"configs": "config"
 				},
 				"skake": false
 			},
@@ -2618,7 +2628,7 @@
 				"x": 30,
 				"y": 30
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 30,
@@ -3449,8 +3459,8 @@
 		}
 	],
 	"viewport": {
-		"x": -999.4356650261493,
-		"y": 203.81364260315908,
-		"zoom": 0.5743491774985173
+		"x": 10,
+		"y": 15,
+		"zoom": 1
 	}
 }
