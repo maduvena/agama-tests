@@ -20,6 +20,7 @@ When resultCheck is not null
      Log "@info " Completed 5 iterations of recording keystrokes
      resultUser | exception = Call  io.jans.passwurd.UserCheck#addUser credentialMap
      Finish true
+Log "@info " Authentication flow
 credentialMap = RRF "UsernamePasswurd.ftlh" 
 Log "@info " credentialMap
 resultCode | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
