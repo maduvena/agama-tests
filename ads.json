@@ -46,7 +46,7 @@
             "authorization"
         ]
         "configs": {
-            "maduvena.io.jans.passwurd": {"AS_ENDPOINT": "",
+            "maduvena.passwurd": {"AS_ENDPOINT": "",
     "AS_SSA": "",
     "AS_CLIENT_ID": "",
     "AS_CLIENT_SECRET": "",
