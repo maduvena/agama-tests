@@ -185,6 +185,11 @@ public class UserCheck {
 		}
 	}
 
+        public static boolean validateOTP(HashMap<String, String> credentialMap) {
+		logger.debug("Passwurd. username: " + credentialMap);
+                return true;
+        }
+
 	public static String getAccessTokenJansServer() {
 
 		HttpClient httpClient = (HttpClient)httpService.getHttpsClient();
