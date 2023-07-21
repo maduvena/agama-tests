@@ -52,6 +52,15 @@ public class UserCheck {
 		credentialMap.put("orgId", "");
 	}
 
+        public static boolean addUser(HashMap<String, String> credentialMap)
+	{
+		User user = new User();
+        user.setAttribute("uid", credentialMap.get("username"));
+        user = userService.addUser(user, true);
+
+		return true;
+	}
+	
 	public static boolean initializeFlow(Map<String, String> config) {
         logger.info("Passwurd. Initialization. ");
 		configAttributes = config;
