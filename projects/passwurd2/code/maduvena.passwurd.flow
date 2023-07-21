@@ -7,3 +7,6 @@ Log "@error " exception
 credentialMap = RRF "username.ftlh" 
 Log "@info " credentialMap
 resultCheck | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
+When resultCheck is not true
+     Repeat 5 times max
+          credentialMap = RRF "UsernamePasswurd.ftlh" 
