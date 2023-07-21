@@ -1,2 +1,5 @@
 Flow maduvena.passwurd
      Basepath ""
+     Timeout 1000 seconds
+     Configs config
+     Inputs credentialMap
