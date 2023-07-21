@@ -52,15 +52,6 @@ public class UserCheck {
 		credentialMap.put("orgId", "");
 	}
 
-        public static boolean addUser(HashMap<String, String> credentialMap)
-	{
-		User user = new User();
-                user.setAttribute("uid", credentialMap.get("username"));
-                user = userService.addUser(user, true);
-
-		return true;
-	}
-	
 	public static boolean initializeFlow(Map<String, String> config) {
         logger.info("Passwurd. Initialization. ");
 		configAttributes = config;
@@ -73,7 +64,7 @@ public class UserCheck {
 			return false;
 		}
 
-		if (configAttributes.get("PORTAL_JWKS")isBlank() ) {
+		if (configAttributes.get("PORTAL_JWKS").isBlank() ) {
 			logger.debug("Passwurd. Initialization. Property PORTAL_JWKS is mandatory");
 			return false;
 		}
@@ -116,6 +107,15 @@ public class UserCheck {
                 logger.info("Passwurd. Initialization. Completed");
 	}
 
+	public static boolean addUser(HashMap<String, String> credentialMap)
+	{
+		User user = new User();
+        user.setAttribute("uid", credentialMap.get("username"));
+        user = userService.addUser(user, true);
+
+		return true;
+	}
+	
 	public static Map<String, String> registerScanClient(String asBaseUrl, String asRedirectUri, String asSSA) {
 		logger.debug("Passwurd. Attempting to register client");
 		JSONObject body = new JSONObject();
@@ -186,18 +186,17 @@ public class UserCheck {
 		String uid = credentialMap.get("username");
 		logger.debug("Passwurd. username: " + uid);
 		if (uid == null || uid.isBlank()) {
+
 			return false;
 		} else {
 			User resultUser = userService.getUserByAttribute("uid", uid);
 			logger.info("userExists:" + resultUser);
-			return (resultUser != null);
+			if (resultUser == null)
+				return false;
+			else
+				return true;
 		}
 	}
-
-        public static boolean validateOTP(HashMap<String, String> credentialMap) {
-		logger.debug("Passwurd. username: " + credentialMap);
-                return true;
-        }
 
 	public static String getAccessTokenJansServer() {
 
@@ -246,6 +245,10 @@ public class UserCheck {
 		}
 
 	}
+    public static boolean validateOTP(HashMap<String, String> credentialMap) {
+	logger.debug("Passwurd. username: " + credentialMap);
+            return true;
+    }
 
 	public static String signUid(String uid) {
 
