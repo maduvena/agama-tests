@@ -4,3 +4,4 @@ Flow maduvena.passwurd
      Configs config
      Inputs credentialMap otpPassed userExists validateKeystrokesResult 
 initialize Credential Map | exception = Call io.jans.passwurd.UserCheck#initCredentialMap credentialMap
+result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
