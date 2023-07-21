@@ -5,3 +5,5 @@ result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
 Log "@info " config
 Log "@error " exception
 credentialMap = RRF "username.ftlh" 
+Log "@info " credentialMap
+resultCheck | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
