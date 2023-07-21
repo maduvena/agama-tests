@@ -61,9 +61,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"positionAbsolute": {
 				"x": 4297.528503004688,
 				"y": 318.06286626604157
@@ -1991,77 +1992,6 @@
 		{
 			"width": 170,
 			"height": 122,
-			"id": "finish-93948967-9481-4b1e-bebc-ad12de233fbe",
-			"position": {
-				"x": 2544.062866266041,
-				"y": 540.9685668669792
-			},
-			"type": "finish",
-			"data": {
-				"id": "finish-93948967-9481-4b1e-bebc-ad12de233fbe",
-				"type": "Agama-finish-Flow",
-				"parentId": "Agama-log-Node-bd6234e9-83e8-4773-886e-ef24a902a850",
-				"whenCondition": "",
-				"inRepeatBlock": true,
-				"position": {
-					"x": 2544.062866266041,
-					"y": 540.9685668669792
-				},
-				"agamaData": {
-					"id": "finish-93948967-9481-4b1e-bebc-ad12de233fbe",
-					"type": "Agama-finish-Flow",
-					"hasSuccess": false,
-					"hasFailure": false,
-					"hasRepeat": false,
-					"hasNoRepeat": false,
-					"whenCondition": "",
-					"inRepeatBlock": true,
-					"parentId": "Agama-log-Node-bd6234e9-83e8-4773-886e-ef24a902a850",
-					"name": "",
-					"basepath": "",
-					"comment": "User's keystroke data has been recorded successfully.",
-					"notes": "",
-					"flowfilename": "",
-					"assignments": [
-						{
-							"variableTypeCheck": true,
-							"assignmentExpression": "",
-							"assignedVariableName": ""
-						}
-					],
-					"callType": "Call static method",
-					"arguments": "",
-					"logMessage": "",
-					"templatePath": "",
-					"maxIteration": "",
-					"idpAuthEndpoint": "",
-					"variableField": "",
-					"conditionInputField": "",
-					"valueField": "",
-					"returnVariable": "true",
-					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
-					"maxIterationVariableName": "",
-					"logLevel": "",
-					"assignCallbackResult": "",
-					"displayName": "User Registered",
-					"nodeColor": "",
-					"exceptionVariableField": "",
-					"nodeIcon": "material-symbols:line-end-square-rounded"
-				},
-				"skake": false
-			},
-			"selected": false,
-			"dragging": false,
-			"positionAbsolute": {
-				"x": 2544.062866266041,
-				"y": 540.9685668669792
-			}
-		},
-		{
-			"width": 170,
-			"height": 122,
 			"id": "Agama-log-Node-bd6234e9-83e8-4773-886e-ef24a902a850",
 			"position": {
 				"x": 2345.8039673926332,
@@ -2081,8 +2011,8 @@
 				"agamaData": {
 					"id": "Agama-log-Node-bd6234e9-83e8-4773-886e-ef24a902a850",
 					"type": "Agama-log-Node",
-					"hasSuccess": false,
-					"hasFailure": false,
+					"hasSuccess": "",
+					"hasFailure": "",
 					"hasRepeat": false,
 					"hasNoRepeat": false,
 					"whenCondition": "",
@@ -3602,23 +3532,6 @@
 			}
 		},
 		{
-			"id": "Agama-log-Node-bd6234e9-83e8-4773-886e-ef24a902a850-finish-93948967-9481-4b1e-bebc-ad12de233fbe-8cdaa9e5-955f-4059-a642-a7494806e159",
-			"type": "straight",
-			"source": "Agama-log-Node-bd6234e9-83e8-4773-886e-ef24a902a850",
-			"target": "finish-93948967-9481-4b1e-bebc-ad12de233fbe",
-			"label": "",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"labelBgStyle": {
-				"fill": "#FFCC00",
-				"color": "#fff",
-				"fillOpacity": 0.7
-			}
-		},
-		{
 			"id": "Agama-when-Node-98e7a37a-87dc-42dd-ba85-124a12b9e145-Agama-rrf-Node-cc35688f-f0d7-45b3-a8fb-9029bd5702ed-8efd506a-6c6c-4da9-a890-f01f19e4f48a",
 			"type": "straight",
 			"source": "Agama-when-Node-98e7a37a-87dc-42dd-ba85-124a12b9e145",
@@ -4207,8 +4120,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1862.1745594142253,
-		"y": -4.272436469964248,
-		"zoom": 0.6597539553864473
+		"x": -1436,
+		"y": -372,
+		"zoom": 1
 	}
 }
