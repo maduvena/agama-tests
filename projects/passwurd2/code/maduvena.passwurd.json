@@ -135,7 +135,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 4481.5157165665105,
@@ -185,7 +185,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "\"Result of Notify Profile : \" resultNotify ",
+					"logMessage": "resultNotify ",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -349,7 +349,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 4344.5157165665105,
@@ -3459,8 +3459,8 @@
 		}
 	],
 	"viewport": {
-		"x": -4205.845532588253,
-		"y": 73.25856111860162,
+		"x": -4762.845532588253,
+		"y": 139.25856111860162,
 		"zoom": 1.1486983549970347
 	}
 }
