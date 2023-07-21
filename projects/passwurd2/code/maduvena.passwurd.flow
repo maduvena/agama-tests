@@ -4,3 +4,4 @@ credentialMap | exception = Call io.jans.passwurd.UserCheck#initCredentialMap cr
 result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
 Log "@info " config
 Log "@error " exception
+credentialMap = RRF "username.ftlh" 
