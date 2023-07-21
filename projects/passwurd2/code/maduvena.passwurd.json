@@ -61,9 +61,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 4681.5157165665105,
@@ -131,7 +132,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -201,7 +203,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"positionAbsolute": {
 				"x": 4702.5157165665105,
@@ -272,7 +275,8 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "resultNotify"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -1387,7 +1391,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "exception",
+					"logMessage": "\"Exceptions from validate Keystrokes\" exception",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -1408,7 +1412,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2481.5157165665105,
@@ -1530,7 +1534,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "credentialMap",
+					"logMessage": "\"Credentials captured: \" credentialMap",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -2682,7 +2686,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -2752,7 +2757,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -3443,8 +3449,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1262.1896060297395,
-		"y": 114.61001596557276,
-		"zoom": 0.5
+		"x": -2560.9693592123945,
+		"y": 90.2597533404981,
+		"zoom": 1.3195079107728942
 	}
 }
