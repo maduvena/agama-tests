@@ -27,7 +27,7 @@ When resultCode is -2
 When resultCode is -3
      Log "@error " Some server error
      Finish false
-Log "@info " resultCode
+Log "@info Track id is : " resultCode
 credentialMap = RRF "otp.ftlh" credentialMap
 otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMap
 When otpResult is true
