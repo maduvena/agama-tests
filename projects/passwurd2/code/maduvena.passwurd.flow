@@ -19,8 +19,8 @@ When resultCheck is not true
 credentialMap = RRF "UsernamePasswurd.ftlh" 
 Log "@info Credentials captured: " credentialMap
 resultCode | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
-Log "@error Exceptions from validate Keystrokes" exception
-Log "@info Validate Keystrokes resultCode" resultCode
+Log "@error " exception
+Log "@info " resultCode
 When resultCode is -1
      Log "@info " Authentication successful
      Finish true
