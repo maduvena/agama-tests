@@ -19,3 +19,4 @@ resultCode | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes cred
 Log "@error " exception
 Log "@info " resultCode
 When resultCode is -1
+     Log "@info " Authentication successful
