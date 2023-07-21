@@ -613,7 +613,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "resultCode",
+					"logMessage": "\"Track id is : \" resultCode",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -634,7 +634,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 3631.5157165665105,
@@ -1341,7 +1341,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2681.5157165665105,
@@ -3449,8 +3449,8 @@
 		}
 	],
 	"viewport": {
-		"x": -2560.9693592123945,
-		"y": 90.2597533404981,
-		"zoom": 1.3195079107728942
+		"x": -999.4356650261493,
+		"y": 203.81364260315908,
+		"zoom": 0.5743491774985173
 	}
 }
