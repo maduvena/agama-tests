@@ -36,10 +36,6 @@ Log "@info " resultCode
 credentialMap = RRF "otp.ftlh" credentialMap
 otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMap
 When otpResult is true
-     Log "@info " OTP authenticated successfully
-     resultNotify | exception = Call io.jans.passwurd.UserCheck#notifyProfile credentialMap
-     Log "@info " resultNotify 
-     Log "@info Authentication completed"
-     Finish true
+     Log "@info " Temp logging
 Log "@error " OTP authentication failed
 Finish false
