@@ -3,6 +3,77 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-call-Node-5931f5e9-0973-4a08-b4bc-a2973124141b",
+			"position": {
+				"x": 430,
+				"y": 29
+			},
+			"type": "call",
+			"data": {
+				"id": "Agama-call-Node-5931f5e9-0973-4a08-b4bc-a2973124141b",
+				"type": "Agama-call-Node",
+				"parentId": "Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"position": {
+					"x": 430,
+					"y": 29
+				},
+				"agamaData": {
+					"id": "Agama-call-Node-5931f5e9-0973-4a08-b4bc-a2973124141b",
+					"type": "Agama-call-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae",
+					"name": "",
+					"basepath": "",
+					"comment": "Obtain creds to access Passwurd API",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "config",
+					"logMessage": "",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "io.jans.passwurd.UserCheck",
+					"javaMethodName": "initializeFlow",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "",
+					"assignCallbackResult": "",
+					"displayName": "Initialize configuration",
+					"nodeColor": "",
+					"exceptionVariableField": "exception",
+					"nodeIcon": "material-symbols:code",
+					"asssignedVariableName": "result"
+				}
+			},
+			"selected": true,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 430,
+				"y": 29
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae",
 			"position": {
 				"x": 230,
@@ -62,9 +133,10 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "initialize Credential Map"
-				}
+				},
+				"skake": true
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 230,
@@ -162,11 +234,28 @@
 				"color": "#fff",
 				"fillOpacity": 0.7
 			}
+		},
+		{
+			"id": "Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae-Agama-call-Node-5931f5e9-0973-4a08-b4bc-a2973124141b-a2730811-e493-47b7-880f-ded7bff382b0",
+			"type": "straight",
+			"source": "Agama-call-Node-9cc77d9e-a9c0-468f-9b4e-9fca8fd9c7ae",
+			"target": "Agama-call-Node-5931f5e9-0973-4a08-b4bc-a2973124141b",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
 		}
 	],
 	"viewport": {
 		"x": 3,
-		"y": 67,
+		"y": 68,
 		"zoom": 1
 	}
 }
