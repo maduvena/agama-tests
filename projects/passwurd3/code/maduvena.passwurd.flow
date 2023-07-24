@@ -11,5 +11,3 @@ Log "@info User Exists: " resultUserExists
 credentialMap = RRF "UsernamePasswurd.ftlh" 
 resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
 When resultValidation  is not -2
-     When resultValidated is not -3
-Finish false
