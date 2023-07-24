@@ -136,7 +136,7 @@
 					"nodeColor": "",
 					"exceptionVariableField": ""
 				},
-				"skake": false
+				"skake": true
 			},
 			"selected": true,
 			"dragging": false,
