@@ -10,7 +10,7 @@ resultUserExists | exception = Call io.jans.passwurd.UserCheck#userExists creden
 Log "@info User Exists: " resultUserExists
 credentialMap = RRF "UsernamePasswurd.ftlh" 
 resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
-When resultValidate > 0 is true
+When resultValidate < 0 is true
      credentialMap = RRF "otp.ftlh" credentialMap
      otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMap
 Finish false
