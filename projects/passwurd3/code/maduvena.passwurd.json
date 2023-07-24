@@ -62,9 +62,10 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "resultUserExists"
-				}
+				},
+				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 830,
