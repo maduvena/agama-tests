@@ -3,6 +3,77 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
+			"position": {
+				"x": 1230,
+				"y": 28.12944943670385
+			},
+			"type": "rrf",
+			"data": {
+				"id": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
+				"type": "Agama-rrf-Node",
+				"parentId": "Agama-log-Node-f1d6d4bd-b273-4ab5-9185-1d757ff7f138",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"position": {
+					"x": 1230,
+					"y": 28.12944943670385
+				},
+				"agamaData": {
+					"id": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
+					"type": "Agama-rrf-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-log-Node-f1d6d4bd-b273-4ab5-9185-1d757ff7f138",
+					"name": "",
+					"basepath": "",
+					"comment": "User will type his username and password and his typing behavior will be recorded.",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "",
+					"logMessage": "",
+					"templatePath": "UsernamePasswurd.ftlh",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "",
+					"assignCallbackResult": "",
+					"displayName": "Register keystroke patterns",
+					"nodeColor": "",
+					"exceptionVariableField": "",
+					"nodeIcon": "ph:globe-simple",
+					"asssignedVariableName": "credentialMap"
+				}
+			},
+			"selected": true,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 1230,
+				"y": 28.12944943670385
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "Agama-log-Node-f1d6d4bd-b273-4ab5-9185-1d757ff7f138",
 			"position": {
 				"x": 1030,
@@ -61,9 +132,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1030,
@@ -506,6 +578,23 @@
 			"type": "straight",
 			"source": "Agama-call-Node-eb9c6ebf-f3f6-428a-82d2-b45564387682",
 			"target": "Agama-log-Node-f1d6d4bd-b273-4ab5-9185-1d757ff7f138",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
+		},
+		{
+			"id": "Agama-log-Node-f1d6d4bd-b273-4ab5-9185-1d757ff7f138-Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e-cffc825a-ca87-4fe6-9ace-9b637405c91d",
+			"type": "straight",
+			"source": "Agama-log-Node-f1d6d4bd-b273-4ab5-9185-1d757ff7f138",
+			"target": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
 			"label": "",
 			"labelBgPadding": [
 				8,
