@@ -65,7 +65,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -96,8 +97,8 @@
 				"agamaData": {
 					"id": "Agama-when-Node-2e708f75-33c0-4836-a696-ae682ddbd83c",
 					"type": "Agama-when-Node",
-					"hasSuccess": "",
-					"hasFailure": "",
+					"hasSuccess": false,
+					"hasFailure": false,
 					"hasRepeat": false,
 					"hasNoRepeat": false,
 					"whenCondition": "",
@@ -121,7 +122,7 @@
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
-					"variableField": "resultValidate < 0",
+					"variableField": "resultValidation < 0",
 					"conditionInputField": "is",
 					"valueField": "true",
 					"returnVariable": "",
@@ -137,7 +138,7 @@
 				},
 				"skake": true
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1670.9243472957805,
