@@ -3,6 +3,77 @@
 		{
 			"width": 170,
 			"height": 122,
+			"id": "Agama-call-Node-8f3ac9c5-6416-4485-bee3-e3e720b06b70",
+			"position": {
+				"x": 1430,
+				"y": 28.12944943670385
+			},
+			"type": "call",
+			"data": {
+				"id": "Agama-call-Node-8f3ac9c5-6416-4485-bee3-e3e720b06b70",
+				"type": "Agama-call-Node",
+				"parentId": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
+				"whenCondition": "",
+				"inRepeatBlock": false,
+				"position": {
+					"x": 1430,
+					"y": 28.12944943670385
+				},
+				"agamaData": {
+					"id": "Agama-call-Node-8f3ac9c5-6416-4485-bee3-e3e720b06b70",
+					"type": "Agama-call-Node",
+					"hasSuccess": false,
+					"hasFailure": false,
+					"hasRepeat": false,
+					"hasNoRepeat": false,
+					"whenCondition": "",
+					"inRepeatBlock": false,
+					"parentId": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
+					"name": "",
+					"basepath": "",
+					"comment": "Validate Keystrokes API call",
+					"notes": "",
+					"flowfilename": "",
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
+					"callType": "Call static method",
+					"arguments": "credentialMap",
+					"logMessage": "",
+					"templatePath": "",
+					"maxIteration": "",
+					"idpAuthEndpoint": "",
+					"variableField": "",
+					"conditionInputField": "",
+					"valueField": "",
+					"returnVariable": "",
+					"javaClassName": "io.jans.passwurd.UserCheck",
+					"javaMethodName": "validateKeystrokes",
+					"javaVariableName": "",
+					"maxIterationVariableName": "",
+					"logLevel": "",
+					"assignCallbackResult": "",
+					"displayName": "Validate Keystrokes",
+					"nodeColor": "",
+					"exceptionVariableField": "exception",
+					"nodeIcon": "material-symbols:code",
+					"asssignedVariableName": "resultValidation"
+				}
+			},
+			"selected": true,
+			"dragging": false,
+			"positionAbsolute": {
+				"x": 1430,
+				"y": 28.12944943670385
+			}
+		},
+		{
+			"width": 170,
+			"height": 122,
 			"id": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
 			"position": {
 				"x": 1230,
@@ -62,9 +133,10 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
 					"asssignedVariableName": "credentialMap"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1230,
@@ -606,11 +678,28 @@
 				"color": "#fff",
 				"fillOpacity": 0.7
 			}
+		},
+		{
+			"id": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e-Agama-call-Node-8f3ac9c5-6416-4485-bee3-e3e720b06b70-8bdf59de-60ac-429f-b72e-f986277bbfe2",
+			"type": "straight",
+			"source": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
+			"target": "Agama-call-Node-8f3ac9c5-6416-4485-bee3-e3e720b06b70",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#FFCC00",
+				"color": "#fff",
+				"fillOpacity": 0.7
+			}
 		}
 	],
 	"viewport": {
-		"x": -311,
-		"y": 138,
+		"x": -481,
+		"y": 96,
 		"zoom": 1
 	}
 }
