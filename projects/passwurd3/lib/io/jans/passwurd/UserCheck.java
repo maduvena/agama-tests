@@ -277,17 +277,7 @@ public class UserCheck {
 			logger.debug("Passwurd. k_username" + credentialMap.get("k_username"));
 			String customer_sig = signUid(credentialMap.get("username"));
 			String access_token = getAccessTokenJansServer();
-			/*
-			 * JSONObject data = new JSONObject();
-			 * 
-			 * data.put("k_username" , new JSONArray( credentialMap.get("k_username")));
-			 * data.put("k_pwd" , new JSONArray( credentialMap.get("k_pwd")));
-			 * 
-			 * data.append("\"customer_sig\" : \""+ customer_sig+"\""); data.append(",");
-			 * data.append("\"org_id\" : \""+ configAttributes.get("ORG_ID")+"\"");
-			 * data.append(","); data.append("\"uid\" : \""+ username+"\"}");
-			 */
-			
+						
 			StringBuffer data = new StringBuffer();
 			data.append("{");
 			data.append("\"k_username\" : " + credentialMap.get("k_username"));
@@ -331,7 +321,7 @@ public class UserCheck {
 			if (httpResponseStatusCode == "200" || httpResponseStatusCode == "202") {
 				if (dataResponse.get("status") == "Enrollment") {
 					logger.debug("Enrollment");
-					return -1;
+					return Integer.valueOf(dataResponse.get("track_id"));
 				} else if (dataResponse.get("status") == "Approved") {
 					logger.debug("Approved");
 					return -1;
