@@ -874,7 +874,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1654,
@@ -915,13 +915,19 @@
 					"parentId": "Agama-call-Node-8f3ac9c5-6416-4485-bee3-e3e720b06b70",
 					"name": "",
 					"basepath": "",
-					"comment": "",
+					"comment": "Just nothing",
 					"notes": "",
 					"flowfilename": "",
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "",
+							"assignedVariableName": ""
+						}
+					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "",
+					"logMessage": "\"Just nothing\"",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -933,17 +939,21 @@
 					"javaMethodName": "",
 					"javaVariableName": "",
 					"maxIterationVariableName": "",
-					"logLevel": "",
+					"logLevel": "info",
 					"assignCallbackResult": "",
-					"displayName": "",
+					"displayName": "Just nothing",
 					"nodeColor": "",
-					"exceptionVariableField": ""
-				}
+					"exceptionVariableField": "",
+					"nodeIcon": "octicon:log-16"
+				},
+				"skake": true
 			},
 			"positionAbsolute": {
 				"x": 1854,
 				"y": 26.12944943670385
-			}
+			},
+			"selected": true,
+			"dragging": false
 		},
 		{
 			"width": 210,
