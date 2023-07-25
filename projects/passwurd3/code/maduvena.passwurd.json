@@ -5,8 +5,8 @@
 			"height": 122,
 			"id": "finish-91eb7567-8ca5-4101-9b60-6caccf016343",
 			"position": {
-				"x": 2107,
-				"y": 27.12944943670385
+				"x": 2252,
+				"y": 35.12944943670385
 			},
 			"type": "finish",
 			"data": {
@@ -20,8 +20,8 @@
 					"Agama-when-Node-24899db4-80a5-4fcf-aec7-9c54dc5c9c47.SUCCESS"
 				],
 				"position": {
-					"x": 2107,
-					"y": 27.12944943670385
+					"x": 2252,
+					"y": 35.12944943670385
 				},
 				"agamaData": {
 					"id": "finish-91eb7567-8ca5-4101-9b60-6caccf016343",
@@ -71,8 +71,8 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 2107,
-				"y": 27.12944943670385
+				"x": 2252,
+				"y": 35.12944943670385
 			}
 		},
 		{
@@ -866,7 +866,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:equal"
-				}
+				},
+				"skake": true
 			},
 			"selected": true,
 			"dragging": false,
