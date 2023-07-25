@@ -17,4 +17,7 @@ resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystroke
 Log "@info Just nothing"
 When resultValidation is not -2
      Log "@info Proceed, not incorrect password"
+     When resultValidation is not -4
+          Log "@info Proceed. No server error"
+     Finish false
 Finish false
