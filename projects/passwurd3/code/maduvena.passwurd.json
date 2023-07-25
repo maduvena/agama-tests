@@ -859,7 +859,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:equal"
-				}
+				},
+				"skake": true
 			},
 			"selected": true,
 			"dragging": false,
