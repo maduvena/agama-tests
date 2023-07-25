@@ -9,6 +9,10 @@ credentialMap = RRF "username.ftlh"
 resultUserExists | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
 Log "@info User Exists: " resultUserExists
 credentialMap = RRF "UsernamePasswurd.ftlh" 
+false = incorrectPassword
+false = serverError
+false = validationSuccess
+0 = trackId
 resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
 When resultValidation is true
      credentialMap = RRF "otp.ftlh" credentialMap
