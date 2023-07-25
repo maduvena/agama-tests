@@ -14,7 +14,7 @@ serverError = "false"
 incorrectPassword = "false"
 trackId = "false"
 resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
-Log "@ " __________
+Log "@info Just nothing"
 When resultValidation is true
      credentialMap = RRF "otp.ftlh" credentialMap
      otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMap
