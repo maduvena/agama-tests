@@ -874,7 +874,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1654,
@@ -946,13 +946,13 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
 				},
-				"skake": true
+				"skake": false
 			},
 			"positionAbsolute": {
 				"x": 1854,
 				"y": 26.12944943670385
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
