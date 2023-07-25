@@ -835,8 +835,23 @@
 					"assignments": [
 						{
 							"variableTypeCheck": false,
-							"assignmentExpression": "resultValidation == -2",
+							"assignmentExpression": "false",
 							"assignedVariableName": "incorrectPassword"
+						},
+						{
+							"variableTypeCheck": false,
+							"assignmentExpression": "false",
+							"assignedVariableName": "serverError"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "false",
+							"assignedVariableName": "validKeystrokes"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "false",
+							"assignedVariableName": "trackId"
 						}
 					],
 					"callType": "Call static method",
