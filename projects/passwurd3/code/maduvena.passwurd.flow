@@ -9,11 +9,11 @@ credentialMap = RRF "username.ftlh"
 resultUserExists | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
 Log "@info User Exists: " resultUserExists
 credentialMap = RRF "UsernamePasswurd.ftlh" 
-resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
-incorrectPassword = false
-serverError = false
 validKeystrokes = "false"
+serverError = "false"
+incorrectPassword = "false"
 trackId = "false"
+resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
 When resultValidation is true
      credentialMap = RRF "otp.ftlh" credentialMap
      otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMap
