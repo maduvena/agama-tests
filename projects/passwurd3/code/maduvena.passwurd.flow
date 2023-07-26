@@ -21,6 +21,7 @@ When resultValidation is not -2
           Log "@info Proceed. No server error"
           When resultValidation is not 0
                credentialMap = RRF "otp.ftlh" credentialMap
+               Log "@info credentialMap" 
                otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMap
                resultValidation = "credentialMap.trackId"
                When otpResult is true
