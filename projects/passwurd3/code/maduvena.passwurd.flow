@@ -14,7 +14,7 @@ serverError = "false"
 incorrectPassword = "false"
 trackId = "false"
 resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
-Log "@info Just nothing"
+Log "@info resultValidation ----- " resultValidation
 When resultValidation is not -2
      Log "@info Proceed, not incorrect password"
      When resultValidation is not -4
