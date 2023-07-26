@@ -139,7 +139,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 3985.677526682314,
@@ -903,7 +903,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "",
+					"arguments": "credentialMap",
 					"logMessage": "",
 					"templatePath": "UsernamePasswurd.ftlh",
 					"maxIteration": "",
@@ -1118,7 +1118,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "",
+					"arguments": "credentialMap",
 					"logMessage": "",
 					"templatePath": "username.ftlh",
 					"maxIteration": "",
@@ -1141,7 +1141,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 630,
@@ -1746,7 +1746,7 @@
 			"height": 122,
 			"id": "Agama-log-Node-9af56953-69ae-45ed-9425-dedd3efeb881",
 			"position": {
-				"x": 2988.4528503004685,
+				"x": 2989.4528503004685,
 				"y": 716.1294494367039
 			},
 			"type": "log",
@@ -1757,7 +1757,7 @@
 				"whenCondition": "",
 				"inRepeatBlock": "",
 				"position": {
-					"x": 2988.4528503004685,
+					"x": 2989.4528503004685,
 					"y": 716.1294494367039
 				},
 				"agamaData": {
@@ -1802,12 +1802,13 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 2988.4528503004685,
+				"x": 2989.4528503004685,
 				"y": 716.1294494367039
 			}
 		},
@@ -2340,8 +2341,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1591.9318003733683,
-		"y": -93.37012332975098,
-		"zoom": 0.6597539553864471
+		"x": -462,
+		"y": 211,
+		"zoom": 1
 	}
 }
