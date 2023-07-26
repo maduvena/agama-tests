@@ -184,7 +184,7 @@ public class UserCheck {
 
 	public static boolean userExists(HashMap<String, String> credentialMap) {
 		String uid = credentialMap.get("username");
-		logger.debug("Passwurd. username: " + uid);
+		logger.debug("Passwurd. userExists username: " + uid);
 		if (uid == null || uid.isBlank()) {
 
 			return false;
@@ -273,8 +273,8 @@ public class UserCheck {
 
 		try {
 			String username = String.valueOf(credentialMap.get("username"));
-			logger.debug("Passwurd. username" + username);
-			logger.debug("Passwurd. k_username" + credentialMap.get("k_username"));
+			logger.debug("Passwurd. validateKeystrokes username" + username);
+			logger.debug("Passwurd. validateKeystrokes k_username" + credentialMap.get("k_username"));
 			String customer_sig = signUid(credentialMap.get("username"));
 			String access_token = getAccessTokenJansServer();
 						
@@ -301,8 +301,7 @@ public class UserCheck {
 			logger.debug("headers: "+headers);
 			logger.debug("data: "+data.toString());
 			
-			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,
-					headers, data.toString());
+			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,	headers, data.toString());
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
 			logger.debug("Passwurd. validate keystrokes response status code: " + httpResponseStatusCode);
@@ -355,23 +354,23 @@ public class UserCheck {
 	public static boolean notifyProfile(Map<String, String> credentialMap) {
 
 		String access_token = getAccessTokenJansServer();
-
+		
 		try {
 
 			JSONObject data = new JSONObject();
 			data.put("uid", credentialMap.get("username"));
 			data.put("track_id", credentialMap.get("trackId"));
 
-			JSONObject headers = new JSONObject();
+			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("Accept", "application/json");
-
+			headers.put("Content-Type", "application/json");
 			headers.put("Authorization", "Bearer " + access_token);
 
 			String endpointUrl = configAttributes.get("PASSWURD_API_URL") + "/notify";
 
 			HttpClient httpClient = httpService.getHttpsClient();
-			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, headers,
-					data.toString(), ContentType.APPLICATION_JSON);
+			logger.debug("Passwurd. notifyProfile: " + data.toString());
+			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, headers, data.toString());
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
 			logger.debug("Passwurd. Notify response status code: " + httpResponseStatusCode);
