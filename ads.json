@@ -54,7 +54,7 @@
         "description": "Behavioural Biometrics",
         "type": "community",
         "author": "maduvena",
-        "version": "1.1.7",
+        "version": "1.1.8",
         "authorWebsite": "https://github.com/maduvena/agama-tests",
         "githubUri": "https://github.com/maduvena/agama-tests",
         "license": "MIT",
