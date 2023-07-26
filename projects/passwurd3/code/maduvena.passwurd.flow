@@ -5,7 +5,7 @@ Flow maduvena.passwurd
      Inputs credentialMap otpPassed userExists validateKeystrokesResult 
 initializeCredentialMap | exception = Call io.jans.passwurd.UserCheck#initCredentialMap credentialMap
 result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
-credentialMap = RRF "username.ftlh" credentialMap
+credentialMap = RRF "username.ftlh" 
 resultUserExists | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
 Log "@info User Exists: " resultUserExists
 credentialMap = RRF "UsernamePasswurd.ftlh" credentialMap
