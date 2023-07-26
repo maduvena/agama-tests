@@ -331,7 +331,7 @@ public class UserCheck {
 					return Integer.valueOf(dataResponse.get("track_id"));
 				} else if (dataResponse.get("status") == "Approved") {
 					logger.debug("Approved");
-					return -1;
+					return 0;
 				} else if (dataResponse.get("status") == "Denied") {
 					logger.debug("Denied" + dataResponse.get("track_id"));
 					return Integer.valueOf(dataResponse.get("track_id"));
@@ -342,8 +342,9 @@ public class UserCheck {
 				}
 				logger.debug("Keystrokes validated successfully");
 			} else if (httpResponseStatusCode == "422") {
-				// in this case the password text mismatched, hence we do not offer the 2FA
-				// option
+				
+				logger.debug(
+						"Passwurd. Error 422");
 				return -2;
 			} else if (httpResponseStatusCode == "400") {
 				logger.debug(
@@ -351,7 +352,7 @@ public class UserCheck {
 				return -2;
 			} else {
 				logger.debug("Failed to validate keystrokes, API returned error " + httpResponseStatusCode);
-				return 0;
+				return -4;
 			}
 		} catch (Exception e) {
 			logger.debug("Passwurd. Failed to execute /validate.", e);
