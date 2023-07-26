@@ -107,13 +107,21 @@ public class UserCheck {
                 logger.info("Passwurd. Initialization. Completed");
 	}
 
-	public static boolean addUser(HashMap<String, String> credentialMap)
-	{
-		User user = new User();
-        user.setAttribute("uid", credentialMap.get("username"));
-        user = userService.addUser(user, true);
+	public static boolean addUser(boolean userExists, HashMap<String, String> credentialMap) {
 
-		return true;
+		String uid = credentialMap.get("username");
+		
+		User resultUser = userService.getUserByAttribute("uid", uid);
+		logger.info("userExists:" + resultUser);
+		if (resultUser == null) {
+			logger.debug("Passwurd. Adding user: " + uid);
+			User user = new User();
+			user.setAttribute("uid", credentialMap.get("username"));
+			user = userService.addUser(user, true);
+			logger.debug("User has been added - " + uid);
+		} else
+		{	return true; }
+
 	}
 	
 	public static Map<String, String> registerScanClient(String asBaseUrl, String asRedirectUri, String asSSA) {
