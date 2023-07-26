@@ -65,9 +65,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 3438.4528503004685,
@@ -135,7 +136,8 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -206,7 +208,8 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "resultNotify"
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -275,7 +278,8 @@
 					"displayName": "",
 					"nodeColor": "",
 					"exceptionVariableField": ""
-				}
+				},
+				"skake": false
 			},
 			"selected": false,
 			"dragging": false,
@@ -1707,7 +1711,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "\"Just nothing\"",
+					"logMessage": "\"resultValidation ----- \" resultValidation",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -1732,7 +1736,7 @@
 				"x": 1854,
 				"y": 26.12944943670385
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		}
 	],
@@ -2155,8 +2159,8 @@
 		}
 	],
 	"viewport": {
-		"x": -995.6971035401743,
-		"y": -121.7537426262262,
-		"zoom": 0.6597539553864473
+		"x": -1420,
+		"y": 67,
+		"zoom": 1
 	}
 }
