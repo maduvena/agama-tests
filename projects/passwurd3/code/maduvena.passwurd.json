@@ -1118,7 +1118,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "credentialMap",
+					"arguments": "",
 					"logMessage": "",
 					"templatePath": "username.ftlh",
 					"maxIteration": "",
@@ -2341,8 +2341,8 @@
 		}
 	],
 	"viewport": {
-		"x": -462,
-		"y": 211,
+		"x": 10,
+		"y": 15,
 		"zoom": 1
 	}
 }
