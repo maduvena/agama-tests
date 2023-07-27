@@ -56,39 +56,39 @@ public class UserCheck {
         logger.info("Passwurd. Initialization. ");
 		configAttributes = config;
 		if (configAttributes.get("AS_ENDPOINT").isBlank() ) {
-			logger.debug("Passwurd. Initialization. Property AS_ENDPOINT is mandatory");
+			logger.info("Passwurd. Initialization. Property AS_ENDPOINT is mandatory");
 			return false;
 		}
 		if (configAttributes.get("AS_REDIRECT_URI").isBlank() ){
-			logger.debug("Passwurd. Initialization. Property AS_REDIRECT_URI is mandatory");
+			logger.info("Passwurd. Initialization. Property AS_REDIRECT_URI is mandatory");
 			return false;
 		}
 
 		if (configAttributes.get("PORTAL_JWKS").isBlank() ) {
-			logger.debug("Passwurd. Initialization. Property PORTAL_JWKS is mandatory");
+			logger.info("Passwurd. Initialization. Property PORTAL_JWKS is mandatory");
 			return false;
 		}
 
 		if (configAttributes.get("PASSWURD_KEY_A_KEYSTORE").isBlank() ) {
-			logger.debug("Passwurd. Initialization. Property PASSWURD_KEY_A_KEYSTORE is mandatory");
+			logger.info("Passwurd. Initialization. Property PASSWURD_KEY_A_KEYSTORE is mandatory");
 			return false;
 		}
 
 		if (configAttributes.get("PASSWURD_KEY_A_PASSWORD").isBlank() ) {
-			logger.debug("Passwurd. Initialization. Property PASSWURD_KEY_A_PASSWORD is mandatory");
+			logger.info("Passwurd. Initialization. Property PASSWURD_KEY_A_PASSWORD is mandatory");
 			return false;
 		} else {
 			cryptoProvider = new AuthCryptoProvider(configAttributes.get("PASSWURD_KEY_A_KEYSTORE"),
 					configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
-			logger.debug("Passwurd. Initialization. Keystore initialized");
+			logger.info("Passwurd. Initialization. Keystore initialized");
 		}
 
 		if (configAttributes.get("PASSWURD_API_URL").isBlank() ) {
-			logger.debug("Passwurd. Initialization. Property PASSWURD_API_URL is mandatory");
+			logger.info("Passwurd. Initialization. Property PASSWURD_API_URL is mandatory");
 			return false;
 		}
 		if (configAttributes.get("AS_SSA").isBlank() ) {
-			logger.debug("Passwurd. Initialization. Property AS_SSA is mandatory");
+			logger.info("Passwurd. Initialization. Property AS_SSA is mandatory");
 			return false;
 		}
 
@@ -97,7 +97,7 @@ public class UserCheck {
 			Map<String, String> clientRegistrationResponse = registerScanClient(configAttributes.get("AS_ENDPOINT"),
 					configAttributes.get("AS_REDIRECT_URI"), configAttributes.get("AS_SSA"));
 			if (clientRegistrationResponse == null)
-				logger.debug("Passwurd. Unable to register client with AS");
+				logger.info("Passwurd. Unable to register client with AS");
 			return false;
 
 			configAttributes.put("AS_CLIENT_ID", clientRegistrationResponse.get("client_id"));
@@ -114,18 +114,18 @@ public class UserCheck {
 		User resultUser = userService.getUserByAttribute("uid", uid);
 		logger.info("userExists:" + resultUser);
 		if (resultUser == null) {
-			logger.debug("Passwurd. Adding user: " + uid);
+			logger.info("Passwurd. Adding user: " + uid);
 			User user = new User();
 			user.setAttribute("uid", uid);
 			user = userService.addUser(user, true);
-			logger.debug("User has been added - " + uid);
+			logger.info("User has been added - " + uid);
 		} else
 		{	return true; }
 
 	}
 	
 	public static Map<String, String> registerScanClient(String asBaseUrl, String asRedirectUri, String asSSA) {
-		logger.debug("Passwurd. Attempting to register client");
+		logger.info("Passwurd. Attempting to register client");
 		JSONObject body = new JSONObject();
 		JSONObject header = new JSONObject();
 		JSONArray redirect = new JSONArray();
@@ -145,10 +145,10 @@ public class UserCheck {
 					header.toString(), body.toString(), ContentType.APPLICATION_JSON);
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
-			logger.debug("Passwurd. Get client registration response status code: " + httpResponseStatusCode);
+			logger.info("Passwurd. Get client registration response status code: " + httpResponseStatusCode);
 
 			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
-				logger.debug("Passwurd. Scan. Get invalid registration");
+				logger.info("Passwurd. Scan. Get invalid registration");
 				httpService.consume(httpResponse);
 				return null;
 			}
@@ -156,7 +156,7 @@ public class UserCheck {
 
 			response = httpService.convertEntityToString(bytes);
 		} catch (Exception e) {
-			logger.debug("Passwurd. Failed to send client registration request: ");
+			logger.info("Passwurd. Failed to send client registration request: ");
 			e.printStackTrace();
 			return null;
 		}
@@ -181,7 +181,7 @@ public class UserCheck {
 			}
 			custScriptService.update(customScript);
 
-			logger.debug("Passwurd. Stored client credentials in script parameters");
+			logger.info("Passwurd. Stored client credentials in script parameters");
 		} catch (Exception e) {
 			logger.error("Passwurd. Failed to store client credentials.", e);
 			return null;
@@ -192,7 +192,7 @@ public class UserCheck {
 
 	public static boolean userExists(String uid) {
 		
-		logger.debug("Passwurd. userExists username: " + uid);
+		logger.info("Passwurd. userExists username: " + uid);
 		if (uid == null || uid.isBlank()) {
 
 			return false;
@@ -209,9 +209,9 @@ public class UserCheck {
 	public static String getAccessTokenJansServer() {
 
 		HttpClient httpClient = (HttpClient)httpService.getHttpsClient();
-		logger.debug("HttpClient : "+httpClient.getClass());
+		logger.info("HttpClient : "+httpClient.getClass());
 		String url = configAttributes.get("AS_ENDPOINT") + "/jans-auth/restv1/token";
-		logger.debug("configAttributes.get(AS_REDIRECT_URI): " + configAttributes.get("AS_REDIRECT_URI"));
+		logger.info("configAttributes.get(AS_REDIRECT_URI): " + configAttributes.get("AS_REDIRECT_URI"));
 		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri=" + configAttributes.get("AS_REDIRECT_URI");
 		Map<String, String> header = new HashMap<String, String>();
 		header.put("Content-type", "application/x-www-form-urlencoded");
@@ -224,7 +224,7 @@ public class UserCheck {
 			resultResponse = httpService.executePost(httpClient, url, encodedString, header, data);
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
-				logger.debug("Passwurd. Jans-Auth getAccessToken. Get invalid response from server: ",
+				logger.info("Passwurd. Jans-Auth getAccessToken. Get invalid response from server: ",
 						(httpResponse.getStatusLine().getStatusCode()));
 				httpService.consume(httpResponse);
 				return null;
@@ -234,12 +234,12 @@ public class UserCheck {
 				httpService.consume(httpResponse);
 
 				if (response_string == null) {
-					logger.debug("Passwurd. getAccessToken. Got empty response from validation server");
+					logger.info("Passwurd. getAccessToken. Got empty response from validation server");
 					return null;
 				}
 				JSONObject response = new JSONObject(response_string);
 
-				logger.debug("Passwurd. response access token: " + response.get("access_token"));
+				logger.info("Passwurd. response access token: " + response.get("access_token"));
 				return String.valueOf(response.get("access_token"));
 			}
 
@@ -254,7 +254,7 @@ public class UserCheck {
 
 	}
     public static boolean validateOTP(HashMap<String, String> credentialMap) {
-	logger.debug("Passwurd. validateOTP: " + credentialMap);
+	logger.info("Passwurd. validateOTP: " + credentialMap);
             return true;
     }
 
@@ -262,27 +262,27 @@ public class UserCheck {
 
 		String alias = (CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer())
 				.replace("https://", "");
-		logger.debug("alias : " + alias);
+		logger.info("alias : " + alias);
 
 		// cryptoProvider = new
 		// AuthCryptoProvider(configAttributes.get("PASSWURD_KEY_A_KEYSTORE"),
 		// configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
-		logger.debug("cryptoProvider : " + cryptoProvider);
+		logger.info("cryptoProvider : " + cryptoProvider);
 		SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.fromString(SignatureAlgorithm.DEF_RS256);
-		logger.debug("signatureAlgorithm : " + signatureAlgorithm);
+		logger.info("signatureAlgorithm : " + signatureAlgorithm);
 		String signedUID = cryptoProvider.sign(uid, alias, "changeit", signatureAlgorithm);
-		logger.debug("signedUID : " + signedUID);
+		logger.info("signedUID : " + signedUID);
 		return signedUID;
 	}
 
 	public static int validateKeystrokes(String username, HashMap<String, String> credentialMap) {
-		logger.debug("Passwurd. Attempting to validate keystrokes" + credentialMap);
-		credentialMap.forEach((key, value) -> logger.debug(key + ":" + value));
+		logger.info("Passwurd. Attempting to validate keystrokes" + credentialMap);
+		credentialMap.forEach((key, value) -> logger.info(key + ":" + value));
 
 		try {
 			
-			logger.debug("Passwurd. validateKeystrokes username" + username);
-			logger.debug("Passwurd. validateKeystrokes k_username" + credentialMap.get("k_username"));
+			logger.info("Passwurd. validateKeystrokes username" + username);
+			logger.info("Passwurd. validateKeystrokes k_username" + credentialMap.get("k_username"));
 			String customer_sig = signUid(username);
 			String access_token = getAccessTokenJansServer();
 						
@@ -305,17 +305,17 @@ public class UserCheck {
 			String endpointUrl = configAttributes.get("PASSWURD_API_URL") + "/validate";
 
 			HttpClient httpClient = httpService.getHttpsClient();
-			logger.debug("endpointUrl: "+endpointUrl);
-			logger.debug("headers: "+headers);
-			logger.debug("data: "+data.toString());
+			logger.info("endpointUrl: "+endpointUrl);
+			logger.info("headers: "+headers);
+			logger.info("data: "+data.toString());
 			
 			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,	headers, data.toString());
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
-			logger.debug("Passwurd. validate keystrokes response status code: " + httpResponseStatusCode);
-			logger.debug("Passwurd. validate keystrokes httpResponse: " + httpResponse);
+			logger.info("Passwurd. validate keystrokes response status code: " + httpResponseStatusCode);
+			logger.info("Passwurd. validate keystrokes httpResponse: " + httpResponse);
 			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
-				logger.debug("Passwurd. Validate response invalid ");
+				logger.info("Passwurd. Validate response invalid ");
 				httpService.consume(httpResponse);
 				
 			}
@@ -323,39 +323,39 @@ public class UserCheck {
 				
 				byte[] bytes = httpService.getResponseContent(httpResponse);
 				String response = httpService.convertEntityToString(bytes);
-				logger.debug("Response : "+response);
+				logger.info("Response : "+response);
 				JSONObject dataResponse = new JSONObject(response);
 				
 				if ( StringHelper.equalsIgnoreCase(dataResponse.get("status") , "Enrollment")) {
-					logger.debug("Enrollment");
+					logger.info("Enrollment");
 					return Integer.valueOf(dataResponse.get("track_id"));
 				} else if ( StringHelper.equalsIgnoreCase(dataResponse.get("status"), "Approved")) {
-					logger.debug("Approved");
+					logger.info("Approved");
 					return 0;
 				} else if ( StringHelper.equalsIgnoreCase(dataResponse.get("status") , "Denied")) {
-					logger.debug("Denied" + dataResponse.get("track_id"));
+					logger.info("Denied" + dataResponse.get("track_id"));
 					return Integer.valueOf(dataResponse.get("track_id"));
 
 				} else {
-					logger.debug("Some error " + dataResponse.get("status"));
+					logger.info("Some error " + dataResponse.get("status"));
 					return -4;
 				}
-				logger.debug("Keystrokes validated successfully");
+				logger.info("Keystrokes validated successfully");
 			} else if (httpResponseStatusCode == "422") {
 				
-				logger.debug(
+				logger.info(
 						"Passwurd. Error 422");
 				return -2;
 			} else if (httpResponseStatusCode == "400") {
-				logger.debug(
+				logger.info(
 						"Passwurd. in this case the password text mismatched, hence we do not offer the 2FA option");
 				return -2;
 			} else {
-				logger.debug("Failed to validate keystrokes, API returned error " + httpResponseStatusCode);
+				logger.info("Failed to validate keystrokes, API returned error " + httpResponseStatusCode);
 				return -4;
 			}
 		} catch (Exception e) {
-			logger.debug("Passwurd. Failed to execute /validate.", e);
+			logger.info("Passwurd. Failed to execute /validate.", e);
 			return 0;
 		}
 	}
@@ -378,14 +378,14 @@ public class UserCheck {
 			String endpointUrl = configAttributes.get("PASSWURD_API_URL") + "/notify";
 
 			HttpClient httpClient = httpService.getHttpsClient();
-			logger.debug("Passwurd. notifyProfile: " + data.toString());
+			logger.info("Passwurd. notifyProfile: " + data.toString());
 			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, headers, data.toString());
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
-			logger.debug("Passwurd. Notify response status code: " + httpResponseStatusCode);
+			logger.info("Passwurd. Notify response status code: " + httpResponseStatusCode);
 
 			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
-				logger.debug("Passwurd. Notify response invalid ");
+				logger.info("Passwurd. Notify response invalid ");
 				httpService.consume(httpResponse);
 				return null;
 			}
@@ -393,10 +393,10 @@ public class UserCheck {
 
 			String response = httpService.convertEntityToString(bytes);
 			data = new JSONObject(response);
-			logger.debug(data.getString("status"));
+			logger.info(data.getString("status"));
 
 		} catch (Exception e) {
-			logger.debug("Passwurd. Failed to execute /notify.", e);
+			logger.info("Passwurd. Failed to execute /notify.", e);
 			// return true irrespective of the result
 
 		}
