@@ -254,7 +254,7 @@ public class UserCheck {
 
 	}
     public static boolean validateOTP(HashMap<String, String> credentialMap) {
-	logger.debug("Passwurd. username: " + credentialMap);
+	logger.debug("Passwurd. validateOTP: " + credentialMap);
             return true;
     }
 
