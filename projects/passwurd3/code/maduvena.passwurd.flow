@@ -20,6 +20,7 @@ When resultValidation is not -2
                otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialOtp
                When otpResult is true
                     resultNotify | exception = Call io.jans.passwurd.UserCheck#notifyProfile credentialU.username resultValidation
+                    isUserAdded | exception = Call  io.jans.passwurd.UserCheck#addUser resultUserExists credentialU.username
                     Finish credentialU.username
                Finish false
           Finish credentialU.username
