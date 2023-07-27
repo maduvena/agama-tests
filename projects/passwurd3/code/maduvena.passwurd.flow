@@ -15,9 +15,9 @@ When resultValidation is not -2
      When resultValidation is not -4
           Log "@info Proceed. No server error"
           When resultValidation is not 0
-               credentialMap = RRF "otp.ftlh" credentialMap
+               credentialOtp = RRF "otp.ftlh" 
                Log "@info credentialMap" 
-               otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMap
+               otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialOtp
                When otpResult is true
                     resultNotify | exception = Call io.jans.passwurd.UserCheck#notifyProfile credentialU.username resultValidation
                     Finish credentialMap.username
