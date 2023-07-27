@@ -360,15 +360,15 @@ public class UserCheck {
 		}
 	}
 
-	public static boolean notifyProfile(Map<String, String> credentialMap) {
+	public static boolean notifyProfile(String uid, int trackId) {
 
 		String access_token = getAccessTokenJansServer();
 		
 		try {
 
 			JSONObject data = new JSONObject();
-			data.put("uid", credentialMap.get("username"));
-			data.put("track_id", credentialMap.get("trackId"));
+			data.put("uid", uid);
+			data.put("track_id",trackId);
 
 			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("Accept", "application/json");
