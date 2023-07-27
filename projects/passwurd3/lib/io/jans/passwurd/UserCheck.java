@@ -319,20 +319,20 @@ public class UserCheck {
 				httpService.consume(httpResponse);
 				
 			}
-			if (httpResponseStatusCode == "200" || httpResponseStatusCode == "202") {
+			if (StringHelper.equalsIgnoreCase(httpResponseStatusCode , "200") || StringHelper.equalsIgnoreCase( httpResponseStatusCode , "202")) {
 				
 				byte[] bytes = httpService.getResponseContent(httpResponse);
 				String response = httpService.convertEntityToString(bytes);
 				logger.debug("Response : "+response);
 				JSONObject dataResponse = new JSONObject(response);
 				
-				if (dataResponse.get("status") == "Enrollment") {
+				if ( StringHelper.equalsIgnoreCase(dataResponse.get("status") , "Enrollment")) {
 					logger.debug("Enrollment");
 					return Integer.valueOf(dataResponse.get("track_id"));
-				} else if (dataResponse.get("status") == "Approved") {
+				} else if ( StringHelper.equalsIgnoreCase(dataResponse.get("status"), "Approved")) {
 					logger.debug("Approved");
 					return 0;
-				} else if (dataResponse.get("status") == "Denied") {
+				} else if ( StringHelper.equalsIgnoreCase(dataResponse.get("status") , "Denied")) {
 					logger.debug("Denied" + dataResponse.get("track_id"));
 					return Integer.valueOf(dataResponse.get("track_id"));
 
