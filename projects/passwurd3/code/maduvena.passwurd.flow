@@ -8,7 +8,7 @@ result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
 credentialU = RRF "username.ftlh" 
 resultUserExists | exceptionResultUserExists = Call io.jans.passwurd.UserCheck#userExists credentialU.username
 credentialP = RRF "UsernamePasswurd.ftlh" 
-resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialU.username credentialK
+resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialU.username credentialP
 Log "@info resultValidation ----- " resultValidation
 When resultValidation is not -2
      Log "@info Proceed, not incorrect password"
