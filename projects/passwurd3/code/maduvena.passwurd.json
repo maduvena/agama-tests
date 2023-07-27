@@ -283,7 +283,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2788.4528503004685,
@@ -1400,7 +1400,7 @@
 					"parentId": "Agama-rrf-Node-8bf8a9dd-d3d4-4d71-842f-e864b05bcc40",
 					"name": "",
 					"basepath": "",
-					"comment": "credentialMap",
+					"comment": "credentialOtp",
 					"notes": "",
 					"flowfilename": "",
 					"assignments": [
@@ -1412,7 +1412,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "\"credentialMap\" credentialMap",
+					"logMessage": "\"credentialMap\" credentialOtp",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -1426,14 +1426,14 @@
 					"maxIterationVariableName": "",
 					"logLevel": "info",
 					"assignCallbackResult": "",
-					"displayName": "Printing credentialMap",
+					"displayName": "Printing credentialOtp",
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2989.4528503004685,
