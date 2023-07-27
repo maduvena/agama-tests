@@ -151,7 +151,7 @@
 			"height": 122,
 			"id": "Agama-call-Node-196eb6b4-026d-4e1c-b59f-50c1cdc7d8b2",
 			"position": {
-				"x": 3665.2248262629637,
+				"x": 3666.2248262629637,
 				"y": 1038.5881599938382
 			},
 			"type": "call",
@@ -162,7 +162,7 @@
 				"whenCondition": "WhenTrue",
 				"inRepeatBlock": "",
 				"position": {
-					"x": 3665.2248262629637,
+					"x": 3666.2248262629637,
 					"y": 1038.5881599938382
 				},
 				"agamaData": {
@@ -188,7 +188,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "credentialMap",
+					"arguments": "credentialU.username resultValidation",
 					"logMessage": "",
 					"templatePath": "",
 					"maxIteration": "",
@@ -211,10 +211,10 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 3665.2248262629637,
+				"x": 3666.2248262629637,
 				"y": 1038.5881599938382
 			}
 		},
@@ -1215,7 +1215,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1410.155619662707,
@@ -2174,8 +2174,8 @@
 		}
 	],
 	"viewport": {
-		"x": -447.2864740677769,
-		"y": 191.75389326162983,
-		"zoom": 0.8705505632961241
+		"x": -2463.9999999999995,
+		"y": -416.4999999999999,
+		"zoom": 0.9999999999999999
 	}
 }
