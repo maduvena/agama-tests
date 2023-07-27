@@ -5,14 +5,11 @@ Flow maduvena.passwurd
      Inputs credentialMap otpPassed userExists validateKeystrokesResult 
 initializeCredentialMap | exception = Call io.jans.passwurd.UserCheck#initCredentialMap credentialMap
 result | exception = Call io.jans.passwurd.UserCheck#initializeFlow config
-credentialMap = RRF "username.ftlh" 
-resultUserExists | exception = Call io.jans.passwurd.UserCheck#userExists credentialMap
-Log "@info User Exists: " resultUserExists
-credentialMap = RRF "UsernamePasswurd.ftlh" credentialMap
-validKeystrokes = "false"
-serverError = "false"
-incorrectPassword = "false"
-trackId = "false"
+credential = RRF "username.ftlh" 
+credentialMap.username = "credential.username"
+credential = RRF "UsernamePasswurd.ftlh" credential
+credential.k_username = "credentialMap.k_username"
+credential.k_pwd = "credentialMap.k_pwd"
 resultValidation | exception = Call io.jans.passwurd.UserCheck#validateKeystrokes credentialMap
 Log "@info resultValidation ----- " resultValidation
 When resultValidation is not -2
