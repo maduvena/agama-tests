@@ -344,7 +344,7 @@
 					"variableField": "",
 					"conditionInputField": "",
 					"valueField": "",
-					"returnVariable": "credentialMap.username",
+					"returnVariable": "credentialU.username",
 					"javaClassName": "",
 					"javaMethodName": "",
 					"javaVariableName": "",
@@ -358,7 +358,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2925.4528503004685,
@@ -1433,7 +1433,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2989.4528503004685,
@@ -2174,8 +2174,8 @@
 		}
 	],
 	"viewport": {
-		"x": -2169,
-		"y": -264,
+		"x": -1830,
+		"y": 23,
 		"zoom": 1
 	}
 }
