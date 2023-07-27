@@ -275,15 +275,15 @@ public class UserCheck {
 		return signedUID;
 	}
 
-	public static int validateKeystrokes(HashMap<String, String> credentialMap) {
+	public static int validateKeystrokes(String username, HashMap<String, String> credentialMap) {
 		logger.debug("Passwurd. Attempting to validate keystrokes" + credentialMap);
 		credentialMap.forEach((key, value) -> logger.debug(key + ":" + value));
 
 		try {
-			String username = String.valueOf(credentialMap.get("username"));
+			
 			logger.debug("Passwurd. validateKeystrokes username" + username);
 			logger.debug("Passwurd. validateKeystrokes k_username" + credentialMap.get("k_username"));
-			String customer_sig = signUid(credentialMap.get("username"));
+			String customer_sig = signUid(username);
 			String access_token = getAccessTokenJansServer();
 						
 			StringBuffer data = new StringBuffer();
