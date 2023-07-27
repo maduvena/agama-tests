@@ -1653,7 +1653,8 @@
 					"exceptionVariableField": "exception",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "isUserAdded"
-				}
+				},
+				"skake": false
 			},
 			"selected": true,
 			"dragging": false,
@@ -2265,8 +2266,8 @@
 		}
 	],
 	"viewport": {
-		"x": -2976,
-		"y": -566,
+		"x": -3050,
+		"y": -468,
 		"zoom": 1
 	}
 }
