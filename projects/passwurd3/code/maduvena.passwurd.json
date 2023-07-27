@@ -260,7 +260,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "credentialMap",
+					"arguments": "",
 					"logMessage": "",
 					"templatePath": "otp.ftlh",
 					"maxIteration": "",
@@ -279,11 +279,11 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "ph:globe-simple",
-					"asssignedVariableName": "credentialMap"
+					"asssignedVariableName": "credentialOtp"
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2788.4528503004685,
@@ -1215,7 +1215,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1410.155619662707,
@@ -1482,7 +1482,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "credentialMap",
+					"arguments": "credentialOtp",
 					"logMessage": "",
 					"templatePath": "",
 					"maxIteration": "",
@@ -2174,8 +2174,8 @@
 		}
 	],
 	"viewport": {
-		"x": -474,
-		"y": 132,
+		"x": -2169,
+		"y": -264,
 		"zoom": 1
 	}
 }
