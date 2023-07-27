@@ -190,8 +190,8 @@ public class UserCheck {
 
 	}
 
-	public static boolean userExists(HashMap<String, String> credentialMap) {
-		String uid = credentialMap.get("username");
+	public static boolean userExists(String uid) {
+		
 		logger.debug("Passwurd. userExists username: " + uid);
 		if (uid == null || uid.isBlank()) {
 
