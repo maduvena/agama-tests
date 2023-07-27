@@ -107,16 +107,16 @@ public class UserCheck {
                 logger.info("Passwurd. Initialization. Completed");
 	}
 
-	public static boolean addUser(boolean userExists, HashMap<String, String> credentialMap) {
+	public static boolean addUser(boolean userExists, String uid) {
 
-		String uid = credentialMap.get("username");
+		
 		
 		User resultUser = userService.getUserByAttribute("uid", uid);
 		logger.info("userExists:" + resultUser);
 		if (resultUser == null) {
 			logger.debug("Passwurd. Adding user: " + uid);
 			User user = new User();
-			user.setAttribute("uid", credentialMap.get("username"));
+			user.setAttribute("uid", uid);
 			user = userService.addUser(user, true);
 			logger.debug("User has been added - " + uid);
 		} else
