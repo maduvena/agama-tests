@@ -319,13 +319,13 @@ public class UserCheck {
 				httpService.consume(httpResponse);
 				
 			}
-			
-			byte[] bytes = httpService.getResponseContent(httpResponse);
-			String response = httpService.convertEntityToString(bytes);
-			logger.debug("Response : "+response);
-			JSONObject dataResponse = new JSONObject(response);
-
 			if (httpResponseStatusCode == "200" || httpResponseStatusCode == "202") {
+				
+				byte[] bytes = httpService.getResponseContent(httpResponse);
+				String response = httpService.convertEntityToString(bytes);
+				logger.debug("Response : "+response);
+				JSONObject dataResponse = new JSONObject(response);
+				
 				if (dataResponse.get("status") == "Enrollment") {
 					logger.debug("Enrollment");
 					return Integer.valueOf(dataResponse.get("track_id"));
