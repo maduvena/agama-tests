@@ -1192,7 +1192,7 @@
 						}
 					],
 					"callType": "Call static method",
-					"arguments": "credentialMap",
+					"arguments": "credentialU.username credentialK",
 					"logMessage": "",
 					"templatePath": "",
 					"maxIteration": "",
@@ -1215,7 +1215,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1410.155619662707,
@@ -1577,9 +1577,10 @@
 					"exceptionVariableField": "exceptionResultUserExists",
 					"nodeIcon": "material-symbols:code",
 					"asssignedVariableName": "resultUserExists"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 841.4869835499704,
