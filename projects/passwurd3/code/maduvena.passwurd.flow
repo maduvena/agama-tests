@@ -19,7 +19,7 @@ When resultValidation is not -2
                Log "@info credentialMap" 
                otpResult | exception = Call io.jans.passwurd.UserCheck#validateOTP credentialMap
                When otpResult is true
-                    resultNotify | exception = Call io.jans.passwurd.UserCheck#notifyProfile credentialMap
+                    resultNotify | exception = Call io.jans.passwurd.UserCheck#notifyProfile credentialU.username resultValidation
                     Finish credentialMap.username
                Finish false
           Finish credentialMap.username
