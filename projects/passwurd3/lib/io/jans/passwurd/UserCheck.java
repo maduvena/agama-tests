@@ -369,7 +369,7 @@ public class UserCheck {
 			}
 		} catch (Exception e) {
 			logger.info("Passwurd. Failed to execute /validate.", e);
-			return 0;
+			return -4;
 		}
 	}
 
