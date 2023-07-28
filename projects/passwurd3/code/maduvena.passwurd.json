@@ -412,7 +412,7 @@
 					"variableField": "",
 					"conditionInputField": "",
 					"valueField": "",
-					"returnVariable": "{ success: false,  error: \"Some internal server error. Try again later\" }",
+					"returnVariable": "{ \"success\": false,  \"error\": \"Some internal server error. Try again later\" }",
 					"javaClassName": "",
 					"javaMethodName": "",
 					"javaVariableName": "",
@@ -424,7 +424,7 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				},
-				"skake": false
+				"skake": true
 			},
 			"selected": true,
 			"dragging": false,
