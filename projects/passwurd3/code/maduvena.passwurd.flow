@@ -24,5 +24,5 @@ When resultValidation is not -2
                     Finish credentialU.username
                Finish false
           Finish credentialU.username
-     Finish { success: false,  error: "Some internal server error. Try again later" }
+     Finish false
 Finish false
