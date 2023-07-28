@@ -253,11 +253,19 @@ public class UserCheck {
 		}
 
 	}
-    public static boolean validateOTP(HashMap<String, String> credentialMap) {
-	logger.info("Passwurd. validateOTP: " + credentialMap);
-            return true;
-    }
 
+	public static boolean validateOTP(HashMap<String, String> credentialMap) {
+		String otp = credentialMap.get("first") + credentialMap.get("second") + credentialMap.get("third")
+				+ credentialMap.get("fourth");
+		logger.info("Passwurd. validateOTP: " + otp);
+		if (otp.equals("1234"))
+
+		{
+			return true;
+		} else
+			return false;
+
+	}
 	public static String signUid(String uid) {
 
 		String alias = (CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer())
