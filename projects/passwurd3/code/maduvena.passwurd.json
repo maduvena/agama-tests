@@ -412,7 +412,7 @@
 					"variableField": "",
 					"conditionInputField": "",
 					"valueField": "",
-					"returnVariable": "false",
+					"returnVariable": "{ success: false,  error: \"Some internal server error. Try again later\" }",
 					"javaClassName": "",
 					"javaMethodName": "",
 					"javaVariableName": "",
@@ -426,7 +426,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2615.4842834334895,
@@ -579,7 +579,7 @@
 			"height": 122,
 			"id": "finish-ff409d17-05c4-4e66-91e7-d517eb2063bf",
 			"position": {
-				"x": 2304,
+				"x": 2305,
 				"y": -27.87055056329615
 			},
 			"type": "finish",
@@ -594,7 +594,7 @@
 					"Agama-when-Node-ba6a528c-9172-4410-81ec-97e4e35d1570.SUCCESS"
 				],
 				"position": {
-					"x": 2304,
+					"x": 2305,
 					"y": -27.87055056329615
 				},
 				"agamaData": {
@@ -645,7 +645,7 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 2304,
+				"x": 2305,
 				"y": -27.87055056329615
 			}
 		},
@@ -1084,8 +1084,8 @@
 			"height": 122,
 			"id": "Agama-call-Node-8f3ac9c5-6416-4485-bee3-e3e720b06b70",
 			"position": {
-				"x": 1410.155619662707,
-				"y": -29.00807160315378
+				"x": 1275.155619662707,
+				"y": -21.00807160315378
 			},
 			"type": "call",
 			"data": {
@@ -1095,8 +1095,8 @@
 				"whenCondition": "",
 				"inRepeatBlock": "",
 				"position": {
-					"x": 1410.155619662707,
-					"y": -29.00807160315378
+					"x": 1275.155619662707,
+					"y": -21.00807160315378
 				},
 				"agamaData": {
 					"id": "Agama-call-Node-8f3ac9c5-6416-4485-bee3-e3e720b06b70",
@@ -1147,8 +1147,8 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 1410.155619662707,
-				"y": -29.00807160315378
+				"x": 1275.155619662707,
+				"y": -21.00807160315378
 			},
 			"parentId": "Agama-assignment-Node-c3a24b8e-6ec6-4f93-884b-b32879950692",
 			"whenCondition": "",
@@ -1159,8 +1159,8 @@
 			"height": 122,
 			"id": "Agama-log-Node-c17dd3d4-223b-4d4f-a3c1-1f99ad97394e",
 			"position": {
-				"x": 1621.8364460600833,
-				"y": -27.8593732481568
+				"x": 1616.8364460600833,
+				"y": -17.85937324815677
 			},
 			"type": "log",
 			"data": {
@@ -1170,8 +1170,8 @@
 				"whenCondition": "",
 				"inRepeatBlock": "",
 				"position": {
-					"x": 1621.8364460600833,
-					"y": -27.8593732481568
+					"x": 1616.8364460600833,
+					"y": -17.85937324815677
 				},
 				"agamaData": {
 					"id": "Agama-log-Node-c17dd3d4-223b-4d4f-a3c1-1f99ad97394e",
@@ -1219,8 +1219,8 @@
 				"skake": false
 			},
 			"positionAbsolute": {
-				"x": 1621.8364460600833,
-				"y": -27.8593732481568
+				"x": 1616.8364460600833,
+				"y": -17.85937324815677
 			},
 			"selected": false,
 			"dragging": false
@@ -1521,8 +1521,8 @@
 			"height": 122,
 			"id": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
 			"position": {
-				"x": 1152.9739670999409,
-				"y": -27.00807160315378
+				"x": 1059.9739670999409,
+				"y": -22.00807160315378
 			},
 			"type": "rrf",
 			"data": {
@@ -1532,8 +1532,8 @@
 				"whenCondition": "",
 				"inRepeatBlock": "",
 				"position": {
-					"x": 1152.9739670999409,
-					"y": -27.00807160315378
+					"x": 1059.9739670999409,
+					"y": -22.00807160315378
 				},
 				"agamaData": {
 					"id": "Agama-rrf-Node-abcab2ae-2112-4224-8396-4a8d0863362e",
@@ -1584,8 +1584,8 @@
 			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
-				"x": 1152.9739670999409,
-				"y": -27.00807160315378
+				"x": 1059.9739670999409,
+				"y": -22.00807160315378
 			},
 			"parentId": "Agama-call-Node-7cb8108a-6de2-4878-9710-926918e312af",
 			"whenCondition": "",
@@ -1656,7 +1656,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 3866.2248262629637,
@@ -2266,8 +2266,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3050,
-		"y": -468,
-		"zoom": 1
+		"x": -1208.608175778796,
+		"y": -51.2915017573697,
+		"zoom": 0.757858283255199
 	}
 }
