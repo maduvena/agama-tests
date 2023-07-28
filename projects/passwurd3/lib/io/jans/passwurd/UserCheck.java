@@ -327,20 +327,21 @@ public class UserCheck {
 				httpService.consume(httpResponse);
 				
 			}
-			if (StringHelper.equalsIgnoreCase(httpResponseStatusCode , "200") || StringHelper.equalsIgnoreCase( httpResponseStatusCode , "202")) {
-				
-				byte[] bytes = httpService.getResponseContent(httpResponse);
-				String response = httpService.convertEntityToString(bytes);
-				logger.info("Response : "+response);
-				JSONObject dataResponse = new JSONObject(response);
-				
-				if ( StringHelper.equalsIgnoreCase(dataResponse.get("status") , "Enrollment")) {
+			byte[] bytes = httpService.getResponseContent(httpResponse);
+			String response = httpService.convertEntityToString(bytes);
+			logger.info("Response : "+response);
+			JSONObject dataResponse = new JSONObject(response);
+		
+			if (StringHelper.equalsIgnoreCase(httpResponseStatusCode, "200")
+					|| StringHelper.equalsIgnoreCase(httpResponseStatusCode, "202")) {
+
+				if (StringHelper.equalsIgnoreCase(dataResponse.get("status"), "Enrollment")) {
 					logger.info("Enrollment");
 					return Integer.valueOf(dataResponse.get("track_id"));
-				} else if ( StringHelper.equalsIgnoreCase(dataResponse.get("status"), "Approved")) {
+				} else if (StringHelper.equalsIgnoreCase(dataResponse.get("status"), "Approved")) {
 					logger.info("Approved");
 					return 0;
-				} else if ( StringHelper.equalsIgnoreCase(dataResponse.get("status") , "Denied")) {
+				} else if (StringHelper.equalsIgnoreCase(dataResponse.get("status"), "Denied")) {
 					logger.info("Denied" + dataResponse.get("track_id"));
 					return Integer.valueOf(dataResponse.get("track_id"));
 
@@ -349,12 +350,16 @@ public class UserCheck {
 					return -4;
 				}
 				logger.info("Keystrokes validated successfully");
-			} else if (httpResponseStatusCode == "422") {
-				
-				logger.info(
-						"Passwurd. Error 422");
+			} else if (StringHelper.equalsIgnoreCase(httpResponseStatusCode, "401")) {
+
+				logger.info("Passwurd. Error 401");
 				return -2;
-			} else if (httpResponseStatusCode == "400") {
+			}  
+			else if (StringHelper.equalsIgnoreCase(httpResponseStatusCode, "422")) {
+
+				logger.info("Passwurd. Error 422");
+				return -2;
+			} else if (StringHelper.equalsIgnoreCase(httpResponseStatusCode, "400")) {
 				logger.info(
 						"Passwurd. in this case the password text mismatched, hence we do not offer the 2FA option");
 				return -2;
