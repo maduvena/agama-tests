@@ -412,7 +412,7 @@
 					"variableField": "",
 					"conditionInputField": "",
 					"valueField": "",
-					"returnVariable": "{ success: false,  error: \"Some internal server error. Try again later\" }",
+					"returnVariable": "false",
 					"javaClassName": "",
 					"javaMethodName": "",
 					"javaVariableName": "",
@@ -424,9 +424,9 @@
 					"exceptionVariableField": "",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				},
-				"skake": false
+				"skake": true
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2615.4842834334895,
@@ -642,7 +642,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 2305,
