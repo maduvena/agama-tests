@@ -412,7 +412,7 @@
 					"variableField": "",
 					"conditionInputField": "",
 					"valueField": "",
-					"returnVariable": "{ \"success\": false,  \"error\": \"Some internal server error. Try again later\" }",
+					"returnVariable": "{ success: false,  error: \"Some internal server error. Try again later\" }",
 					"javaClassName": "",
 					"javaMethodName": "",
 					"javaVariableName": "",
