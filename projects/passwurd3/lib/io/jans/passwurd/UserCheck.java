@@ -11,10 +11,12 @@ import io.jans.as.common.model.common.User;
 import io.jans.as.model.crypto.signature.SignatureAlgorithm;
 import io.jans.as.model.crypto.AuthCryptoProvider;
 
+import io.jans.as.server.service.ClientService;
 import io.jans.service.custom.CustomScriptService;
 import io.jans.model.custom.script.CustomScriptType;
 import io.jans.model.custom.script.model.CustomScript;
 import io.jans.model.SimpleExtendedCustomProperty;
+import io.jans.as.common.model.registration.Client;
 
 import java.util.Map;
 import java.net.URI;
@@ -176,6 +178,15 @@ public class UserCheck {
 		result.put("client_secret", response_data.getString("client_secret"));
 
 		try {
+			ClientService clientService = CdiUtil.bean(ClientService);
+			Client client = clientService.getClient(response_data.getString("client_id"));
+
+			// currently this does not come from the response, can be removed in the future
+			// https://github.com/JanssenProject/jans/issues/5787
+			String org_id = client.getOrganization();
+
+			logger.info("org_id:" + org_id);
+
 			CustomScriptService custScriptService = CdiUtil.bean(CustomScriptService);
 			CustomScript customScript = custScriptService.getScriptByDisplayName("agama");
 
@@ -185,8 +196,7 @@ public class UserCheck {
 					response_data.getString("client_id"), "AS_CLIENT_ID");
 			SimpleExtendedCustomProperty clientSecret = new SimpleExtendedCustomProperty("PASSWURD_AS_CLIENT_SECRET",
 					response_data.getString("client_secret"), "AS_CLIENT_SECRET");
-			SimpleExtendedCustomProperty orgId = new SimpleExtendedCustomProperty("PASSWURD_ORG_ID",
-					response_data.getString("org_id"), "ORG_ID");
+			SimpleExtendedCustomProperty orgId = new SimpleExtendedCustomProperty("PASSWURD_ORG_ID", org_id, "ORG_ID");
 			conf.add(clientId);
 			conf.add(clientSecret);
 			conf.add(orgId);
