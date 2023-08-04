@@ -63,7 +63,9 @@
             "openid-connect"
         ],
         "configs": {
-            "maduvena.passwurd": {}
+            "maduvena.passwurd": {
+                "ORG_ID": "Organization's github id"
+            }
         }
     }
 }
