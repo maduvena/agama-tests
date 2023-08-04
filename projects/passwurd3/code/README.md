@@ -16,7 +16,7 @@
 ```
 
 
-### Pending features
+### Pending features / bugs
 
 1. Display appropriate error messages - https://github.com/GluuFederation/private/issues/3674
 
@@ -24,8 +24,18 @@
 
 3. OTP flow, replace with real flow
 
+4. Unable to add config to the project - https://github.com/GluuFederation/private/issues/3580
+
 
 ### Assumptions
 
-1. Users already exist, they have already enrolled OTP creds
+1. Users already exist.
+2. OTP for all users is 1234.
+3. Wrong OTP will give error
+
+
+### Cases in Passwurd API that dont work
+
+1. During enrollment, each enrollment can have different values of password
+2. Suppose the password for a user is user123, the API validates user123456 as well typed using the same pattern
 
