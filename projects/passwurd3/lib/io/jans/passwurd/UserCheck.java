@@ -104,7 +104,7 @@ public class UserCheck {
 			for (SimpleExtendedCustomProperty conf : customScript.getConfigurationProperties()) {
 
 				if (StringHelper.equalsIgnoreCase("PASSWURD_AS_CLIENT_ID", conf.getValue1())
-						&& conf.getValue2() != null) {
+						&& StringHelper.isNotEmpty( conf.getValue2() )) {
 					clientIdExists = true;
 					configAttributes.put("AS_CLIENT_ID", conf.getValue2());
 				}
