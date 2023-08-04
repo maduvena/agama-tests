@@ -19,12 +19,14 @@ import io.jans.model.SimpleExtendedCustomProperty;
 import java.util.Map;
 import java.net.URI;
 import java.util.HashMap;
+import java.util.List;
+
 import org.apache.commons.codec.binary.Base64;
 
 import org.apache.http.client.HttpClient;
 import io.jans.as.server.model.net.HttpServiceResponse;
 import io.jans.as.server.service.net.HttpService2;
-       
+
 import org.apache.http.entity.ContentType;
 import org.apache.http.HttpResponse;
 
@@ -53,18 +55,18 @@ public class UserCheck {
 	}
 
 	public static boolean initializeFlow(Map<String, String> config) {
-        logger.info("Passwurd. Initialization. ");
+		logger.info("Passwurd. Initialization. ");
 		configAttributes = config;
 		if (StringHelper.isEmpty(configAttributes.get("AS_ENDPOINT"))) {
 			logger.info("Passwurd. Initialization. Property AS_ENDPOINT is mandatory");
 			return false;
 		}
-		if (StringHelper.isEmpty(configAttributes.get("AS_REDIRECT_URI"))){
+		if (StringHelper.isEmpty(configAttributes.get("AS_REDIRECT_URI"))) {
 			logger.info("Passwurd. Initialization. Property AS_REDIRECT_URI is mandatory");
 			return false;
 		}
 
-		if (StringHelper.isEmpty(configAttributes.get("PORTAL_JWKS")) ) {
+		if (StringHelper.isEmpty(configAttributes.get("PORTAL_JWKS"))) {
 			logger.info("Passwurd. Initialization. Property PORTAL_JWKS is mandatory");
 			return false;
 		}
@@ -74,7 +76,7 @@ public class UserCheck {
 			return false;
 		}
 
-		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_KEY_A_PASSWORD")) ) {
+		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_KEY_A_PASSWORD"))) {
 			logger.info("Passwurd. Initialization. Property PASSWURD_KEY_A_PASSWORD is mandatory");
 			return false;
 		} else {
@@ -83,51 +85,58 @@ public class UserCheck {
 			logger.info("Passwurd. Initialization. Keystore initialized");
 		}
 
-		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_API_URL")) ) {
+		if (StringHelper.isEmpty(configAttributes.get("PASSWURD_API_URL"))) {
 			logger.info("Passwurd. Initialization. Property PASSWURD_API_URL is mandatory");
 			return false;
 		}
-		if (StringHelper.isEmpty(configAttributes.get("AS_SSA")) ) {
+		if (StringHelper.isEmpty(configAttributes.get("AS_SSA"))) {
 			logger.info("Passwurd. Initialization. Property AS_SSA is mandatory");
 			return false;
 		}
 
-		if (StringHelper.isEmpty(configAttributes.get("AS_CLIENT_ID")) ) {
+		if (StringHelper.isEmpty(configAttributes.get("AS_CLIENT_ID"))) {
 
-			Map<String, String> clientRegistrationResponse = registerScanClient(configAttributes.get("AS_ENDPOINT"),
-					configAttributes.get("AS_REDIRECT_URI"), configAttributes.get("AS_SSA"));
-			if (clientRegistrationResponse == null)
-				logger.info("Passwurd. Unable to register client with AS");
-			return false;
+			CustomScriptService custScriptService = CdiUtil.bean(CustomScriptService);
+			CustomScript customScript = custScriptService.getScriptByDisplayName("agama");
+			logger.info("Passwurd. Configuration properties : " + customScript.getConfigurationProperties());
+			boolean clientIdExists = false;
+			// look in ldap, config attrib under agama script
+			for (SimpleExtendedCustomProperty conf : customScript.getConfigurationProperties()) {
 
-			configAttributes.put("AS_CLIENT_ID", clientRegistrationResponse.get("client_id"));
-			configAttributes.put("AS_CLIENT_SECRET", clientRegistrationResponse.get("client_secret"));
-			configAttributes.put("ORG_ID", clientRegistrationResponse.get("org_id"));
+				if (StringHelper.equalsIgnoreCase("PASSWURD_AS_CLIENT_ID", conf.getValue1())
+						&& conf.getValue2() != null) {
+					clientIdExists = true;
+					configAttributes.put("AS_CLIENT_ID", conf.getValue2());
+				}
+				if (clientIdExists) {
+					if (StringHelper.equalsIgnoreCase("PASSWURD_AS_CLIENT_SECRET", conf.getValue1())) {
+						configAttributes.put("AS_CLIENT_SECRET", conf.getValue2());
+					} else if (StringHelper.equalsIgnoreCase("PASSWURD_ORG_ID", conf.getValue1())) {
+						configAttributes.put("ORG_ID", conf.getValue2());
+					}
+				}
+			}
+			// if not, registering the client is needed
+			if (clientIdExists == false) {
+				Map<String, String> clientRegistrationResponse = registerScanClient(configAttributes.get("AS_ENDPOINT"),
+						configAttributes.get("AS_REDIRECT_URI"), configAttributes.get("AS_SSA"));
+				if (clientRegistrationResponse == null) {
+					logger.info("Passwurd. Unable to register client with AS");
+					return false;
+				}
+				configAttributes.put("AS_CLIENT_ID", clientRegistrationResponse.get("client_id"));
+				configAttributes.put("AS_CLIENT_SECRET", clientRegistrationResponse.get("client_secret"));
+				configAttributes.put("ORG_ID", clientRegistrationResponse.get("org_id"));
+			}
+
 		}
-                logger.info("Passwurd. Initialization. Completed");
+		logger.info("Passwurd. Initialization. Completed");
 	}
 
-	public static boolean addUser(boolean userExists, String uid) {
-
-		
-		
-		User resultUser = userService.getUserByAttribute("uid", uid);
-		logger.info("userExists:" + resultUser);
-		if (resultUser == null) {
-			logger.info("Passwurd. Adding user: " + uid);
-			User user = new User();
-			user.setAttribute("uid", uid);
-			user = userService.addUser(user, true);
-			logger.info("User has been added - " + uid);
-		} else
-		{	return true; }
-
-	}
-	
 	public static Map<String, String> registerScanClient(String asBaseUrl, String asRedirectUri, String asSSA) {
 		logger.info("Passwurd. Attempting to register client");
 		JSONObject body = new JSONObject();
-		JSONObject header = new JSONObject();
+		Map<String, String> header = new HashMap<String, String>();
 		JSONArray redirect = new JSONArray();
 		redirect.put(asRedirectUri);
 		body.put("redirect_uris", redirect);
@@ -141,8 +150,8 @@ public class UserCheck {
 		try {
 
 			HttpClient httpClient = httpService.getHttpsClient();
-			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,
-					header.toString(), body.toString(), ContentType.APPLICATION_JSON);
+			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, header,
+					body.toString(), ContentType.APPLICATION_JSON);
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
 			logger.info("Passwurd. Get client registration response status code: " + httpResponseStatusCode);
@@ -168,17 +177,19 @@ public class UserCheck {
 		try {
 			CustomScriptService custScriptService = CdiUtil.bean(CustomScriptService);
 			CustomScript customScript = custScriptService.getScriptByDisplayName("agama");
-			for (List<SimpleExtendedCustomProperty> conf : customScript.getConfigurationProperties()) {
 
-				if (StringHelper.equalsIgnoreCase(conf.getValue1(), "AS_CLIENT_ID")) {
-					conf.setValue2(response_data.getString("client_id"));
-				} else if (StringHelper.equalsIgnoreCase(conf.getValue1(), "AS_CLIENT_SECRET")) {
-					conf.setValue2(response_data.getString("client_secret"));
-				} else if (StringHelper.equalsIgnoreCase(conf.getValue1(), "ORG_ID")) {
-					conf.setValue2(response_data.getString("org_id"));
-				}
+			List<SimpleExtendedCustomProperty> conf = customScript.getConfigurationProperties();
 
-			}
+			SimpleExtendedCustomProperty clientId = new SimpleExtendedCustomProperty("PASSWURD_AS_CLIENT_ID",
+					response_data.getString("client_id"), "AS_CLIENT_ID");
+			SimpleExtendedCustomProperty clientSecret = new SimpleExtendedCustomProperty("PASSWURD_AS_CLIENT_SECRET",
+					response_data.getString("client_secret"), "AS_CLIENT_SECRET");
+			SimpleExtendedCustomProperty orgId = new SimpleExtendedCustomProperty("PASSWURD_ORG_ID",
+					response_data.getString("org_id"), "ORG_ID");
+			conf.add(clientId);
+			conf.add(clientSecret);
+			conf.add(orgId);
+			customScript.setConfigurationProperties(conf);
 			custScriptService.update(customScript);
 
 			logger.info("Passwurd. Stored client credentials in script parameters");
@@ -190,13 +201,29 @@ public class UserCheck {
 
 	}
 
+	public static boolean addUser(boolean userExists, String uid) {
+
+		User resultUser = userService.getUserByAttribute("uid", uid);
+		logger.info("userExists:" + resultUser);
+		if (resultUser == null) {
+			logger.info("Passwurd. Adding user: " + uid);
+			User user = new User();
+			user.setAttribute("uid", uid);
+			user = userService.addUser(user, true);
+			logger.info("User has been added - " + uid);
+		} else {
+			return true;
+		}
+
+	}
+
 	public static boolean userExists(String uid) {
-		
+
 		logger.info("Passwurd. userExists username: " + uid);
 		if (uid == null || uid.isBlank()) {
 
 			return false;
-		} else {
+		} else {    
 			User resultUser = userService.getUserByAttribute("uid", uid);
 			logger.info("userExists:" + resultUser);
 			if (resultUser == null)
@@ -208,16 +235,17 @@ public class UserCheck {
 
 	public static String getAccessTokenJansServer() {
 
-		HttpClient httpClient = (HttpClient)httpService.getHttpsClient();
-		logger.info("HttpClient : "+httpClient.getClass());
+		HttpClient httpClient = (HttpClient) httpService.getHttpsClient();
+		logger.info("HttpClient : " + httpClient.getClass());
 		String url = configAttributes.get("AS_ENDPOINT") + "/jans-auth/restv1/token";
 		logger.info("configAttributes.get(AS_REDIRECT_URI): " + configAttributes.get("AS_REDIRECT_URI"));
-		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri=" + configAttributes.get("AS_REDIRECT_URI");
+		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri="
+				+ configAttributes.get("AS_REDIRECT_URI");
 		Map<String, String> header = new HashMap<String, String>();
 		header.put("Content-type", "application/x-www-form-urlencoded");
 		header.put("Accept", "application/json");
-		String encodedString = Base64.encodeBase64String((configAttributes.get("AS_CLIENT_ID") + ":" + configAttributes.get("AS_CLIENT_SECRET")).getBytes());
-		
+		String encodedString = Base64.encodeBase64String(
+				(configAttributes.get("AS_CLIENT_ID") + ":" + configAttributes.get("AS_CLIENT_SECRET")).getBytes());
 
 		HttpServiceResponse resultResponse = null;
 		try {
@@ -257,28 +285,25 @@ public class UserCheck {
 	public static boolean validateOTP(HashMap<String, String> credentialMap) {
 		String otp = credentialMap.get("first") + credentialMap.get("second") + credentialMap.get("third")
 				+ credentialMap.get("fourth");
-		logger.info("Passwurd. validateOTP: " + otp);
-		if (otp.equals("1234"))
+		logger.info("Passwurd. validateOTP: " + otp+ ":"+ "1234".equals(otp));
+		if ("1234".equals(otp))
 
-		{
 			return true;
-		} else
+		else
 			return false;
 
 	}
+
 	public static String signUid(String uid) {
 
 		String alias = (CdiUtil.bean(io.jans.as.model.configuration.AppConfiguration.class).getIssuer())
 				.replace("https://", "");
 		logger.info("alias : " + alias);
 
-		// cryptoProvider = new
-		// AuthCryptoProvider(configAttributes.get("PASSWURD_KEY_A_KEYSTORE"),
-		// configAttributes.get("PASSWURD_KEY_A_PASSWORD"), null);
 		logger.info("cryptoProvider : " + cryptoProvider);
 		SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.fromString(SignatureAlgorithm.DEF_RS256);
 		logger.info("signatureAlgorithm : " + signatureAlgorithm);
-		String signedUID = cryptoProvider.sign(uid, alias, "changeit", signatureAlgorithm);
+		String signedUID = cryptoProvider.sign(uid, alias, null, signatureAlgorithm);
 		logger.info("signedUID : " + signedUID);
 		return signedUID;
 	}
@@ -288,12 +313,12 @@ public class UserCheck {
 		credentialMap.forEach((key, value) -> logger.info(key + ":" + value));
 
 		try {
-			
+
 			logger.info("Passwurd. validateKeystrokes username" + username);
 			logger.info("Passwurd. validateKeystrokes k_username" + credentialMap.get("k_username"));
 			String customer_sig = signUid(username);
 			String access_token = getAccessTokenJansServer();
-						
+
 			StringBuffer data = new StringBuffer();
 			data.append("{");
 			data.append("\"k_username\" : " + credentialMap.get("k_username"));
@@ -313,11 +338,12 @@ public class UserCheck {
 			String endpointUrl = configAttributes.get("PASSWURD_API_URL") + "/validate";
 
 			HttpClient httpClient = httpService.getHttpsClient();
-			logger.info("endpointUrl: "+endpointUrl);
-			logger.info("headers: "+headers);
-			logger.info("data: "+data.toString());
-			
-			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null,	headers, data.toString());
+			logger.info("endpointUrl: " + endpointUrl);
+			logger.info("headers: " + headers);
+			logger.info("data: " + data.toString());
+
+			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, headers,
+					data.toString());
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
 			logger.info("Passwurd. validate keystrokes response status code: " + httpResponseStatusCode);
@@ -325,13 +351,13 @@ public class UserCheck {
 			if (httpService.isResponseStastusCodeOk(httpResponse) == false) {
 				logger.info("Passwurd. Validate response invalid ");
 				httpService.consume(httpResponse);
-				
+
 			}
 			byte[] bytes = httpService.getResponseContent(httpResponse);
 			String response = httpService.convertEntityToString(bytes);
-			logger.info("Response : "+response);
+			logger.info("Response : " + response);
 			JSONObject dataResponse = new JSONObject(response);
-		
+
 			if (StringHelper.equalsIgnoreCase(httpResponseStatusCode, "200")
 					|| StringHelper.equalsIgnoreCase(httpResponseStatusCode, "202")) {
 
@@ -354,8 +380,7 @@ public class UserCheck {
 
 				logger.info("Passwurd. Error 401");
 				return -2;
-			}  
-			else if (StringHelper.equalsIgnoreCase(httpResponseStatusCode, "422")) {
+			} else if (StringHelper.equalsIgnoreCase(httpResponseStatusCode, "422")) {
 
 				logger.info("Passwurd. Error 422");
 				return -2;
@@ -376,12 +401,12 @@ public class UserCheck {
 	public static boolean notifyProfile(String uid, int trackId) {
 
 		String access_token = getAccessTokenJansServer();
-		
+
 		try {
 
 			JSONObject data = new JSONObject();
 			data.put("uid", uid);
-			data.put("track_id",trackId);
+			data.put("track_id", trackId);
 
 			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("Accept", "application/json");
@@ -392,7 +417,8 @@ public class UserCheck {
 
 			HttpClient httpClient = httpService.getHttpsClient();
 			logger.info("Passwurd. notifyProfile: " + data.toString());
-			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, headers, data.toString());
+			HttpServiceResponse resultResponse = httpService.executePost(httpClient, endpointUrl, null, headers,
+					data.toString());
 			HttpResponse httpResponse = resultResponse.getHttpResponse();
 			String httpResponseStatusCode = httpResponse.getStatusLine().getStatusCode();
 			logger.info("Passwurd. Notify response status code: " + httpResponseStatusCode);
