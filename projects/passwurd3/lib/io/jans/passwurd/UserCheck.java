@@ -139,6 +139,14 @@ public class UserCheck {
 			}
 
 		}
+		addUser(true, "mike1");
+		addUser(true, "mike2");
+		addUser(true, "mike3");
+		addUser(true, "mike4");
+		addUser(true, "mike5");
+		addUser(true, "mike6");
+		addUser(true, "mike7");
+		addUser(true, "mike8");
 		logger.info("Passwurd. Initialization. Completed");
 	}
 
