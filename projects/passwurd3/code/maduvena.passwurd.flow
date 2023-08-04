@@ -9,6 +9,7 @@ credentialU = RRF "username.ftlh"
 resultUserExists | exceptionResultUserExists = Call io.jans.passwurd.UserCheck#userExists credentialU.username
 Log "@error exceptionResultUserExists : " exceptionResultUserExists
 When exceptionResultUserExists is not null
+     Log "@info Ending the flow because of exceptions"
      Finish false
 When resultUserExists is false
      Finish false
