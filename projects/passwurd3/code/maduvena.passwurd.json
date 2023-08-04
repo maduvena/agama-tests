@@ -1260,7 +1260,7 @@
 					"parentId": "Agama-call-Node-8f3ac9c5-6416-4485-bee3-e3e720b06b70",
 					"name": "",
 					"basepath": "",
-					"comment": "Just nothing",
+					"comment": "Logging",
 					"notes": "",
 					"flowfilename": "",
 					"assignments": [
@@ -1286,7 +1286,7 @@
 					"maxIterationVariableName": "",
 					"logLevel": "info",
 					"assignCallbackResult": "",
-					"displayName": "Just nothing",
+					"displayName": "Logging VALIDATION RESULT",
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
@@ -1297,7 +1297,7 @@
 				"x": 2066.8364460600833,
 				"y": -17.85937324815677
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -2050,9 +2050,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"positionAbsolute": {
 				"x": 1260.5340352280023,
 				"y": 169.34726647879268
