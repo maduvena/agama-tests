@@ -1584,7 +1584,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 841.4869835499704,
@@ -2074,9 +2074,10 @@
 					"nodeColor": "",
 					"exceptionVariableField": "",
 					"nodeIcon": "octicon:log-16"
-				}
+				},
+				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 1233.4869835499703,
@@ -2797,8 +2798,8 @@
 		}
 	],
 	"viewport": {
-		"x": -397,
-		"y": 124,
-		"zoom": 1
+		"x": -291.7399299007243,
+		"y": 82.01896304706034,
+		"zoom": 0.7071067811865478
 	}
 }
