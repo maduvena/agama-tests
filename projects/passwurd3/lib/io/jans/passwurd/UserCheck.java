@@ -260,8 +260,7 @@ public class UserCheck {
 		logger.info("HttpClient : " + httpClient.getClass());
 		String url = configAttributes.get("AS_ENDPOINT") + "/jans-auth/restv1/token";
 		logger.info("configAttributes.get(AS_REDIRECT_URI): " + configAttributes.get("AS_REDIRECT_URI"));
-		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri="
-				+ configAttributes.get("AS_REDIRECT_URI");
+		String data = "grant_type=client_credentials&scope=https://api.gluu.org/auth/scopes/scan.passwurd&redirect_uri=" + configAttributes.get("AS_REDIRECT_URI");
 		Map<String, String> header = new HashMap<String, String>();
 		header.put("Content-type", "application/x-www-form-urlencoded");
 		header.put("Accept", "application/json");
