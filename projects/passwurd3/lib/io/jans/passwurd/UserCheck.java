@@ -170,7 +170,7 @@ public class UserCheck {
 			return null;
 		}
 		JSONObject response_data = new JSONObject(response);
-		logger.info(response_data);
+		logger.info(response_data.toString());
 		Map<String, String> result = new HashMap<String, String>();
 		result.put("client_id", response_data.getString("client_id"));
 		result.put("client_secret", response_data.getString("client_secret"));
