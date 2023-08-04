@@ -219,9 +219,9 @@ public class UserCheck {
 
 	public static boolean userExists(String uid) {
 
-		logger.info("Passwurd. userExists username: " + uid);
+		logger.info("Passwurd. Checking userExists username: " + uid);
 		if (uid == null || uid.isBlank()) {
-
+			logger.info("Passwurd. Checking userExists false ");
 			return false;
 		} else {    
 			User resultUser = userService.getUserByAttribute("uid", uid);
