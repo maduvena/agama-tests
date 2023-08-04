@@ -96,6 +96,13 @@ public class UserCheck {
 			return false;
 		}
 
+		
+		if (StringHelper.isEmpty(configAttributes.get("ORG_ID"))) {
+			logger.info("Passwurd. Initialization. Property ORG_ID is mandatory");
+			return false;
+		}
+		
+		
 		if (StringHelper.isEmpty(configAttributes.get("AS_CLIENT_ID"))) {
 
 			CustomScriptService custScriptService = CdiUtil.bean(CustomScriptService);
@@ -113,9 +120,9 @@ public class UserCheck {
 				if (clientIdExists) {
 					if (StringHelper.equalsIgnoreCase("PASSWURD_AS_CLIENT_SECRET", conf.getValue1())) {
 						configAttributes.put("AS_CLIENT_SECRET", conf.getValue2());
-					} else if (StringHelper.equalsIgnoreCase("PASSWURD_ORG_ID", conf.getValue1())) {
+					} /*else if (StringHelper.equalsIgnoreCase("PASSWURD_ORG_ID", conf.getValue1())) {
 						configAttributes.put("ORG_ID", conf.getValue2());
-					}
+					}*/
 				}
 			}
 			// if not, registering the client is needed
@@ -128,7 +135,7 @@ public class UserCheck {
 				}
 				configAttributes.put("AS_CLIENT_ID", clientRegistrationResponse.get("client_id"));
 				configAttributes.put("AS_CLIENT_SECRET", clientRegistrationResponse.get("client_secret"));
-				configAttributes.put("ORG_ID", clientRegistrationResponse.get("org_id"));
+				//configAttributes.put("ORG_ID", clientRegistrationResponse.get("org_id"));
 			}
 
 		}
@@ -181,11 +188,11 @@ public class UserCheck {
 			ClientService clientService = CdiUtil.bean(ClientService);
 			Client client = clientService.getClient(response_data.getString("client_id"));
 
-			// currently this does not come from the response, can be removed in the future
+			// currently this does not come from the response, can be uncommented in the future
 			// https://github.com/JanssenProject/jans/issues/5787
-			String org_id = client.getOrganization();
-
-			logger.info("org_id:" + org_id);
+			
+			// response_data.getString("org_id")
+			
 
 			CustomScriptService custScriptService = CdiUtil.bean(CustomScriptService);
 			CustomScript customScript = custScriptService.getScriptByDisplayName("agama");
@@ -196,10 +203,13 @@ public class UserCheck {
 					response_data.getString("client_id"), "AS_CLIENT_ID");
 			SimpleExtendedCustomProperty clientSecret = new SimpleExtendedCustomProperty("PASSWURD_AS_CLIENT_SECRET",
 					response_data.getString("client_secret"), "AS_CLIENT_SECRET");
-			SimpleExtendedCustomProperty orgId = new SimpleExtendedCustomProperty("PASSWURD_ORG_ID", org_id, "ORG_ID");
+			
+			// uncomment this too once org_id comes from the response
+			//SimpleExtendedCustomProperty orgId = new SimpleExtendedCustomProperty("PASSWURD_ORG_ID", org_id, "ORG_ID");
+			
 			conf.add(clientId);
 			conf.add(clientSecret);
-			conf.add(orgId);
+			// conf.add(orgId);
 			customScript.setConfigurationProperties(conf);
 			custScriptService.update(customScript);
 
