@@ -305,8 +305,8 @@ public class UserCheck {
 
 	public static boolean validateOTP(HashMap<String, String> credential) {
 		logger.info("Passwurd. validateOTP credential: " +credential.toString());
-		String otp = credential.get("first") + credential.get("second") + credential.get("third")
-				+ credential.get("fourth");
+		
+		String otp = credential.get("first") + credential.get("second") + credential.get("third") + credential.get("fourth");
 		logger.info("Passwurd. validateOTP: " + otp+ ":"+ "1234".equals(otp));
 		if ("1234".equals(otp))
 
