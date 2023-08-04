@@ -139,14 +139,7 @@ public class UserCheck {
 			}
 
 		}
-		addUser(true, "mike1");
-		addUser(true, "mike2");
-		addUser(true, "mike3");
-		addUser(true, "mike4");
-		addUser(true, "mike5");
-		addUser(true, "mike6");
-		addUser(true, "mike7");
-		addUser(true, "mike8");
+		
 		logger.info("Passwurd. Initialization. Completed");
 	}
 
@@ -310,9 +303,10 @@ public class UserCheck {
 
 	}
 
-	public static boolean validateOTP(HashMap<String, String> credentialMap) {
-		String otp = credentialMap.get("first") + credentialMap.get("second") + credentialMap.get("third")
-				+ credentialMap.get("fourth");
+	public static boolean validateOTP(HashMap<String, String> credential) {
+		logger.info("Passwurd. validateOTP credential: " +credential.toString());
+		String otp = credential.get("first") + credential.get("second") + credential.get("third")
+				+ credential.get("fourth");
 		logger.info("Passwurd. validateOTP: " + otp+ ":"+ "1234".equals(otp));
 		if ("1234".equals(otp))
 
