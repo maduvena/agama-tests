@@ -1416,7 +1416,7 @@
 					],
 					"callType": "Call static method",
 					"arguments": "",
-					"logMessage": "\"credentialMap\" credentialOtp",
+					"logMessage": "\"credentialOtp\" credentialOtp",
 					"templatePath": "",
 					"maxIteration": "",
 					"idpAuthEndpoint": "",
@@ -1437,7 +1437,7 @@
 				},
 				"skake": false
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 3589.4528503004685,
@@ -1584,7 +1584,7 @@
 				},
 				"skake": false
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false,
 			"positionAbsolute": {
 				"x": 841.4869835499704,
@@ -2798,8 +2798,8 @@
 		}
 	],
 	"viewport": {
-		"x": -291.7399299007243,
-		"y": 82.01896304706034,
-		"zoom": 0.7071067811865478
+		"x": -2611,
+		"y": -182,
+		"zoom": 1
 	}
 }
