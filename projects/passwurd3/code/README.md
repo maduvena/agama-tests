@@ -16,7 +16,7 @@
 ```
 
 
-### Pending features / bugs
+### Pending features / bugs that are needed for this flow to work perfectly
 
 1. Display appropriate error messages - https://github.com/GluuFederation/private/issues/3674
 
