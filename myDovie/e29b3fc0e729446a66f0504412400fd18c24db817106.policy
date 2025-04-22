@@ -1,2 +1,2 @@
 @id("check_account_123")
-permit(principal is Jans::User in Jans::Account::"Account = 123", action in Jans::Action::"GET", resource == Jans::Ticket::"account_123");
+permit(principal, action in Jans::Action::"GET", resource == Jans::Ticket::"account_123") when { ((principal["account_id"]) == (resource["account_id"])) && ((principal["trusted"]) == "true") };
