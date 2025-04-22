@@ -1,0 +1,2 @@
+@id("")
+permit(principal is Jans::Dovie, action == Jans::Action::"Read", resource is Jans::Account in Jans::Tenant::"");
