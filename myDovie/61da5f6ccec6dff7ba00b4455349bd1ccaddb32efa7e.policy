@@ -1,0 +1,2 @@
+@id("test123")
+permit(principal == Jans::Workload::"Dovie", action in [Jans::Action::"GET"], resource in Jans::Tenant::"123");
