@@ -8,7 +8,7 @@
                 "e29b3fc0e729446a66f0504412400fd18c24db817106": {
                     "description": "check_account_123",
                     "creation_date": "2025-04-22T12:21:10.985908",
-                    "policy_content": "QGlkKCJjaGVja19hY2NvdW50XzEyMyIpCnBlcm1pdChwcmluY2lwYWwsIGFjdGlvbiBpbiBKYW5zOjpBY3Rpb246OiJHRVQiLCByZXNvdXJjZSA9PSBKYW5zOjpUaWNrZXQ6OiJhY2NvdW50XzEyMyIpIHdoZW4geyAoKHByaW5jaXBhbFsiYWNjb3VudF9pZCJdKSA9PSAocmVzb3VyY2VbImFjY291bnRfaWQiXSkpICYmICgocHJpbmNpcGFsWyJ0cnVzdGVkIl0pID09ICJ0cnVlIikgfTs="
+                    "policy_content": "QGlkKCJjaGVja19hY2NvdW50XzEyMyIpCnBlcm1pdChwcmluY2lwYWwsIGFjdGlvbiBpbiBKYW5zOjpBY3Rpb246OiJSZWFkIiwgcmVzb3VyY2UgPT0gSmFuczo6VGlja2V0OjoiYWNjb3VudF8xMjMiKSB3aGVuIHsgKChwcmluY2lwYWxbImFjY291bnRfaWQiXSkgPT0gKHJlc291cmNlWyJhY2NvdW50X2lkIl0pKSAmJiAoKHByaW5jaXBhbFsidHJ1c3RlZCJdKSA9PSAidHJ1ZSIpIH07"
                 }
             },
             "trusted_issuers": {},
